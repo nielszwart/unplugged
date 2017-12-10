@@ -1,8 +1,68 @@
-{% extends 'base.html.twig' %}
+{% extends 'website/base.html.twig' %}
 
 {% block title %}Unplugged{% endblock %}
 
 {% block body %}
-    <h1>{{ number }}</h1>
-
+    <div class="homepage-header-image" style="background-image: url({{ asset('img/swimmer.jpg') }})">
+        <div class="text-position">
+            <h1>Unpluggen is nog nooit zo lekker geweest</h1>
+            <p>
+                Train, eet en leef volgens de voor jou persoonlijk meest effectieve manier en bereik je doelen sneller.
+            </p>
+        </div>
+    </div>
+    <div class="homepage-pages">
+        <ul class="pages">
+            <li>
+                <div class="image" style="background-image: url({{ asset('img/genblueprint.jpg') }})">
+                    <div class="image-text">
+                        <h2>Text over image</h2>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-position">
+                        <h3>Content title</h3>
+                        <ul class="homepage-pages-list">
+                            <li>Lorem</li>
+                            <li>Ipsum</li>
+                        </ul>
+                        <a href="" class="button-large">Click here</a>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="image" style="background-image: url({{ asset('img/swimmer.jpg') }})">
+                    <div class="image-text">
+                        <h2>Text over image</h2>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-position">
+                        <h3>Content title</h3>
+                        <ul class="homepage-pages-list">
+                            <li>Lorem</li>
+                            <li>Ipsum</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="image" style="background-image: url({{ asset('img/genblueprint.jpg') }})">
+                    <div class="image-text">
+                        <h2>Text over image</h2>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="content-position">
+                        <h3>Content title</h3>
+                        <ul class="homepage-pages-list">
+                            <li>Lorem</li>
+                            <li>Ipsum</li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <div class="clear"></div>
+    </div>
 {% endblock %}

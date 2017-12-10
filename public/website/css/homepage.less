@@ -1,0 +1,96 @@
+.homepage-header-image {
+  height: 500px;
+  width: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: table;
+
+  .text-position {
+    display: table-cell;
+    vertical-align: middle;
+
+    h1 {
+      font-size: 60px;
+      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    }
+
+    p {
+      color: white;
+      text-shadow: -1px 0 @purple, 0 1px @purple, 1px 0 @purple, 0 -1px @purple;
+    }
+  }
+}
+
+.homepage-pages {
+  width: 100%;
+  white-space: nowrap;
+  background-color: @black-lighter;
+  padding: 100px 0;
+
+  .image,
+  .content {
+    display: table;
+    height: 500px;
+    top: 0;
+    width: 50%;
+    text-align: center;
+  }
+
+  .image {
+    float: left;
+    left: 0;
+    background-color: gray;
+    background-position: top left;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .image-text {
+      display: table-cell;
+      vertical-align: middle;
+
+      h2 {
+        font-size: 60px;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+      }
+    }
+  }
+
+  .content {
+    float: right;
+    right: 0;
+
+    .content-position {
+      display: table-cell;
+      vertical-align: middle;
+      color: @white;
+
+      h3 {
+        font-size: 26px;
+      }
+
+      .homepage-pages-list {
+        margin-top: 30px;
+        list-style-type: square;
+        list-style-position: inside;
+      }
+
+      .button-large {
+        margin: 40px auto 0;
+      }
+    }
+  }
+
+  ul.pages li:nth-child(even) {
+    .image {
+      float: right;
+      right: 0;
+    }
+
+    .content {
+      float: left;
+      left: 0;
+    }
+  }
+}
