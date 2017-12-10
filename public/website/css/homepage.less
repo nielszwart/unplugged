@@ -12,12 +12,13 @@
     vertical-align: middle;
 
     h1 {
+      color: @white;
       font-size: 60px;
-      text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+      text-shadow: -1px 0 @purple, 0 1px @purple, 1px 0 @purple, 0 -1px @purple;
     }
 
     p {
-      color: white;
+      color: @white;
       text-shadow: -1px 0 @purple, 0 1px @purple, 1px 0 @purple, 0 -1px @purple;
     }
   }
@@ -25,7 +26,6 @@
 
 .homepage-pages {
   width: 100%;
-  white-space: nowrap;
   background-color: @black-lighter;
   padding: 100px 0;
 
@@ -52,7 +52,8 @@
 
       h2 {
         font-size: 60px;
-        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        color: @white;
+        text-shadow: -1px 0 @purple, 0 1px @purple, 1px 0 @purple, 0 -1px @purple;
       }
     }
   }
@@ -62,18 +63,25 @@
     right: 0;
 
     .content-position {
+      padding: 0 150px;
       display: table-cell;
       vertical-align: middle;
       color: @white;
 
-      h3 {
-        font-size: 26px;
-      }
+      .align-left {
+        text-align: left;
 
-      .homepage-pages-list {
-        margin-top: 30px;
-        list-style-type: square;
-        list-style-position: inside;
+        h3 {
+          font-size: 26px;
+          line-height: 1;
+        }
+
+        ul {
+          line-height: 1.5;
+          margin-top: 30px;
+          list-style-type: square;
+          list-style-position: inside;
+        }
       }
 
       .button-large {

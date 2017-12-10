@@ -37,6 +37,26 @@ class Page
      */
     private $content;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $slide = false;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $slide_title;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $slide_text;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $button_text;
+
     public function __construct($id, $locale) {
         $this->id = $id;
         $this->locale = $locale;
@@ -92,6 +112,46 @@ class Page
         $this->content = $content;
     }
 
+    public function getSlide()
+    {
+        return $this->slide;
+    }
+
+    public function setSlide($slide)
+    {
+        $this->slide = $slide;
+    }
+
+    public function getSlideTitle()
+    {
+        return $this->slide_title;
+    }
+
+    public function setSlideTitle($slide_title)
+    {
+        $this->slide_title = $slide_title;
+    }
+
+    public function getSlideText()
+    {
+        return $this->slide_text;
+    }
+
+    public function setSlideText($slide_text)
+    {
+        $this->slide_text = $slide_text;
+    }
+
+    public function getButtonText()
+    {
+        return $this->button_text;
+    }
+
+    public function setButtonText($button_text)
+    {
+        $this->button_text = $button_text;
+    }
+
     public function edit($values)
     {
         if (isset($values['content'])) {
@@ -102,6 +162,18 @@ class Page
         }
         if (isset($values['title'])) {
             $this->setTitle($values['title']);
+        }
+        if (isset($values['slide'])) {
+            $this->setSlide($values['slide']);
+        }
+        if (isset($values['slide_title'])) {
+            $this->setSlideTitle($values['slide_title']);
+        }
+        if (isset($values['slide_text'])) {
+            $this->setSlideText($values['slide_text']);
+        }
+        if (isset($values['button_text'])) {
+            $this->setButtonText($values['button_text']);
         }
     }
 }

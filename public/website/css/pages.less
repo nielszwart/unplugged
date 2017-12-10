@@ -1,0 +1,29 @@
+.page-header {
+  height: 450px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: table;
+
+  .text-position {
+    display: table-cell;
+    vertical-align: middle;
+
+    h1 {
+      color: @white;
+      font-size: 60px;
+      text-shadow: -1px 0 @purple, 0 1px @purple, 1px 0 @purple, 0 -1px @purple;
+    }
+
+    p {
+      color: @white;
+      text-shadow: -1px 0 @purple, 0 1px @purple, 1px 0 @purple, 0 -1px @purple;
+    }
+  }
+}
+
+.page-content {
+  padding: 25px @navigation-margin;
+}

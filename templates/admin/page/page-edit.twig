@@ -27,6 +27,25 @@
                     {{ form_widget(form.content, {'value': page.content}) }}
                 </div>
 
+                <div class="form-group row">
+                    {{ form_widget(form.slide, {'checked': page.slide == 1}) }}
+                </div>
+
+                <div class="form-group row">
+                    {{ form_label(form.slide_title) }}
+                    {{ form_widget(form.slide_title, {'value': page.slideTitle}) }}
+                </div>
+
+                <div class="form-group row">
+                    {{ form_label(form.slide_text) }}
+                    {{ form_widget(form.slide_text, {'value': page.slideText}) }}
+                </div>
+
+                <div class="form-group row">
+                    {{ form_label(form.button_text) }}
+                    {{ form_widget(form.button_text, {'value': page.buttonText}) }}
+                </div>
+
                 <button type="submit" class="btn btn-success float-right">{% trans %}Save{% endtrans %}</button>
             </div>
         </div>

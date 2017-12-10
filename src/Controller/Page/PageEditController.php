@@ -34,7 +34,7 @@ class PageEditController extends BaseController
                 $page->edit($form->getData());
                 $this->save($page);
                 $this->addFlash('success', $localization->translate('Page was edited successfully'));
-                return $localization->redirectToLocalizedRoute('page_edit', ['id' => $page['id'], 'locale' => $page['locale']]);
+                return $localization->redirectToLocalizedRoute('admin_page_edit', ['id' => $page->getId(), 'locale' => $page->getLocale()]);
             } else {
                 $this->addFlash('error', $localization->translate('Failed to edit page'));
             }
