@@ -57,6 +57,16 @@ class Page
      */
     private $button_text;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $slide_image;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $header;
+
     public function __construct($id, $locale) {
         $this->id = $id;
         $this->locale = $locale;
@@ -152,6 +162,26 @@ class Page
         $this->button_text = $button_text;
     }
 
+    public function getSlideImage()
+    {
+        return $this->slide_image;
+    }
+
+    public function setSlideImage($slide_image)
+    {
+        $this->slide_image = $slide_image;
+    }
+
+    public function getHeader()
+    {
+        return $this->header;
+    }
+
+    public function setHeader($header)
+    {
+        $this->header = $header;
+    }
+
     public function edit($values)
     {
         if (isset($values['content'])) {
@@ -174,6 +204,12 @@ class Page
         }
         if (isset($values['button_text'])) {
             $this->setButtonText($values['button_text']);
+        }
+        if (isset($values['slide_image'])) {
+            $this->setSlideImage($values['slide_image']);
+        }
+        if (isset($values['header'])) {
+            $this->setHeader($values['header']);
         }
     }
 }

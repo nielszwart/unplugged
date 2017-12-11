@@ -23,6 +23,23 @@
                 </div>
 
                 <div class="form-group row">
+                    {{ form_label(form.slug) }}
+                    {{ form_widget(form.slug, {'value': page.slug}) }}
+                </div>
+
+                <div class="form-group row">
+                    {{ form_label(form.header) }}
+                    {{ form_widget(form.header) }}
+                </div>
+
+                {% if page.header %}
+                    <div class="form-group row">
+                        <label>{% trans %}Current header image{% endtrans %}</label>
+                        <div class="current-image" style="background-image: url('{{ asset('uploads/' ~ page.header) }}');"></div>
+                    </div>
+                {% endif %}
+
+                <div class="form-group row">
                     {{ form_label(form.content) }}
                     {{ form_widget(form.content, {'value': page.content}) }}
                 </div>
@@ -30,6 +47,18 @@
                 <div class="form-group row">
                     {{ form_widget(form.slide, {'checked': page.slide == 1}) }}
                 </div>
+
+                <div class="form-group row">
+                    {{ form_label(form.slide_image) }}
+                    {{ form_widget(form.slide_image) }}
+                </div>
+
+                {% if page.slideImage %}
+                    <div class="form-group row">
+                        <label>{% trans %}Current slide image{% endtrans %}</label>
+                        <div class="current-image" style="background-image: url('{{ asset('uploads/' ~ page.slideImage) }}');"></div>
+                    </div>
+                {% endif %}
 
                 <div class="form-group row">
                     {{ form_label(form.slide_title) }}

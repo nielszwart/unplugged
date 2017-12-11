@@ -3,12 +3,12 @@
 {% block title %}Unplugged{% endblock %}
 
 {% block body %}
-    <div class="homepage-header-image" style="background-image: url({{ asset('img/swimmer.jpg') }})">
+    <div class="homepage-header-image" style="background-image: url({{ asset('img/top3.jpg') }})">
         <div class="text-position">
             <h1>Unpluggen was nog nooit zo makkelijk</h1>
-            <p>
+            <h2>
                 Train, eet en leef volgens de voor jou persoonlijk meest effectieve manier en bereik je doelen sneller.
-            </p>
+            </h2>
         </div>
     </div>
 
@@ -17,9 +17,11 @@
         <ul class="pages">
             {% for page in pages %}
                 <li>
-                    <div class="image" style="background-image: url({{ asset('img/genblueprint.jpg') }})">
+                    <div class="image" style="background-image: url({{ asset('uploads/' ~ page.slideImage) }})">
                         <div class="image-text">
-                            <h2>{{ page.slideTitle }}</h2>
+                            <div class="image-opacity-bar">
+                                <h2>{{ page.slideTitle }}</h2>
+                            </div>
                         </div>
                     </div>
                     <div class="content">
