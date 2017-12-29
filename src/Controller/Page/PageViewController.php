@@ -16,6 +16,7 @@ class PageViewController extends BaseController
 {
     /**
      * @Route("/{slug}", name="page_view_en")
+     * @Route("/{slug}", name="page_view_nl")
      * @Method("GET")
      */
     public function viewAction($slug, Request $request, Localization $localization)

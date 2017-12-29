@@ -10,11 +10,11 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 class DashboardController extends BaseController
 {
     /**
-     * @Route("/admin", name="admin_dashboard_en")
-     * @Route("/{_locale}/admin", name="admin_dashboard_nl")
+     * @Route("/admin/", name="admin_dashboard_en")
+     * @Route("/admin/", name="admin_dashboard_nl")
      * @Method("GET")
      */
-    function overviewAction()
+    public function overviewAction()
     {
         return $this->render(
             'admin/dashboard.twig',

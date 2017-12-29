@@ -13,6 +13,7 @@ class IndexController extends BaseController
 {
     /**
      * @Route("/", name="homepage_en")
+     * @Route("/", name="homepage_nl")
      * @Method("GET")
      */
     public function homepageAction(Request $request)

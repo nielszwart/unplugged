@@ -3,28 +3,24 @@
 {% block title %}{% trans %}Edit page{% endtrans %}{% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
+    <div class="container-fluid edit-page">
         <div class="row header-row">
-            <div class="col-3">
-                <h1>{% trans %}Edit page{% endtrans %} ({{ page.locale }})</h1>
+            <div class="col-6">
+                <h1>{% trans %}Edit page{% endtrans %}: {{ page.title }} ({{ page.locale }})</h1>
             </div>
-            <div class="col-9">
+            <div class="col-6">
                 <a href="{{ getLocalizedRoute('admin_page_overview') }}" class="btn btn-dark float-right">{% trans %}Back to overview{% endtrans %}</a>
             </div>
         </div>
 
         <div class="row">
-            <div class="col-8">
+            <div class="col-1">&nbsp;</div>
+            <div class="col-10">
                 {{ form_start(form) }}
 
                 <div class="form-group row">
                     {{ form_label(form.title) }}
                     {{ form_widget(form.title, {'value': page.title}) }}
-                </div>
-
-                <div class="form-group row">
-                    {{ form_label(form.slug) }}
-                    {{ form_widget(form.slug, {'value': page.slug}) }}
                 </div>
 
                 <div class="form-group row">
@@ -34,17 +30,22 @@
 
                 {% if page.header %}
                     <div class="form-group row">
-                        <label>{% trans %}Current header image{% endtrans %}</label>
-                        <div class="current-image" style="background-image: url('{{ asset('uploads/' ~ page.header) }}');"></div>
+                        <div class="col-3">
+                            <label>{% trans %}Current header image{% endtrans %}</label>
+                        </div>
+                        <div class="col-9">
+                            <div class="current-image" style="background-image: url('{{ asset('uploads/' ~ page.header) }}');"></div>
+                        </div>
                     </div>
                 {% endif %}
 
                 <div class="form-group row">
                     {{ form_label(form.content) }}
-                    {{ form_widget(form.content, {'value': page.content}) }}
+                    {{ form_widget(form.content, {'value': page.content, 'class': 'ckeditor'}) }}
                 </div>
 
                 <div class="form-group row">
+                    {{ form_label(form.slide) }}
                     {{ form_widget(form.slide, {'checked': page.slide == 1}) }}
                 </div>
 
@@ -55,8 +56,12 @@
 
                 {% if page.slideImage %}
                     <div class="form-group row">
-                        <label>{% trans %}Current slide image{% endtrans %}</label>
-                        <div class="current-image" style="background-image: url('{{ asset('uploads/' ~ page.slideImage) }}');"></div>
+                        <div class="col-3">
+                            <label>{% trans %}Current slide image{% endtrans %}</label>
+                        </div>
+                        <div class="col-9">
+                            <div class="current-image" style="background-image: url('{{ asset('uploads/' ~ page.slideImage) }}');"></div>
+                        </div>
                     </div>
                 {% endif %}
 
@@ -77,8 +82,26 @@
 
                 <button type="submit" class="btn btn-success float-right">{% trans %}Save{% endtrans %}</button>
             </div>
+            <div class="col-1">&nbsp;</div>
         </div>
         {{ form_end(form) }}
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+<script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
+<script>
+    var editors = document.querySelectorAll('.ckeditor');
+    var i;
+    for (i = 0; i < editors.length; i++) {
+        console.log('hoi');
+        ClassicEditor
+            .create(editors[i])
+            .catch(error => {
+                console.error(error);
+            }
+        );
+    }
+</script>
 {% endblock %}

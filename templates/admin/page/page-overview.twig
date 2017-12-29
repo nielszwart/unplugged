@@ -14,8 +14,8 @@
             <thead class="thead-inverse">
             <tr>
                 <th>ID</th>
-                <th>{% trans %}Language{% endtrans %}</th>
                 <th>{% trans %}Slug{% endtrans %}</th>
+                <th>{% trans %}Language{% endtrans %}</th>
                 <th>{% trans %}Title{% endtrans %}</th>
             </tr>
             </thead>
@@ -23,10 +23,18 @@
             {% for page in pages %}
                 <tr>
                     <td>{{ page.id }}</td>
-                    <td>{{ page.locale|upper }}</td>
                     <td>{{ page.slug }}</td>
                     <td>
-                        <a href="{{ getLocalizedRoute('admin_page_edit', {'id': page.id, 'locale': page.locale}) }}">
+                        {% if page.locale == 'nl' %}
+                            <img src="{{ asset('img/dutch.png') }}" class="language-flag">
+                        {% elseif page.locale == 'en' %}
+                            <img src="{{ asset('img/english.png') }}" class="language-flag">
+                        {% else %}
+                            {{ page.locale|upper }}
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="{{ getLocalizedRoute('admin_page_edit', {'slug': page.slug, 'locale': page.locale}) }}">
                             {{ page.title }}
                         </a>
                     </td>

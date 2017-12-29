@@ -1,9 +1,11 @@
 {% block form_label %}
-    <label for="{{ id }}" class="col-4 col-form-label">{{ label|trans }}</label>
+    <div class="col-3">
+        <label for="{{ id }}" class="col-form-label">{{ label|trans }}</label>
+    </div>
 {% endblock %}
 
 {% block form_widget_simple %}
-    <div class="col-8">
+    <div class="col-9">
         <input
                 id="{{ id }}"
                 class="form-control"
@@ -24,9 +26,17 @@
         </div>
     {% endspaceless %}
 {% endblock choice_widget_expanded %}
+
 {% block checkbox_widget %}
+    <div class="col-9">
         <div class="checkbox">
             <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
-            <label for="{{ id }}">{{ label|trans }}</label>
         </div>
+    </div>
 {% endblock checkbox_widget %}
+
+{% block textarea_widget %}
+    <div class="col-9">
+        <textarea {{ block('widget_attributes') }}>{{ value }}</textarea>
+    </div>
+{% endblock %}

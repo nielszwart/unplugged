@@ -3,12 +3,67 @@
 {% block title %}Unplugged{% endblock %}
 
 {% block body %}
-    <div class="homepage-header-image" style="background-image: url({{ asset('img/top3.jpg') }})">
+    <div class="homepage-header-image" style="background-image: url({{ asset('img/top1.jpg') }})">
         <div class="text-position">
-            <h1>Unpluggen was nog nooit zo makkelijk</h1>
-            <h2>
-                Train, eet en leef volgens de voor jou persoonlijk meest effectieve manier en bereik je doelen sneller.
-            </h2>
+            <div class="image-opacity-bar">
+                <h1>Unpluggen was nog nooit zo makkelijk</h1>
+                <h2>
+                    Train, eet en leef volgens de voor jou persoonlijk meest effectieve manier en bereik je doelen sneller.
+                </h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="usps">
+        <div class="why">
+                <h2>{% trans %}Why Unplugged?{% endtrans %}</h2>
+        </div>
+        <div class="usp-list">
+            <div class="usp">
+                <div class="image">
+                    <img src="{{ asset('img/balance.png') }}">
+                </div>
+                <div class="text">
+                    <h3>{% trans %}Better balanced{% endtrans %}</h3>
+                    <p>
+                        {% trans %}Unplugging ensures better balance between body and mind{% endtrans %}
+                    </p>
+                </div>
+            </div>
+            <div class="usp">
+                <div class="image">
+                    <img src="{{ asset('img/heart.png') }}">
+                </div>
+                <div class="text">
+                    <h3>{% trans %}Healthier & Fitter{% endtrans %}</h3>
+                    <p>
+                        {% trans %}Unplugging helps you become healthier and fitter faster{% endtrans %}
+                    </p>
+                </div>
+            </div>
+            <div class="usp">
+                <div class="image">
+                    <img src="{{ asset('img/cutlery.png') }}">
+                </div>
+                <div class="text">
+                    <h3>{% trans %}Personal food advice{% endtrans %}</h3>
+                    <p>
+                        {% trans %}Unplugging advices on what to eat to balance as fast as possible{% endtrans %}
+                    </p>
+                </div>
+            </div>
+            <div class="usp">
+                <div class="image">
+                    <img src="{{ asset('img/einstein.png') }}">
+                </div>
+                <div class="text">
+                    <h3>{% trans %}Advice from experts{% endtrans %}</h3>
+                    <p>
+                        {% trans %}Unplugging is scientifically supported and works with experts instead of coaches{% endtrans %}
+                    </p>
+                </div>
+            </div>
+            <div class="clear"></div>
         </div>
     </div>
 
@@ -28,7 +83,7 @@
                         <div class="content-position">
                             <div class="align-left">
                                 {{ page.slideText|raw }}
-                                <a href="" class="button-large">{{ page.buttonText }}</a>
+                                <a href="{{ getLocalizedRoute('page_view', {slug: page.slug}) }}" class="button-large">{{ page.buttonText }}</a>
                             </div>
                         </div>
                     </div>

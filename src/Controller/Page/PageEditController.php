@@ -18,12 +18,12 @@ use Symfony\Component\Translation\Translator;
 class PageEditController extends BaseController
 {
     /**
-     * @Route("/{_locale}/admin/pagina/wijzig/{id}/{locale}", name="admin_page_edit_nl", requirements={"id": "\d+"})
-     * @Route("/admin/page/edit/{id}/{locale}", name="admin_page_edit_en", requirements={"id": "\d+"})
+     * @Route("/admin/pagina/wijzig/{slug}/{locale}", name="admin_page_edit_nl")
+     * @Route("/admin/page/edit/{slug}/{locale}", name="admin_page_edit_en")
      */
-    public function editAction($id, $locale, Request $request, Localization $localization, FileUploader $fileUploader)
+    public function editAction($slug, $locale, Request $request, Localization $localization, FileUploader $fileUploader)
     {
-        $page = $this->getDoctrine()->getRepository(Page::class)->findOneBy(['id' => $id, 'locale' => $locale]);
+        $page = $this->getDoctrine()->getRepository(Page::class)->findOneBy(['slug' => $slug, 'locale' => $locale]);
         if (empty($page)) {
             throw new HttpException(404, $localization->translate('Could not find requested page'));
         }
@@ -50,7 +50,7 @@ class PageEditController extends BaseController
                 $page->edit($data);
                 $this->save($page);
                 $this->addFlash('success', $localization->translate('Page was edited successfully'));
-                return $localization->redirectToLocalizedRoute('admin_page_edit', ['id' => $page->getId(), 'locale' => $page->getLocale()]);
+                return $localization->redirectToLocalizedRoute('admin_page_edit', ['slug' => $page->getSlug(), 'locale' => $page->getLocale()]);
             } else {
                 $this->addFlash('error', $localization->translate('Failed to edit page'));
             }
