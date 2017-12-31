@@ -43,6 +43,11 @@ class User implements AdvancedUserInterface, \Serializable
      */
     private $role;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $forgot_password_token;
+
     private $availableRoles = [
         'admin' => 'ROLE_ADMIN',
         'user' => 'ROLE_USER',
@@ -184,5 +189,20 @@ class User implements AdvancedUserInterface, \Serializable
     public function getRole()
     {
         return $this->availableRoles[$this->role];
+    }
+
+    public function getForgotPasswordToken()
+    {
+        return $this->forgot_password_token;
+    }
+
+    public function setForgotPasswordToken()
+    {
+        $this->forgot_password_token = md5($this->getEmail() . time());
+    }
+
+    public function resetForgotPasswordToken()
+    {
+        $this->forgot_password_token = null;
     }
 }

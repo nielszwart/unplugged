@@ -30,16 +30,16 @@ class TwigFunctions extends \Twig_Extension
         ];
     }
 
-    public function getLocalizedRoute($routeName, array $parameters = [])
+    public function getLocalizedRoute($routeName, array $parameters = [], $absolute = 1)
     {
         try {
-            $url = $this->urlGenerator->generate($routeName, $parameters);
+            $url = $this->urlGenerator->generate($routeName, $parameters, $absolute);
             return $url;
         } catch (\Exception $e) {
             //
         }
 
-        return $this->urlGenerator->generate($routeName . "_" . $this->locale, $parameters);
+        return $this->urlGenerator->generate($routeName . "_" . $this->locale, $parameters, $absolute);
     }
 
     public function getCountries()

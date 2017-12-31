@@ -38,6 +38,24 @@ account:
     methods: [GET]
     defaults: { _controller: 'App\Controller\Account\AccountController::account' }
 
+forgot-password_en:
+    path: /forgot-password
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\SecurityController::forgotPassword' }
+forgot-password_nl:
+    path: /wachtwoord-vergeten
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\SecurityController::forgotPassword' }
+
+reset-password_en:
+    path: /reset-password
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\SecurityController::resetPassword' }
+reset-password_nl:
+    path: /wachtwoord-opnieuw-instellen
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\SecurityController::resetPassword' }
+
 contact:
     path: /contact
     defaults: { _controller: 'App\Controller\ContactController::contact' }

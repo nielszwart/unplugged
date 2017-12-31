@@ -1,6 +1,6 @@
 Why Unplugged?: Waarom Unplugged?
 Contact: Contact
-Register: Registreer
+Register: Registreren
 Login: Inloggen
 Better balanced: Beter in balans
 Unplugging ensures better balance between body and mind: Unplugging zorgt er voor dat je lichaam en geest beter in balans komt
@@ -41,3 +41,21 @@ Phone: Telefoon
 Your message has been received: Uw bericht is ontvangen
 Message through contact form: Bericht via contact formulier
 Failed to send the message: Bericht versturen is mislukt
+Reset your password: Stel nieuw wachtwoord in
+Click the link below to set a new password: Klik op onderstaande link om een nieuw wachtwoord in te stellen
+Reset password: Nieuw wachtwoord
+Password: Wachtwoord
+Forgot password: Wachtwoord vergeten
+Please provide us with your email address.: Vul hieronder uw e-mailadres in.
+We will send an email to that email address with instructions on how to reset your password.: We sturen u een e-mail met instructies over hoe u uw wachtwoord opnieuw kunt instellen
+Reset: Wijzig
+We did not find a user with the given email address: We kennen geen gebruiker met het opgegeven e-mailadres
+Follow the instructions in the email we have just sent in order to reset your password: Volg de instructies in de e-mail die we zojuist hebben gestuurd
+Please enter your new password below.: Vul hieronder uw nieuwe wachtwoord in
+New password: Nieuw wachtwoord
+Repeat new password: Herhaal nieuwe wachtwoord
+The repeated password must be identical: Het herhaalde wachtwoord moet identiek zijn
+Failed to reset password: Wachtwoord opnieuw instellen is mislukt
+Successfully reset password: Wachtwoord opnieuw instellen is gelukt
+You have to click the link in the email we sent you to reset your password: U moet op de link in de e-mail klikken om uw wachtwoord opnieuw in te stellen
+Can not find user with given token: Kan geen gebruiker vinden om het wachtwoord voor te wijzigen

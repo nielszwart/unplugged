@@ -13,7 +13,7 @@
             </tr>
         {% endif %}
         <tr>
-            <td>{% trans %}Message{% endtrans %}:</td><td>{{ message }}</td>
+            <td>{% trans %}Message{% endtrans %}:</td><td>{{ message|nl2br }}</td>
         </tr>
     </table>
 {% endblock %}

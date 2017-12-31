@@ -13,12 +13,12 @@
             <form method="post">
 
                 <div class="form-field">
-                    <label for="username">Username or e-mail</label>
+                    <label for="username">{% trans %}E-mail{% endtrans %}</label>
                     <input type="text" id="username" name="_username" value="{{ last_username }}" />
                 </div>
 
                 <div class="form-field">
-                    <label for="password">Password:</label>
+                    <label for="password">{% trans %}Password{% endtrans %}</label>
                     <input type="password" id="password" name="_password" />
                 </div>
 
@@ -28,6 +28,9 @@
 
                 <button type="submit" class="button-large">{% trans %}Login{% endtrans %}</button>
             </form>
+            <a href="{{ getLocalizedRoute('forgot-password') }}">{% trans %}Forgot password{% endtrans %}</a>
+            <a href="{{ getLocalizedRoute('register') }}">{% trans %}Register{% endtrans %}</a>
+            <div class="clear">&nbsp;</div>
         </div>
 
     </div>
