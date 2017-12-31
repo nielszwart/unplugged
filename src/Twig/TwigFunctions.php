@@ -32,6 +32,13 @@ class TwigFunctions extends \Twig_Extension
 
     public function getLocalizedRoute($routeName, array $parameters = [])
     {
+        try {
+            $url = $this->urlGenerator->generate($routeName, $parameters);
+            return $url;
+        } catch (\Exception $e) {
+            //
+        }
+
         return $this->urlGenerator->generate($routeName . "_" . $this->locale, $parameters);
     }
 

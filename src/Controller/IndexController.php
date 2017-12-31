@@ -11,12 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends BaseController
 {
-    /**
-     * @Route("/", name="homepage_en")
-     * @Route("/", name="homepage_nl")
-     * @Method("GET")
-     */
-    public function homepageAction(Request $request)
+    public function homepage(Request $request)
     {
         $pages = $this->getDoctrine()->getRepository(Page::class)->findBy([
             'locale' => $request->getLocale(),

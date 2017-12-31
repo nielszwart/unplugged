@@ -1,0 +1,12 @@
+{% extends 'website/base.html.twig' %}
+
+{% block title %}{% trans %}Registered{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="page-content">
+        <h1>{% trans %}Registered successfully{% endtrans %}</h1>
+        <p>
+            {% trans %}In order to login you need to confirm your email address by clicking the link in the email we have sent.{% endtrans %}
+        </p>
+    </div>
+{% endblock %}

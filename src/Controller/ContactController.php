@@ -6,17 +6,11 @@ namespace App\Controller;
 
 use App\Service\Localization;
 use App\Form\ContactType;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 class ContactController extends BaseController
 {
-    /**
-     * @Route("/contact", name="contact_en")
-     * @Route("/contact", name="contact_nl")
-     */
-    public function contactAction(Request $request, Localization $localization, \Swift_Mailer $mailer)
+    public function contact(Request $request, Localization $localization, \Swift_Mailer $mailer)
     {
         // Honeypot
         if (!empty($request->request->get('emailtest'))) {

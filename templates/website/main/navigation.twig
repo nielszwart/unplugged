@@ -2,13 +2,17 @@
     <div class="nav-wrapper">
         <div class="nav-top">
             <div class="nav-top-email">
-                <a href="">info@unplugged.nl</a>
+                <a href="mailto:info@unplugged.nl">info@unplugged.nl</a>
             </div>
             <div class="nav-top-menu">
                 <ul class="top-menu">
                     <li class="nav-item"><a href="{{ getLocalizedRoute('contact') }}">{% trans %}Contact{% endtrans %}</a></li>
-                    <li class="nav-item"><a href="">{% trans %}Register{% endtrans %}</a></li>
-                    <li class="nav-item"><a href="">{% trans %}Login{% endtrans %}</a></li>
+                    <li class="nav-item"><a href="{{ getLocalizedRoute('register') }}">{% trans %}Register{% endtrans %}</a></li>
+                    {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('logout') }}">{% trans %}Logout{% endtrans %}</a></li>
+                    {% else %}
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('login') }}">{% trans %}Login{% endtrans %}</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </div>

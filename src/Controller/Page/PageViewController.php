@@ -14,12 +14,7 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class PageViewController extends BaseController
 {
-    /**
-     * @Route("/{slug}", name="page_view_en")
-     * @Route("/{slug}", name="page_view_nl")
-     * @Method("GET")
-     */
-    public function viewAction($slug, Request $request, Localization $localization)
+    public function view($slug, Request $request, Localization $localization)
     {
         $page = $this->getDoctrine()->getRepository(Page::class)->findOneBy(['slug' => $slug, 'locale' => $request->getLocale()]);
         if (empty($page)) {
