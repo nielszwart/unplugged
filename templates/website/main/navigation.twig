@@ -25,6 +25,12 @@
             </div>
             <div class="nav-bottom-menu">
                 <ul class="bottom-menu">
+                    {% if app.request.getLocale() == 'nl' %}
+                        {% set slug = 'hoe-werkt-het' %}
+                    {% else %}
+                        {% set slug = 'how-it-works' %}
+                    {% endif %}
+                    <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: slug}) }}">{% trans %}How it works{% endtrans %}</a></li>
                     <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'breathe'}) }}">{% trans %}Breathe{% endtrans %}</a></li>
                     <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'drink'}) }}">{% trans %}Drink{% endtrans %}</a></li>
                     <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'eat'}) }}">{% trans %}Eat{% endtrans %}</a></li>

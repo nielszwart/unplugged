@@ -23,13 +23,13 @@ class PageType extends AbstractType
                 'attr' => ['class' => 'ckeditor'],
             ])
             ->add('slide', CheckboxType::class, ['label' => 'Add as homepage slide', 'required' => false])
-            ->add('slide_title', TextType::class, ['label' => 'Image text'])
+            ->add('slide_title', TextType::class, ['label' => 'Image text', 'required' => false])
             ->add('slide_text', TextareaType::class, [
                 'label' => 'Slide text',
                 'required' => false,
                 'attr' => ['class' => 'ckeditor'],
             ])
-            ->add('button_text', TextType::class, ['label' => 'Button text'])
+            ->add('button_text', TextType::class, ['label' => 'Button text', 'required' => false])
             ->add('slide_image', FileType::class, ['label' => 'Slide image', 'required' => false])
             ->add('header', FileType::class, ['label' => 'Header image', 'required' => false])
         ;
