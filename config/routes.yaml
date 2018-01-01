@@ -38,20 +38,20 @@ account:
     methods: [GET]
     defaults: { _controller: 'App\Controller\Account\AccountController::account' }
 
-forgot-password_en:
+forgot_password_en:
     path: /forgot-password
     host: www.unplugged.co.uk
     defaults: { _controller: 'App\Controller\SecurityController::forgotPassword' }
-forgot-password_nl:
+forgot_password_nl:
     path: /wachtwoord-vergeten
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\SecurityController::forgotPassword' }
 
-reset-password_en:
+reset_password_en:
     path: /reset-password
     host: www.unplugged.co.uk
     defaults: { _controller: 'App\Controller\SecurityController::resetPassword' }
-reset-password_nl:
+reset_password_nl:
     path: /wachtwoord-opnieuw-instellen
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\SecurityController::resetPassword' }
@@ -60,15 +60,15 @@ contact:
     path: /contact
     defaults: { _controller: 'App\Controller\ContactController::contact' }
 
-magnesium-test:
+magnesium_test:
     path: /magnesium-test
     defaults: { _controller: 'App\Controller\Test\MagnesiumTestController::test' }
 
-vitamin-test_en:
+vitamin_test_en:
     path: /vitamin-b12-test
     host: www.unplugged.co.uk
     defaults: { _controller: 'App\Controller\Test\VitamineTestController::test' }
-vitamin-test_nl:
+vitamin_test_nl:
     path: /vitamine-b12-test
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\Test\VitamineTestController::test' }
