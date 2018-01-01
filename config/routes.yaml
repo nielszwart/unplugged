@@ -38,6 +38,15 @@ account:
     methods: [GET]
     defaults: { _controller: 'App\Controller\Account\AccountController::account' }
 
+account_edit_en:
+    path: /edit-account
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Account\EditController::edit' }
+account_edit_nl:
+    path: /wijzig-account
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Account\EditController::edit' }
+
 forgot_password_en:
     path: /forgot-password
     host: www.unplugged.co.uk
