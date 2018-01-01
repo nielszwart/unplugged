@@ -1,29 +1,31 @@
-{% block form_label %}
-    <label for="{{ id }}" class="col-4 col-form-label">{{ label|trans }}</label>
-{% endblock %}
-
 {% block form_widget_simple %}
-    <div class="col-8">
-        <input
-                id="{{ id }}"
-                class="form-control"
-                {% if type is defined %}type="{{ type }}"{% endif %}
-                name="{{ full_name }}"
-                {% if required %} required="required"{% endif %}
-                value="{{ value }}"
-        >
-    </div>
+    <input
+            id="{{ id }}"
+            class="form-control"
+            {% if type is defined %}type="{{ type }}"{% endif %}
+            name="{{ full_name }}"
+            {% if required %} required="required"{% endif %}
+            value="{{ value }}"
+    >
 {% endblock %}
 
 {% block choice_widget_expanded %}
     {% spaceless %}
         <div {{ block('widget_container_attributes') }}>
             {% for child in form %}
-                {{ form_widget(child) }}
+                <div class="radio-choice">
+                    {{ form_widget(child) }}
+                    {{ form_label(child) }}
+                </div>
             {% endfor %}
         </div>
     {% endspaceless %}
 {% endblock choice_widget_expanded %}
+
+{% block radio_label %}
+    <label for="{{ id }}" class="radio-label">{{ label|trans }}</label>
+{% endblock %}
+
 {% block checkbox_widget %}
         <div class="checkbox">
             <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
