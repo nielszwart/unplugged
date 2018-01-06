@@ -31,18 +31,23 @@
             </div>
 
             <div class="form-field">
-                {{ form_label(accountForm.last_name_preposition) }}
-                {{ form_widget(accountForm.last_name_preposition) }}
-            </div>
-
-            <div class="form-field">
                 {{ form_label(accountForm.last_name) }}
                 {{ form_widget(accountForm.last_name) }}
             </div>
 
             <div class="form-field">
-                {{ form_label(accountForm.gender) }}
-                {{ form_widget(accountForm.gender) }}
+                {{ form_label(accountForm.address) }}
+                {{ form_widget(accountForm.address) }}
+            </div>
+
+            <div class="form-field">
+                {{ form_label(accountForm.postcode) }}
+                {{ form_widget(accountForm.postcode) }}
+            </div>
+
+            <div class="form-field">
+                {{ form_label(accountForm.city) }}
+                {{ form_widget(accountForm.city) }}
             </div>
 
             <div class="form-field date-field">
@@ -59,7 +64,6 @@
                 {{ form_label(accountForm.phone_number) }}
                 {{ form_widget(accountForm.phone_number) }}
             </div>
-
 
             <div class="clear">&nbsp;</div>
 

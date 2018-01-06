@@ -6,7 +6,8 @@
     <div class="page-content">
         <div class="account">
             <h1>{% trans %}Your account{% endtrans %}</h1>
-            <a href="{{ getLocalizedRoute('account_edit') }}">{% trans %}Edit account{% endtrans %}</a>
+            <a href="{{ getLocalizedRoute('account_edit') }}" class="button-small">{% trans %}Edit account{% endtrans %}</a><br><br>
+            <a href="{{ getLocalizedRoute('complete_profile') }}" class="button-small">{% trans %}Complete profile{% endtrans %}</a>
         </div>
     </div>
 {% endblock %}

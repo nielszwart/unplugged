@@ -47,6 +47,15 @@ account_edit_nl:
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\Account\EditController::edit' }
 
+complete_profile_en:
+    path: /complete-profile
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
+complete_profile_nl:
+    path: /profiel-aanvullen
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
+
 forgot_password_en:
     path: /forgot-password
     host: www.unplugged.co.uk

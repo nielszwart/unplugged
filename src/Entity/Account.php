@@ -34,17 +34,27 @@ class Account
     private $first_name;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
-     */
-    private $last_name_preposition;
-
-    /**
      * @ORM\Column(type="string")
      */
     private $last_name;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $address;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $postcode;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $city;
+
+    /**
+     * @ORM\Column(type="date", nullable=true)
      */
     private $date_of_birth;
 
@@ -52,11 +62,6 @@ class Account
      * @ORM\Column(type="string", nullable=true)
      */
     private $city_of_birth;
-
-    /**
-     * @ORM\Column(type="string", length=1)
-     */
-    private $gender;
 
     /**
      * @ORM\Column(type="string", nullable=true)
@@ -67,6 +72,11 @@ class Account
      * @ORM\OneToOne(targetEntity="User")
      */
     private $user;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Profile")
+     */
+    private $profile;
 
     public function __construct(){
         $this->date_created = new \DateTime();
@@ -80,17 +90,20 @@ class Account
         if (isset($values['first_name'])) {
             $this->setFirstName($values['first_name']);
         }
-        if (isset($values['last_name_preposition'])) {
-            $this->setLastNamePreposition($values['last_name_preposition']);
-        }
         if (isset($values['last_name'])) {
             $this->setLastName($values['last_name']);
         }
+        if (isset($values['address'])) {
+            $this->setAddress($values['address']);
+        }
+        if (isset($values['postcode'])) {
+            $this->setPostcode($values['postcode']);
+        }
+        if (isset($values['city'])) {
+            $this->setCity($values['city']);
+        }
         if (isset($values['date_of_birth'])) {
             $this->setDateOfBirth(new \DateTime($values['date_of_birth']));
-        }
-        if (isset($values['gender'])) {
-            $this->setGender($values['gender']);
         }
         if (isset($values['city_of_birth'])) {
             $this->setCityOfBirth($values['city_of_birth']);
@@ -167,22 +180,6 @@ class Account
     /**
      * @return mixed
      */
-    public function getLastNamePreposition()
-    {
-        return $this->last_name_preposition;
-    }
-
-    /**
-     * @param mixed $last_name_preposition
-     */
-    public function setLastNamePreposition($last_name_preposition)
-    {
-        $this->last_name_preposition = $last_name_preposition;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getLastName()
     {
         return $this->last_name;
@@ -234,22 +231,6 @@ class Account
     /**
      * @return mixed
      */
-    public function getGender()
-    {
-        return $this->gender;
-    }
-
-    /**
-     * @param mixed $gender
-     */
-    public function setGender($gender)
-    {
-        $this->gender = $gender;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getPhoneNumber()
     {
         return $this->phone_number;
@@ -266,7 +247,6 @@ class Account
     public function getFullName()
     {
         $full_name = $this->getFirstName();
-        $full_name .= !empty($this->getLastNamePreposition()) ? " " . $this->getLastNamePreposition() : "";
         $full_name .= " " . $this->getLastName();
         return $full_name;
     }
@@ -280,4 +260,46 @@ class Account
     {
         $this->user = $user;
     }
+
+    public function getProfile()
+    {
+        return $this->profile;
+    }
+
+    public function setProfile($profile)
+    {
+        $this->profile = $profile;
+    }
+
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    public function setAddress($address)
+    {
+        $this->address = $address;
+    }
+
+    public function getPostcode()
+    {
+        return $this->postcode;
+    }
+
+    public function setPostcode($postcode)
+    {
+        $this->postcode = $postcode;
+    }
+
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    public function setCity($city)
+    {
+        $this->city = $city;
+    }
+
+
 }

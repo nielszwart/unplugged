@@ -16,18 +16,13 @@ class AccountType extends AbstractType
     {
         $builder
             ->add('first_name', TextType::class, ['label' => 'First name'])
-            ->add('last_name_preposition', TextType::class, ['required' => false, 'label' => 'Preposition'])
             ->add('last_name', TextType::class, ['label' => 'Last name'])
-            ->add('date_of_birth', DateType::class, ['widget' => 'single_text', 'label' => 'Date of birth'])
-            ->add('gender', ChoiceType::class, [
-                'label' => 'Gender',
-                'choices' => [
-                    'Male' => 'm',
-                    'Female' => 'f',
-                ],
-            ])
-            ->add('phone_number', TextType::class, ['label' => 'Phone number'])
-            ->add('city_of_birth', TextType::class, ['label' => 'Birthplace']);
+            ->add('address', TextType::class, ['label' => 'Address', 'required' => false])
+            ->add('postcode', TextType::class, ['label' => 'Postcode', 'required' => false])
+            ->add('city', TextType::class, ['label' => 'City', 'required' => false])
+            ->add('phone_number', TextType::class, ['label' => 'Phone number', 'required' => false])
+            ->add('date_of_birth', DateType::class, ['widget' => 'single_text', 'label' => 'Date of birth', 'required' => false])
+            ->add('city_of_birth', TextType::class, ['label' => 'Birthplace', 'required' => false]);
     }
 
     public function configureOptions(OptionsResolver $resolver)

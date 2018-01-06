@@ -5,6 +5,7 @@
 {% block body %}
     <div class="page-content">
         <div class="edit">
+            <a href="{{ getLocalizedRoute('account') }}" class="button-small">{% trans %}Back to account{% endtrans %}</a>
             <h1>{% trans %}Edit account{% endtrans %}</h1>
 
             {{ form_start(accountForm) }}
@@ -15,18 +16,23 @@
             </div>
 
             <div class="form-field">
-                {{ form_label(accountForm.last_name_preposition) }}
-                {{ form_widget(accountForm.last_name_preposition, {value: account.lastNamePreposition}) }}
-            </div>
-
-            <div class="form-field">
                 {{ form_label(accountForm.last_name) }}
                 {{ form_widget(accountForm.last_name, {value: account.lastName}) }}
             </div>
 
             <div class="form-field">
-                {{ form_label(accountForm.gender) }}
-                {{ form_widget(accountForm.gender, {value: account.gender}) }}
+                {{ form_label(accountForm.address) }}
+                {{ form_widget(accountForm.address, {value: account.address}) }}
+            </div>
+
+            <div class="form-field">
+                {{ form_label(accountForm.postcode) }}
+                {{ form_widget(accountForm.postcode, {value: account.postcode}) }}
+            </div>
+
+            <div class="form-field">
+                {{ form_label(accountForm.city) }}
+                {{ form_widget(accountForm.city, {value: account.city}) }}
             </div>
 
             <div class="form-field date-field">
