@@ -11,12 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 class PageOverviewController extends BaseController
 {
-    /**
-     * @Route("/admin/pages", name="admin_page_overview_en")
-     * @Route("/admin/paginas", name="admin_page_overview_nl")
-     * @Method("GET")
-     */
-    function overviewAction()
+    public function overview()
     {
         $pages = $this->getDoctrine()->getRepository(Page::class)->findAll();
 

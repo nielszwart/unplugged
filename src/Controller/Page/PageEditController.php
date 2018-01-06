@@ -17,11 +17,7 @@ use Symfony\Component\Translation\Translator;
 
 class PageEditController extends BaseController
 {
-    /**
-     * @Route("/admin/pagina/wijzig/{slug}/{locale}", name="admin_page_edit_nl")
-     * @Route("/admin/page/edit/{slug}/{locale}", name="admin_page_edit_en")
-     */
-    public function editAction($slug, $locale, Request $request, Localization $localization, FileUploader $fileUploader)
+    public function edit($slug, $locale, Request $request, Localization $localization, FileUploader $fileUploader)
     {
         $page = $this->getDoctrine()->getRepository(Page::class)->findOneBy(['slug' => $slug, 'locale' => $locale]);
         if (empty($page)) {

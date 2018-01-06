@@ -28,11 +28,6 @@ registered_nl:
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\Account\RegisterController::registered' }
 
-admin_dashboard:
-    path: /admin/
-    methods: [GET]
-    defaults: { _controller: 'App\Controller\DashboardController::dashboard' }
-
 account:
     path: /account
     methods: [GET]
@@ -95,3 +90,33 @@ page_view:
     path: /{slug}
     methods: [GET]
     defaults: { _controller: 'App\Controller\Page\PageViewController::view' }
+
+admin_dashboard:
+    path: /admin/
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\DashboardController::dashboard' }
+
+admin_page_overview_en:
+    path: /admin/pages
+    host: www.unplugged.co.uk
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Page\PageOverviewController::overview' }
+admin_page_overview_nl:
+    path: /admin/paginas
+    host: www.unplugged.nl
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Page\PageOverviewController::overview' }
+
+admin_page_edit_en:
+    path: /admin/page/edit/{slug}
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Page\PageEditController::edit' }
+admin_page_edit_nl:
+    path: /admin/pagina/wijzig/{slug}
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Page\PageEditController::edit' }
+
+admin_account_overview:
+    path: /admin/accounts
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Account\AccountOverviewController::overview' }
