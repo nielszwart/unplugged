@@ -27,7 +27,7 @@
             {% for a in accounts %}
                 <tr>
                     <td>{{ a.id }}</td>
-                    <td><a href="">{{ a.fullName }}</a></td>
+                    <td><a href="{{ getLocalizedRoute('admin_account_view', {id: a.id}) }}">{{ a.fullName }}</a></td>
                     <td>{{ a.address }}</td>
                     <td>{{ a.postcode }}</td>
                     <td>{{ a.city }}</td>

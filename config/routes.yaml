@@ -42,12 +42,12 @@ account_edit_nl:
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\Account\EditController::edit' }
 
-complete_profile_en:
-    path: /complete-profile
+account_complete_profile_en:
+    path: /account/complete-profile
     host: www.unplugged.co.uk
     defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
-complete_profile_nl:
-    path: /profiel-aanvullen
+account_complete_profile_nl:
+    path: /account/profiel-aanvullen
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
 
@@ -108,11 +108,11 @@ admin_page_overview_nl:
     defaults: { _controller: 'App\Controller\Page\PageOverviewController::overview' }
 
 admin_page_edit_en:
-    path: /admin/page/edit/{slug}
+    path: /admin/page/edit/{slug}/{locale}
     host: www.unplugged.co.uk
     defaults: { _controller: 'App\Controller\Page\PageEditController::edit' }
 admin_page_edit_nl:
-    path: /admin/pagina/wijzig/{slug}
+    path: /admin/pagina/wijzig/{slug}/{locale}
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\Page\PageEditController::edit' }
 
@@ -120,3 +120,7 @@ admin_account_overview:
     path: /admin/accounts
     methods: [GET]
     defaults: { _controller: 'App\Controller\Account\AccountOverviewController::overview' }
+
+admin_account_view:
+    path: /admin/account/{id}
+    defaults: { _controller: 'App\Controller\Account\AccountViewController::view' }

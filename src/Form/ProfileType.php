@@ -369,7 +369,7 @@ class ProfileType extends AbstractType
                 'required' => false,
             ])
             ->add('vegetarian', CheckboxType::class, [
-                'label' => 'I am a vegeterian',
+                'label' => 'I am a vegetarian',
                 'required' => false,
             ])
             ->add('allergies', ChoiceType::class, [
@@ -456,7 +456,7 @@ class ProfileType extends AbstractType
                 'required' => false,
             ])
             ->add('sports_open', TextareaType::class, [
-                'label' => 'I am currently practising the following sports?',
+                'label' => 'I am currently practising the following sports',
                 'label_attr' => ['class' => 'question'],
                 'required' => false,
             ])
