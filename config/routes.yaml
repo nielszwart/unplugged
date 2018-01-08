@@ -51,6 +51,15 @@ account_complete_profile_nl:
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
 
+account_shop_en:
+    path: /account/shop
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
+account_shop_nl:
+    path: /account/winkel
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
+
 forgot_password_en:
     path: /forgot-password
     host: www.unplugged.co.uk
@@ -124,3 +133,32 @@ admin_account_overview:
 admin_account_view:
     path: /admin/account/{id}
     defaults: { _controller: 'App\Controller\Account\AccountViewController::view' }
+
+admin_product_overview_en:
+    path: /admin/products
+    host: www.unplugged.co.uk
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Product\ProductOverviewController::overview' }
+admin_product_overview_nl:
+    path: /admin/producten
+    host: www.unplugged.nl
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Product\ProductOverviewController::overview' }
+
+admin_product_create_en:
+    path: /admin/product/new
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Product\ProductCreateController::create' }
+admin_product_create_nl:
+    path: /admin/product/nieuw
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Product\ProductCreateController::create' }
+
+admin_product_edit_en:
+    path: /admin/product/edit/{id}
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Product\ProductEditController::edit' }
+admin_product_edit_nl:
+    path: /admin/product/wijzig/{id}
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Product\ProductEditController::edit' }
