@@ -33,6 +33,7 @@ class ContactController extends BaseController
                                 'name' => $data['name'],
                                 'phone' => !empty($data['phone']) ? $data['phone'] : '',
                                 'message' => $data['message'],
+                                'email' => $data['email'],
                             ]
                         ),
                         'text/html'

@@ -40,7 +40,7 @@ class MagnesiumTestController extends BaseController
                 $mailer->send($message);
 
                 $this->addFlash('success', $localization->translate('Your test results have been received'));
-                return $localization->redirectToLocalizedRoute('magnesium-test');
+                return $localization->redirectToLocalizedRoute('magnesium_test');
             } catch (\Exception $e) {
                 $this->addFlash('error', $localization->translate('Failed to send the test'));
             }

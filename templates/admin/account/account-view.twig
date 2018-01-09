@@ -54,9 +54,6 @@
                         <th>{% trans %}Date confirmed{% endtrans %}</th><td>{{ a.dateConfirmed }}</td>
                     </tr>
                     <tr>
-                        <th>{% trans %}Date of birth{% endtrans %}</th><td>{{ a.dateOfBirth }}</td>
-                    </tr>
-                    <tr>
                         <th>{% trans %}Active account{% endtrans %}</th><td>{% if a.user.isActive %}{% trans %}Yes{% endtrans %}{% else %}{% trans %}No{% endtrans %}{% endif %}</td>
                     </tr>
                     <tr>
