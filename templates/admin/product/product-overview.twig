@@ -26,7 +26,7 @@
                 <tr>
                     <td>{{ product.id }}</td>
                     <td><a href="{{ getLocalizedRoute('admin_product_edit', {id: product.id}) }}">{{ product.title }}</a></td>
-                    <td>{{ product.price }}</td>
+                    <td>&euro;{{ product.price }}</td>
                 </tr>
             {% endfor %}
             </tbody>

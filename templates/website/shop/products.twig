@@ -1,0 +1,24 @@
+{% extends 'website/base.html.twig' %}
+
+{% block title %}{% trans %}Shop{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="page-content">
+        <div class="shop">
+            <h1>{% trans %}Shop{% endtrans %}</h1>
+            <div class="products">
+                {% for product in products %}
+                    <a href="{{ getLocalizedRoute('account_shop_product', {id: product.id}) }}">
+                        <div class="product">
+                            <span class="title">{{ product.title }}</span>
+                            <div class="image">
+                                <img src="{{ asset('uploads/' ~ product.image ) }}">
+                            </div>
+                            <span class="price">&euro;{{ product.price|number_format(2) }}</span>
+                        </div>
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

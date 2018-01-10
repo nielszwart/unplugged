@@ -6,6 +6,8 @@ parameters:
     domain_locales:
         www.unplugged.co.uk: en
         www.unplugged.nl: nl
+    mollie_api_key: '%env(MOLLIE_API_KEY)%'
+
 
 services:
     # default configuration for services in *this* file
@@ -40,3 +42,7 @@ services:
             -  { name: kernel.event_subscriber }
         arguments:
             ['%domain_locales%', '%locale%']
+
+    App\Service\Hostnames:
+        arguments:
+            $env: '%env(APP_ENV)%'

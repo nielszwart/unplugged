@@ -28,18 +28,16 @@ class Localization
 
     public function getLocalizedRoute($route, array $parameters = [])
     {
-        return $this->urlGenerator->generate($route . "_" . $this->locale, $parameters);
+        try {
+            $url = $this->urlGenerator->generate($route, $parameters);
+            return $url;
+        } catch (\Exception $e) {
+            return $this->urlGenerator->generate($route . "_" . $this->locale, $parameters);
+        }
     }
 
     public function redirectToLocalizedRoute($route, array $parameters = array(), $status = 302)
     {
-        try {
-            $url = $this->urlGenerator->generate($route, $parameters);
-            return new RedirectResponse($url, $status);
-        } catch (\Exception $e) {
-            //
-        }
-
         return new RedirectResponse($this->getLocalizedRoute($route, $parameters), $status);
     }
 

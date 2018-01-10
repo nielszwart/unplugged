@@ -74,6 +74,9 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "mollie/mollie-api-php": {
+        "version": "v1.9.4"
+    },
     "ocramius/package-versions": {
         "version": "1.2.0"
     },

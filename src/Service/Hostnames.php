@@ -19,7 +19,7 @@ class Hostnames
     {
         switch ($this->env) {
             case 'dev':
-                $host = 'www.unplugged.nl:8000/admin';
+                $host = 'www.unplugged.nl/admin';
                 break;
             case 'prod':
                 $host = 'www.unplugged.nl/admin';
@@ -35,7 +35,7 @@ class Hostnames
     {
         switch ($this->env) {
             case 'dev':
-                $host = 'www.unplugged.nl:8000';
+                $host = 'www.unplugged.nl';
                 break;
             case 'prod':
                 $host = 'www.unplugged.nl';

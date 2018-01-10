@@ -1,0 +1,20 @@
+{% extends 'website/base.html.twig' %}
+
+{% block title %}{% trans %}Shop{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="page-content">
+        <div class="product">
+            <h1>{{ product.title }}</h1>
+            <div class="image">
+                <img src="{{ asset('uploads/' ~ product.image ) }}">
+            </div>
+            <span class="price">&euro;{{ product.price|number_format(2) }}</span>
+            {{ product.description|raw }}
+            <form method="post">
+                <input type="hidden" name="amount" value="1">
+                <button type="submit" class="button-large">{% trans %}Add to cart{% endtrans %}</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

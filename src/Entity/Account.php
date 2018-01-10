@@ -78,6 +78,11 @@ class Account
      */
     private $profile;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Order", mappedBy="account")
+     */
+    private $orders;
+
     public function __construct(){
         $this->date_created = new \DateTime();
     }
@@ -301,5 +306,13 @@ class Account
         $this->city = $city;
     }
 
+    public function getOrders()
+    {
+        return $this->orders;
+    }
 
+    public function setOrders($orders)
+    {
+        $this->orders = $orders;
+    }
 }

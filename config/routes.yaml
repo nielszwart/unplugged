@@ -54,11 +54,47 @@ account_complete_profile_nl:
 account_shop_en:
     path: /account/shop
     host: www.unplugged.co.uk
-    defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
+    defaults: { _controller: 'App\Controller\Shop\ShopController::shop' }
 account_shop_nl:
     path: /account/winkel
     host: www.unplugged.nl
-    defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
+    defaults: { _controller: 'App\Controller\Shop\ShopController::shop' }
+
+account_shop_product_en:
+    path: /account/shop/product/{id}
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Shop\ShopController::product' }
+account_shop_product_nl:
+    path: /account/winkel/product/{id}
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Shop\ShopController::product' }
+
+account_shop_cart_en:
+    path: /account/shop/cart
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Shop\CartController::cart' }
+account_shop_cart_nl:
+    path: /account/winkel/mandje
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Shop\CartController::cart' }
+
+account_shop_order_placed_en:
+    path: /account/shop/order-placed
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Shop\ShopController::orderPlaced' }
+account_shop_order_placed_nl:
+    path: /account/winkel/order-geplaatst
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Shop\ShopController::orderPlaced' }
+
+clear_cart:
+    path: /clear-cart
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Shop\CartController::clear' }
+
+mollie_webhook:
+    path: /mollie-webhook
+    defaults: { _controller: 'App\Controller\Shop\MollieController::webhook' }
 
 forgot_password_en:
     path: /forgot-password
