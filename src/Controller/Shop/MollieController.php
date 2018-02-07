@@ -18,11 +18,11 @@ class MollieController extends BaseController
         $mollie->setApiKey($this->getParameter('mollie_api_key'));
 
         if (empty($request->request->get('id'))) {
-            throw new HttpException(405, "That is not what we expect");
+            throw new HttpException(500, "That is not what we expect");
         }
 
         $payment = $mollie->payments->get($request->request->get('id'));
-        $order = $this->getDoctrine()->getRepository(Order::class)->find($payment->metadata->order_id);
+        $order = $this->getDoctrine()->getRepository(Order::class)->findOneBy(['payment_provider_id' => $payment->id]);
 
         if ($payment->isPaid()) {
             $order->setStatus('paid');
@@ -31,6 +31,8 @@ class MollieController extends BaseController
             $order->setStatus('aborted');
         }
 
-        return Response::HTTP_OK;
+        $this->save($order);
+
+        return new Response();
     }
 }

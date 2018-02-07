@@ -30,16 +30,45 @@ class ProductEditController extends BaseController
             );
         }
 
+        $originalEbook = $product->getEbook();
+        if (!empty($originalEbook)) {
+            $product->setEbook(
+                new File($fileUploader->getTargetDir() . $originalEbook)
+            );
+        }
+
+        $originalVideo = $product->getVideo();
+        if (!empty($originalVideo)) {
+            $product->setVideo(
+                new File($fileUploader->getTargetDir() . $originalVideo)
+            );
+        }
+
         $form = $this->createForm(ProductType::class, $product);
 
         $form->handleRequest($request);
         if ($form->isSubmitted()) {
             if ($form->isValid()) {
+
                 $image = $product->getImage();
                 if (!empty($image) && $image instanceof UploadedFile) {
                     $product->setImage($fileUploader->upload($image));
                 } else {
                     $product->setImage($originalImage);
+                }
+
+                $ebook = $product->getEbook();
+                if (!empty($ebook) && $ebook instanceof UploadedFile) {
+                    $product->setEbook($fileUploader->upload($ebook));
+                } else {
+                    $product->setEbook($originalEbook);
+                }
+
+                $video = $product->getVideo();
+                if (!empty($video) && $video instanceof UploadedFile) {
+                    $product->setVideo($fileUploader->upload($video));
+                } else {
+                    $product->setVideo($originalVideo);
                 }
 
                 $this->save($product);
@@ -51,6 +80,12 @@ class ProductEditController extends BaseController
         } else {
             if (!empty($product->getImage())) {
                 $product->setImage($originalImage);
+            }
+            if (!empty($product->getEbook())) {
+                $product->setEbook($originalEbook);
+            }
+            if (!empty($product->getVideo())) {
+                $product->setVideo($originalVideo);
             }
         }
 

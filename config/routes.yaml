@@ -96,6 +96,19 @@ mollie_webhook:
     path: /mollie-webhook
     defaults: { _controller: 'App\Controller\Shop\MollieController::webhook' }
 
+account_purchase_overview_en:
+    path: /account/purchases
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Account\PurchaseController::overview' }
+account_purchase_overview_nl:
+    path: /account/aankopen
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Account\PurchaseController::overview' }
+
+account_download_purchase:
+    path: /account/purchase/download/{id}
+    defaults: { _controller: 'App\Controller\Account\PurchaseController::download' }
+
 forgot_password_en:
     path: /forgot-password
     host: www.unplugged.co.uk

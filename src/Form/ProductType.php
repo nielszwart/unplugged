@@ -25,6 +25,8 @@ class ProductType extends AbstractType
             ])
             ->add('price', NumberType::class, ['label' => 'Price', 'scale' => 2])
             ->add('image', FileType::class, ['label' => 'Image', 'required' => false])
+            ->add('ebook', FileType::class, ['label' => 'E-book', 'required' => false])
+            ->add('video', FileType::class, ['label' => 'Video', 'required' => false])
         ;
     }
 }

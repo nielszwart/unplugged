@@ -5,6 +5,7 @@
 {% block body %}
     <div class="page-content">
         <div class="product">
+            <a href="{{ getLocalizedRoute('account_shop') }}" class="button-small">{% trans %}Back to overview{% endtrans %}</a>
             <h1>{{ product.title }}</h1>
             <div class="image">
                 <img src="{{ asset('uploads/' ~ product.image ) }}">

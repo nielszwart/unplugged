@@ -5,6 +5,7 @@
 {% block body %}
     <div class="page-content">
         <div class="shop">
+            <a href="{{ getLocalizedRoute('account') }}" class="button-small">{% trans %}Back to account{% endtrans %}</a>
             <h1>{% trans %}Shop{% endtrans %}</h1>
             <div class="products">
                 {% for product in products %}

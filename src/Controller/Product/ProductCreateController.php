@@ -27,6 +27,14 @@ class ProductCreateController extends BaseController
                 if (!empty($image) && $image instanceof UploadedFile) {
                     $product->setImage($fileUploader->upload($image));
                 }
+                $ebook = $product->getEbook();
+                if (!empty($ebook) && $ebook instanceof UploadedFile) {
+                    $product->setEbook($fileUploader->upload($ebook));
+                }
+                $video = $product->getVideo();
+                if (!empty($video) && $video instanceof UploadedFile) {
+                    $product->setVideo($fileUploader->upload($video));
+                }
 
                 $this->save($product);
                 $this->addFlash('success', $localization->translate('Product was edited successfully'));

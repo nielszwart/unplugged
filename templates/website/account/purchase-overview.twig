@@ -1,0 +1,54 @@
+{% extends 'website/base.html.twig' %}
+
+{% block title %}{% trans %}Purchases{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="page-content">
+        <div class="purchases">
+            <a href="{{ getLocalizedRoute('account') }}" class="button-small">{% trans %}Back to account{% endtrans %}</a>
+            <h1>{% trans %}Purchase overview{% endtrans %}</h1>
+            <div class="orders">
+                {% for order in orders %}
+                    <div class="order">
+                        <table>
+                            <tr>
+                                <td>ID:</td><td>{{ order.id }}</td>
+                            </tr>
+                            <tr>
+                                <td>{% trans %}Price{% endtrans %}:</td><td>&euro;{{ order.totalPrice|number_format(2) }}</td>
+                            </tr>
+                            <tr>
+                                <td>{% trans %}Payment method{% endtrans %}:</td><td>{{ order.paymentMethod }}</td>
+                            </tr>
+                            <tr>
+                                <td>{% trans %}Status{% endtrans %}:</td><td>{{ order.status }}</td>
+                            </tr>
+                            {% for item in order.orderLines %}
+                                <tr>
+                                    <td>
+                                        {% if item.product.video %}
+                                            {% if order.status == 'paid' %}
+                                                <a href="{{ getLocalizedRoute('account_download_purchase', {id: item.id}) }}" target="_blank" class="product-link">{{ item.product.title }}</a>
+                                            {% endif %}
+                                        {% elseif item.product.ebook %}
+                                            {% if order.status == 'paid' %}
+                                                <a href="{{ getLocalizedRoute('account_download_purchase', {id: item.id}) }}" target="_blank" class="product-link">{{ item.product.title }}</a>
+                                            {% endif %}
+                                        {% else %}
+                                            {{ item.product.title }}
+                                        {% endif %}
+                                    </td>
+                                    <td>x{{ item.amount }}</td>
+                                    <td>{{ item.color }}</td>
+                                    <td>{{ item.size }}</td>
+                                    <td>&euro;{{ item.price|number_format(2) }}</td>
+                                </tr>
+                            {% endfor %}
+                        </table>
+                    </div>
+                    <br/>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

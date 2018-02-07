@@ -37,6 +37,16 @@ class Product
      */
     private $image;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $ebook;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $video;
+
     public function getId()
     {
         return $this->id;
@@ -85,5 +95,25 @@ class Product
     public function setImage($image)
     {
         $this->image = $image;
+    }
+
+    public function getEbook()
+    {
+        return $this->ebook;
+    }
+
+    public function setEbook($ebook)
+    {
+        $this->ebook = $ebook;
+    }
+
+    public function getVideo()
+    {
+        return $this->video;
+    }
+
+    public function setVideo($video)
+    {
+        $this->video = $video;
     }
 }
