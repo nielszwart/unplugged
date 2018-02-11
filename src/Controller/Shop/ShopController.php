@@ -33,7 +33,8 @@ class ShopController extends BaseController
         }
 
         if ($request->isMethod('post')) {
-            $cart->addToCart($product);
+            $amount = $request->request->get('amount') ? $request->request->get('amount') : 1;
+            $cart->addToCart($product, $amount);
             return $localization->redirectToLocalizedRoute('account_shop_cart');
         }
 

@@ -5,8 +5,15 @@
 {% block body %}
     <div class="page-content">
         <div class='complete-profile'>
-            <a href="{{ getLocalizedRoute('account') }}" class="button-small">{% trans %}Back to account{% endtrans %}</a>
+            <a href="{{ getLocalizedRoute('account') }}" class="button-small float-right">{% trans %}Back to account{% endtrans %}</a>
             <h1>{% trans %}Complete your profile{% endtrans %}</h1>
+
+            <div class="text">
+                <p>Wie ben ik? En wat zijn mijn mogelijkheden als persoon?</p><br />
+                <p>Om een compleet beeld van je te krijgen is het belangrijk dat je jouw profiel zo compleet mogelijk maakt.</p><br/>
+                <p>Al deze informatie is prive! Deze informatie delen we niet en wordt alleen door ons gebruikt om jou maximaal in elke zone te kunnen aansturen en te kunnen adviseren.</p><br/>
+                <p>Jouw persoonlijke informatie vormt dan ook de GenBluePrint. Deze GenBluePrint kunnen we maximaal optimaliseren met verschillende lichamelijke testen waardoor het ook mogelijk wordt om in je eigen zone te trainen en sporten. Dit laatste onderdeel (body) gebeurd via onze partner NEOBODIES waar getraind wordt op basis van je GenBluePrint.</p>
+            </div>
 
             {{ form_start(form) }}
 

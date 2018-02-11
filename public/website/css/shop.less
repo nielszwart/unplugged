@@ -1,16 +1,144 @@
 .shop {
+  width: 70%;
+  margin: 40px auto 0;
 
   .products {
 
-    .product {
+    a.item {
+      display: block;
 
-      .image {
+      .product {
+        float: left;
+        width: 30%;
+        margin: 25px 5% 0 0;
 
-        img {
-          height: 100%;
-          width: 250px;
+        .image {
+
+          img {
+            width: 100%;
+          }
+        }
+
+        .info {
+          text-align: center;
+
+          .price {
+            font-weight: bold;
+          }
         }
       }
+
+
     }
+
+    a.item:nth-child(3n) .product {
+      margin-right: 0;
+    }
+  }
+}
+
+.product {
+  width: 70%;
+  margin: 0 auto;
+
+  .left {
+    width: 50%;
+    float: left;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .right {
+    width: 50%;
+    float: left;
+
+    .cart {
+      padding: 0 25px;
+
+      p.price {
+        margin: 20px 0;
+        font-weight: bold;
+      }
+
+      form {
+        border-bottom: 1px solid @purple;
+
+        .product-field {
+          .form-field();
+          width: 100%;
+
+          label {
+            width: 20%;
+            float: left;
+          }
+
+          input {
+            width: 10%;
+            float: left;
+            clear: none;
+          }
+
+          button {
+            float: left;
+            margin-left: 25px;
+          }
+        }
+      }
+
+    }
+
+    .info {
+      margin-top: 25px;
+      padding: 25px;
+    }
+  }
+}
+
+.shoppingcart {
+  width: 70%;
+  margin: 0 auto;
+
+  .items {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px 0 25px 0;
+
+    .item {
+      background-color: lightgray;
+      padding: 10px;
+      border: 1px solid lightgray;
+
+      a {
+        color: @purple;
+        text-decoration: underline;
+      }
+
+      span.right {
+        float: right;
+        font-weight: bold;
+      }
+    }
+
+    .item:nth-child(even) {
+      background-color: white;
+    }
+  }
+
+  .summary {
+    text-align: right;
+
+    form {
+      margin-top: 20px;
+    }
+  }
+}
+
+.top-bar {
+  height: 50px;
+
+  a {
+    margin-left: 20px;
   }
 }

@@ -5,21 +5,28 @@
 {% block body %}
     <div class="page-content">
         <div class="shop">
-            <a href="{{ getLocalizedRoute('account') }}" class="button-small">{% trans %}Back to account{% endtrans %}</a>
+            <div class="top-bar">
+                <a href="{{ getLocalizedRoute('account') }}" class="button-small float-right">{% trans %}Back to account{% endtrans %}</a>
+                <a href="{{ getLocalizedRoute('account_shop_cart') }}" class="button-small float-right">{% trans %}Cart{% endtrans %}</a>
+            </div>
             <h1>{% trans %}Shop{% endtrans %}</h1>
             <div class="products">
                 {% for product in products %}
-                    <a href="{{ getLocalizedRoute('account_shop_product', {id: product.id}) }}">
+                    <a href="{{ getLocalizedRoute('account_shop_product', {id: product.id}) }}" class="item">
                         <div class="product">
-                            <span class="title">{{ product.title }}</span>
                             <div class="image">
                                 <img src="{{ asset('uploads/' ~ product.image ) }}">
                             </div>
-                            <span class="price">&euro;{{ product.price|number_format(2) }}</span>
+                            <div class="info">
+                                <p class="title">{{ product.title }}</p>
+                                <p class="price">&euro;{{ product.price|number_format(2) }}</p>
+                            </div>
                         </div>
                     </a>
                 {% endfor %}
+                <div class="clear">&nbsp;</div>
             </div>
+            <div class="clear">&nbsp;</div>
         </div>
     </div>
 {% endblock %}

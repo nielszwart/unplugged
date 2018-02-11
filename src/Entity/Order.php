@@ -48,6 +48,16 @@ class Order
      */
     private $payment_provider_id = null;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $date_created;
+
+    public function __construct()
+    {
+        $this->date_created = new \DateTime();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -116,5 +126,18 @@ class Order
     public function setPaymentProviderId($payment_provider_id)
     {
         $this->payment_provider_id = $payment_provider_id;
+    }
+
+    public function getDateCreated()
+    {
+        if (!is_null($this->date_created)) {
+            return $this->date_created->format('Y-m-d H:i:s');
+        }
+        return $this->date_created;
+    }
+
+    public function setDateCreated($date_created)
+    {
+        $this->date_created = $date_created;
     }
 }

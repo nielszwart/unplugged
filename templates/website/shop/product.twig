@@ -5,17 +5,33 @@
 {% block body %}
     <div class="page-content">
         <div class="product">
-            <a href="{{ getLocalizedRoute('account_shop') }}" class="button-small">{% trans %}Back to overview{% endtrans %}</a>
-            <h1>{{ product.title }}</h1>
-            <div class="image">
+            <div class="top-bar">
+                <a href="{{ getLocalizedRoute('account_shop') }}" class="button-small float-right">{% trans %}Back to overview{% endtrans %}</a>
+                <a href="{{ getLocalizedRoute('account_shop_cart') }}" class="button-small float-right">{% trans %}Cart{% endtrans %}</a>
+            </div>
+            <div class="left">
                 <img src="{{ asset('uploads/' ~ product.image ) }}">
             </div>
-            <span class="price">&euro;{{ product.price|number_format(2) }}</span>
-            {{ product.description|raw }}
-            <form method="post">
-                <input type="hidden" name="amount" value="1">
-                <button type="submit" class="button-large">{% trans %}Add to cart{% endtrans %}</button>
-            </form>
+            <div class="right">
+                <div class="cart">
+                    <h1>{{ product.title }}</h1>
+                    <p class="price">&euro;{{ product.price|number_format(2) }}</p>
+
+                    <form method="post">
+                        <div class="product-field">
+                            <label for="quantity">{% trans %}Quantity{% endtrans %}</label>
+                            <input type="number" name="amount" value="1">
+                            <button type="submit" class="button-large">{% trans %}Add to cart{% endtrans %}</button>
+                        </div>
+                        <div class="clear">&nbsp;</div>
+                    </form>
+                </div>
+                <div class="info">
+                    <h2>{% trans %}Product description{% endtrans %}</h2>
+                    <p class="description">{{ product.description|nl2br }}</p>
+                </div>
+            </div>
+            <div class="clear">&nbsp;</div>
         </div>
     </div>
 {% endblock %}

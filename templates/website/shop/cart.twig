@@ -3,21 +3,25 @@
 {% block title %}{% trans %}Shopping cart{% endtrans %}{% endblock %}
 
 {% block body %}
-    <div class="page-content">
-        <div class="cart">
-            <h1>{% trans %}Shopping cart{% endtrans %}</h1>
-            <a href="{{ getLocalizedRoute('clear_cart') }}" class="button-small">{% trans %}Clear cart{% endtrans %}</a>
-            <a href="{{ getLocalizedRoute('account_shop') }}" class="button-small">{% trans %}Continue shopping{% endtrans %}</a>
-            <div class="items">
-                {% for item in cart.items %}
-                    <div class="item">
-                        {{ item.product.title }} | x{{ item.amount }}
-                        {% if item.color %} | {{ item.color }}{% endif %}
-                        {% if item.size %} | {{ item.size }}{% endif %}
-                        | &euro;{{ item.price|number_format(2) }}
-                    </div>
-                {% endfor %}
-            </div>
+<div class="page-content">
+    <div class="shoppingcart">
+        <div class="top-bar">
+            <a href="{{ getLocalizedRoute('clear_cart') }}" class="button-small float-right">{% trans %}Clear cart{% endtrans %}</a>
+            <a href="{{ getLocalizedRoute('account_shop') }}" class="button-small float-right">{% trans %}Continue shopping{% endtrans %}</a>
+        </div>
+        <h1>{% trans %}Shopping cart{% endtrans %}</h1>
+        <div class="items">
+            {% for item in cart.items %}
+                <div class="item">
+                    <a href="{{ getLocalizedRoute('account_shop_product', {id: item.product_id}) }}">{{ item.product.title }}</a>
+                    x{{ item.amount }}
+                    {% if item.color %} | {{ item.color }}{% endif %}
+                    {% if item.size %} | {{ item.size }}{% endif %}
+                    <span class="right">&euro;{{ item.price|number_format(2) }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="summary">
             <h2>{% trans %}Total price{% endtrans %}: &euro;{{ cart.total_price|number_format(2) }}</h2>
 
             <form method="post">
@@ -25,4 +29,5 @@
             </form>
         </div>
     </div>
+</div>
 {% endblock %}
