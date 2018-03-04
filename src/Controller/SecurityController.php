@@ -101,7 +101,7 @@ class SecurityController extends BaseController
     protected function sendForgotPasswordEmail($mailer, $user, $localization)
     {
         $message = (new \Swift_Message($localization->translate('Reset your password')))
-            ->setFrom('info@unplugged.nl')
+            ->setFrom('michael@neocaveman.nl')
             ->setTo($user->getEmail())
             ->setBody(
                 $this->renderView(

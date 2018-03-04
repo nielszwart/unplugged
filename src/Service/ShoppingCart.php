@@ -33,7 +33,7 @@ class ShoppingCart
         return $this->cart;
     }
 
-    public function addToCart(Product $product, $amount = 1, $color = '', $size = '')
+    public function addToCart(Product $product, $amount = 1, $size = '', $color = '')
     {
         foreach ($this->cart['items'] as $key => $cartItem) {
             if (

@@ -34,7 +34,8 @@ class ShopController extends BaseController
 
         if ($request->isMethod('post')) {
             $amount = $request->request->get('amount') ? $request->request->get('amount') : 1;
-            $cart->addToCart($product, $amount);
+            $size = $request->request->get('size') ? $request->request->get('size') : "";
+            $cart->addToCart($product, $amount, $size);
             return $localization->redirectToLocalizedRoute('account_shop_cart');
         }
 

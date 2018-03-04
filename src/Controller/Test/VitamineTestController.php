@@ -26,7 +26,7 @@ class VitamineTestController extends BaseController
             try {
                 $message = (new \Swift_Message($localization->translate('Vitamine B12 test results')))
                     ->setFrom($data['email'])
-                    ->setTo('info@unplugged.nl')
+                    ->setTo('michael@neocaveman.nl')
                     ->setBody(
                         $this->renderView(
                             'email/vitamine.twig',

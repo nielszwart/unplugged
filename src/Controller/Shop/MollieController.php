@@ -6,13 +6,14 @@ namespace App\Controller\Shop;
 
 use App\Controller\BaseController;
 use App\Entity\Order;
+use App\Service\Localization;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class MollieController extends BaseController
 {
-    public function webhook(Request $request)
+    public function webhook(Request $request, \Swift_Mailer $mailer, Localization $localization)
     {
         $mollie = new \Mollie_API_Client();
         $mollie->setApiKey($this->getParameter('mollie_api_key'));
@@ -27,6 +28,11 @@ class MollieController extends BaseController
         if ($payment->isPaid()) {
             $order->setStatus('paid');
             $order->setPaymentMethod($payment->method);
+            try {
+                $this->sendNewOrderEmail($mailer, $localization, $order);
+            } catch (\Exception $e) {
+                // Oh well
+            }
         } elseif (! $payment->isOpen()) {
             $order->setStatus('aborted');
         }
@@ -34,5 +40,24 @@ class MollieController extends BaseController
         $this->save($order);
 
         return new Response();
+    }
+
+    protected function sendNewOrderEmail(\Swift_Mailer $mailer, Localization $localization, Order $order)
+    {
+        $account = $order->getAccount();
+        $message = (new \Swift_Message($localization->translate('New order')))
+        ->setFrom($account->getUser()->getEmail())
+        ->setTo('michael@neocaveman.nl')
+        ->setBody(
+            $this->renderView(
+                'email/new-order.twig',
+                [
+                    'order' => $order,
+                ]
+            ),
+            'text/html'
+        );
+
+        $mailer->send($message);
     }
 }

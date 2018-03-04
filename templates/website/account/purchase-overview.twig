@@ -37,8 +37,8 @@
                                         {{ line.product.title }}
                                     {% endif %}
                                     x{{ line.amount }}
-                                    {% if line.color %} | {{ line.color }}{% endif %}
-                                    {% if line.size %} | {{ line.size }}{% endif %}
+                                    {% if line.color %} | {{ line.color|capitalize }}{% endif %}
+                                    {% if line.size %} | {{ line.size|capitalize }}{% endif %}
                                     <span class="right">&euro;{{ line.price|number_format(2) }}</span>
                                 </div>
                             {% endfor %}

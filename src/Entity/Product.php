@@ -52,6 +52,11 @@ class Product
      */
     private $has_genblueprint = false;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_clothing = false;
+
     public function getId()
     {
         return $this->id;
@@ -130,5 +135,15 @@ class Product
     public function setHasGenblueprint($has_genblueprint)
     {
         $this->has_genblueprint = $has_genblueprint;
+    }
+
+    public function getIsClothing()
+    {
+        return $this->is_clothing;
+    }
+
+    public function setIsClothing($is_clothing)
+    {
+        $this->is_clothing = $is_clothing;
     }
 }

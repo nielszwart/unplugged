@@ -31,6 +31,10 @@ class ProductType extends AbstractType
                 'label' => 'Has GenBluePrint',
                 'required' => false,
             ])
+            ->add('is_clothing', CheckboxType::class, [
+                'label' => 'Clothing',
+                'required' => false,
+            ])
         ;
     }
 }

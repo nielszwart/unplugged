@@ -15,8 +15,8 @@
                 <div class="item">
                     <a href="{{ getLocalizedRoute('account_shop_product', {id: item.product_id}) }}">{{ item.product.title }}</a>
                     x{{ item.amount }}
-                    {% if item.color %} | {{ item.color }}{% endif %}
-                    {% if item.size %} | {{ item.size }}{% endif %}
+                    {% if item.color %} | {{ item.color|capitalize }}{% endif %}
+                    {% if item.size %} | {{ item.size|capitalize }}{% endif %}
                     <span class="right">&euro;{{ item.price|number_format(2) }}</span>
                 </div>
             {% endfor %}

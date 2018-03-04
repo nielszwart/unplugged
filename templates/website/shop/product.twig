@@ -18,6 +18,18 @@
                     <p class="price">&euro;{{ product.price|number_format(2) }}</p>
 
                     <form method="post">
+                        {% if product.isClothing %}
+                            <div class="product-field">
+                                <select name="size">
+                                    <option value="">{% trans %}Pick a size{% endtrans %}</option>
+                                    <option value="xs">XS</option>
+                                    <option value="s">S</option>
+                                    <option value="m">M</option>
+                                    <option value="l">L</option>
+                                    <option value="xl">XL</option>
+                                </select>
+                            </div>
+                        {% endif %}
                         <div class="product-field">
                             <label for="quantity">{% trans %}Quantity{% endtrans %}</label>
                             <input type="number" name="amount" value="1">
