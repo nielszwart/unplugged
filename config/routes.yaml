@@ -109,6 +109,10 @@ account_download_purchase:
     path: /account/purchase/download/{id}
     defaults: { _controller: 'App\Controller\Account\PurchaseController::download' }
 
+account_genblueprint:
+    path: /account/genblueprint
+    defaults: { _controller: 'App\Controller\Account\GenblueprintController::genblueprint' }
+
 forgot_password_en:
     path: /forgot-password
     host: www.unplugged.co.uk

@@ -13,10 +13,16 @@
     {% spaceless %}
         <div {{ block('widget_container_attributes') }}>
             {% for child in form %}
-                <div class="radio-choice">
-                    {{ form_widget(child) }}
-                    {{ form_label(child) }}
-                </div>
+                {% if multiple %}
+                    <div class="checkbox-choice">
+                        {{ form_widget(child) }}
+                    </div>
+                {% else %}
+                    <div class="radio-choice">
+                        {{ form_widget(child) }}
+                        {{ form_label(child) }}
+                    </div>
+                {% endif %}
             {% endfor %}
         </div>
     {% endspaceless %}

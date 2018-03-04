@@ -47,6 +47,11 @@ class Product
      */
     private $video;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $has_genblueprint = false;
+
     public function getId()
     {
         return $this->id;
@@ -115,5 +120,15 @@ class Product
     public function setVideo($video)
     {
         $this->video = $video;
+    }
+
+    public function getHasGenblueprint()
+    {
+        return $this->has_genblueprint;
+    }
+
+    public function setHasGenblueprint($has_genblueprint)
+    {
+        $this->has_genblueprint = $has_genblueprint;
     }
 }

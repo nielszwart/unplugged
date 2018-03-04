@@ -83,6 +83,11 @@ class Account
      */
     private $orders;
 
+    /**
+     * @ORM\OneToOne(targetEntity="Genblueprint")
+     */
+    private $genblueprint;
+
     public function __construct(){
         $this->date_created = new \DateTime();
     }
@@ -128,9 +133,6 @@ class Account
         $this->id = $id;
     }
 
-    /**
-     * @return mixed
-     */
     public function getDateCreated()
     {
         if (!is_null($this->date_created)) {
@@ -139,17 +141,11 @@ class Account
         return $this->date_created;
     }
 
-    /**
-     * @param mixed $date_created
-     */
     public function setDateCreated($date_created)
     {
         $this->date_created = $date_created;
     }
 
-    /**
-     * @return mixed
-     */
     public function getDateConfirmed()
     {
         if (!is_null($this->date_confirmed)) {
@@ -158,49 +154,31 @@ class Account
         return $this->date_confirmed;
     }
 
-    /**
-     * @param mixed $date_confirmed
-     */
     public function setDateConfirmed($date_confirmed)
     {
         $this->date_confirmed = $date_confirmed;
     }
 
-    /**
-     * @return mixed
-     */
     public function getFirstName()
     {
         return $this->first_name;
     }
 
-    /**
-     * @param mixed $first_name
-     */
     public function setFirstName($first_name)
     {
         $this->first_name = $first_name;
     }
 
-    /**
-     * @return mixed
-     */
     public function getLastName()
     {
         return $this->last_name;
     }
 
-    /**
-     * @param mixed $last_name
-     */
     public function setLastName($last_name)
     {
         $this->last_name = $last_name;
     }
 
-    /**
-     * @return mixed
-     */
     public function getDateOfBirth()
     {
         if (!is_null($this->date_of_birth)) {
@@ -209,41 +187,26 @@ class Account
         return $this->date_of_birth;
     }
 
-    /**
-     * @param mixed $date_of_birth
-     */
     public function setDateOfBirth($date_of_birth)
     {
         $this->date_of_birth = $date_of_birth;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCityOfBirth()
     {
         return $this->city_of_birth;
     }
 
-    /**
-     * @param mixed $city_of_birth
-     */
     public function setCityOfBirth($city_of_birth)
     {
         $this->city_of_birth = $city_of_birth;
     }
 
-    /**
-     * @return mixed
-     */
     public function getPhoneNumber()
     {
         return $this->phone_number;
     }
 
-    /**
-     * @param mixed $phone_number
-     */
     public function setPhoneNumber($phone_number)
     {
         $this->phone_number = $phone_number;
@@ -314,5 +277,15 @@ class Account
     public function setOrders($orders)
     {
         $this->orders = $orders;
+    }
+
+    public function getGenblueprint()
+    {
+        return $this->genblueprint;
+    }
+
+    public function setGenblueprint($genblueprint)
+    {
+        $this->genblueprint = $genblueprint;
     }
 }

@@ -33,6 +33,7 @@ class CartController extends BaseController
             $order->setPaymentProviderId($payment->id);
             $order->setStatus('processing-payment');
             $this->save($order);
+            $cart->clearCart();
 
             header("Location: " . $payment->getPaymentUrl());
             exit;

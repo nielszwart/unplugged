@@ -1,0 +1,39 @@
+{% extends 'website/base.html.twig' %}
+{% form_theme form 'website/form/fields.twig' %}
+{% block title %}{% trans %}GenBluePrint{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="page-content">
+        <div class='genblueprint'>
+            <a href="{{ getLocalizedRoute('account') }}" class="button-small float-right">{% trans %}Back to account{% endtrans %}</a>
+            <h1>{% trans %}GenBluePrint{% endtrans %}</h1>
+
+            <div class="text">
+                <p>{% trans %}Maximum of 2 answers per question.{% endtrans %}</p><br />
+            </div>
+
+            {{ form_start(form) }}
+
+            <div class="form-field one-third">
+                {{ form_label(form.1) }}
+                {{ form_widget(form.1) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(form.2) }}
+                {{ form_widget(form.2) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(form.3) }}
+                {{ form_widget(form.3) }}
+            </div>
+
+            <button type="submit" class="button-large">{% trans %}Save{% endtrans %}</button>
+
+            {{ form_end(form) }}
+
+            <div class="clear"></div>
+        </div>
+    </div>
+{% endblock %}

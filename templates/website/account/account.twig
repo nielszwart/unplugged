@@ -6,11 +6,43 @@
     <div class="page-content">
         <div class="account">
             <h1>{% trans %}Your account{% endtrans %}</h1>
-            <a href="{{ getLocalizedRoute('account_edit') }}" class="button-small">{% trans %}Edit account{% endtrans %}</a><br><br>
-            <a href="{{ getLocalizedRoute('account_complete_profile') }}" class="button-small">{% trans %}Complete profile{% endtrans %}</a><br><br>
-            <a href="{{ getLocalizedRoute('account_shop') }}" class="button-small">{% trans %}Shop{% endtrans %}</a><br><br>
-            <a href="{{ getLocalizedRoute('account_purchase_overview') }}" class="button-small">{% trans %}Purchases{% endtrans %}</a><br><br>
-            <a href="{{ getLocalizedRoute('logout') }}" class="button-small">{% trans %}Logout{% endtrans %}</a>
+
+            <div class="account-block">
+                <a href="{{ getLocalizedRoute('account_shop') }}">
+                    <div class="inner-block">
+                        {% trans %}Shop{% endtrans %}
+                    </div>
+                </a>
+            </div>
+            <div class="account-block">
+                <a href="{{ getLocalizedRoute('account_purchase_overview') }}">
+                    <div class="inner-block">
+                        {% trans %}Purchases{% endtrans %}
+                    </div>
+                </a>
+            </div>
+            <div class="account-block">
+                <a href="{{ getLocalizedRoute('account_edit') }}">
+                    <div class="inner-block">
+                        {% trans %}Edit account{% endtrans %}
+                    </div>
+                </a>
+            </div>
+            <div class="account-block">
+                <a href="{{ getLocalizedRoute('account_complete_profile') }}">
+                    <div class="inner-block">
+                        {% trans %}Complete profile{% endtrans %}
+                    </div>
+                </a>
+            </div>
+            <div class="account-block">
+                <a href="{{ getLocalizedRoute('logout') }}">
+                    <div class="inner-block">
+                        {% trans %}Logout{% endtrans %}
+                    </div>
+                </a>
+            </div>
+            <div class="clear">&nbsp;</div>
         </div>
     </div>
 {% endblock %}
