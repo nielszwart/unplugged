@@ -9,11 +9,13 @@
         </div>
     </div>
 
+    {% if page.id == 7 %}
+        {% include 'website/page/_how-it-works-usp.twig' %}
+    {% endif %}
+
     <div class="page-content">
         {{ page.content|raw }}
     </div>
 
-    <div class="page-footer" style="background-image: url({{ asset('uploads/' ~ page.footer) }})">
-        x
-    </div>
+    <div class="page-footer" style="background-image: url({{ asset('uploads/' ~ page.footer) }})">&nbsp;</div>
 {% endblock %}
