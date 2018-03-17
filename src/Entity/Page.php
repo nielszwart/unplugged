@@ -67,6 +67,11 @@ class Page
      */
     private $header;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $footer;
+
     public function __construct($id, $locale) {
         $this->id = $id;
         $this->locale = $locale;
@@ -182,6 +187,16 @@ class Page
         $this->header = $header;
     }
 
+    public function getFooter()
+    {
+        return $this->footer;
+    }
+
+    public function setFooter($footer)
+    {
+        $this->footer = $footer;
+    }
+
     public function edit($values)
     {
         if (isset($values['content'])) {
@@ -210,6 +225,9 @@ class Page
         }
         if (isset($values['header'])) {
             $this->setHeader($values['header']);
+        }
+        if (isset($values['footer'])) {
+            $this->setFooter($values['footer']);
         }
     }
 }

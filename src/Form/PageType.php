@@ -32,6 +32,7 @@ class PageType extends AbstractType
             ->add('button_text', TextType::class, ['label' => 'Button text', 'required' => false])
             ->add('slide_image', FileType::class, ['label' => 'Slide image', 'required' => false])
             ->add('header', FileType::class, ['label' => 'Header image', 'required' => false])
+            ->add('footer', FileType::class, ['label' => 'Footer image', 'required' => false])
         ;
     }
 }

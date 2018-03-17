@@ -42,6 +42,15 @@
                     </div>
                 </a>
             </div>
+            {% if account.genblueprint %}
+                <div class="account-block">
+                    <a href="{{ getLocalizedRoute('account_genblueprint') }}">
+                        <div class="inner-block">
+                            {% trans %}GenBluePrint{% endtrans %}
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
             <div class="clear">&nbsp;</div>
         </div>
     </div>

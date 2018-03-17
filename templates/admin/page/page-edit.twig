@@ -45,6 +45,22 @@
                 </div>
 
                 <div class="form-group row">
+                    {{ form_label(form.footer) }}
+                    {{ form_widget(form.footer) }}
+                </div>
+
+                {% if page.footer %}
+                    <div class="form-group row">
+                        <div class="col-3">
+                            <label>{% trans %}Current footer image{% endtrans %}</label>
+                        </div>
+                        <div class="col-9">
+                            <div class="current-image" style="background-image: url('{{ asset('uploads/' ~ page.header) }}');"></div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="form-group row">
                     {{ form_label(form.slide) }}
                     {{ form_widget(form.slide, {'checked': page.slide == 1}) }}
                 </div>
@@ -95,7 +111,6 @@
     var editors = document.querySelectorAll('.ckeditor');
     var i;
     for (i = 0; i < editors.length; i++) {
-        console.log('hoi');
         ClassicEditor
             .create(editors[i])
             .catch(error => {

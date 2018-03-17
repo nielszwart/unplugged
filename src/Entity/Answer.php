@@ -18,32 +18,29 @@ class Answer
     private $genblueprint;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string")
      * @ORM\Id
      */
     private $question;
 
     /**
      * @ORM\Column(type="boolean")
-     * @ORM\Id
      */
     private $green = false;
 
     /**
      * @ORM\Column(type="boolean")
-     * @ORM\Id
      */
     private $blue = false;
 
     /**
      * @ORM\Column(type="boolean")
-     * @ORM\Id
      */
     private $red = false;
 
-    public function __construct($genblueprintId, $questionId, array $answers = [])
+    public function __construct(Genblueprint $genblueprint, $questionId, array $answers = [])
     {
-        $this->genblueprint = $genblueprintId;
+        $this->genblueprint = $genblueprint;
         $this->question = $questionId;
         if (!empty($answers)) {
             $this->edit($answers);

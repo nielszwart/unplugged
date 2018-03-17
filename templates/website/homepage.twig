@@ -68,30 +68,30 @@
     </div>
 
     {% if pages %}
-    <div class="homepage-pages">
-        <ul class="pages">
-            {% for page in pages %}
-                <li>
-                    <div class="image" style="background-image: url({{ asset('uploads/' ~ page.slideImage) }})">
-                        <div class="image-text">
-                            <div class="image-opacity-bar">
-                                <h2>{{ page.slideTitle }}</h2>
+        <div class="homepage-pages">
+            <ul class="pages">
+                {% for page in pages %}
+                    <li>
+                        <div class="image" style="background-image: url({{ asset('uploads/' ~ page.slideImage) }})">
+                            <div class="image-text">
+                                <div class="image-opacity-bar">
+                                    <h2>{{ page.slideTitle }}</h2>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="content">
-                        <div class="content-position">
-                            <div class="align-left">
-                                {{ page.slideText|raw }}
-                                <a href="{{ getLocalizedRoute('page_view', {slug: page.slug}) }}" class="button-large">{{ page.buttonText }}</a>
+                        <div class="content">
+                            <div class="content-position">
+                                <div class="align-left">
+                                    {{ page.slideText|raw }}
+                                    <a href="{{ getLocalizedRoute('page_view', {slug: page.slug}) }}" class="button-large">{{ page.buttonText }}</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </li>
-            {% endfor %}
-        </ul>
-        <div class="clear"></div>
-    </div>
+                    </li>
+                {% endfor %}
+            </ul>
+            <div class="clear"></div>
+        </div>
     {% endif %}
 
 {% endblock %}

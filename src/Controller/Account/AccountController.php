@@ -5,6 +5,7 @@ namespace App\Controller\Account;
 
 
 use App\Controller\BaseController;
+use App\Entity\Account;
 use App\Service\Localization;
 
 class AccountController extends BaseController
@@ -15,6 +16,10 @@ class AccountController extends BaseController
             return $localization->redirectToLocalizedRoute('admin_dashboard');
         }
 
-        return $this->render('website/account/account.twig', []);
+        $account = $this->getDoctrine()->getRepository(Account::class)->findOneBy(['user' => $this->getUser()->getId()]);
+
+        return $this->render('website/account/account.twig', [
+            'account' => $account,
+        ]);
     }
 }
