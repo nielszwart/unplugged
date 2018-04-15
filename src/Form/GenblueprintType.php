@@ -432,6 +432,79 @@ class GenblueprintType extends AbstractType
                     'With a weakened immune system, I initially feel snotty' => 'red',
                 ]
             ])
+            ->add('question01', ChoiceType::class, [
+                'label' => 'What applies',
+                'label_attr' => ['class' => 'question'],
+                'required' => true,
+                'expanded' => true,
+                'multiple' => true,
+                'choices' => [
+                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
+                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
+                    'With a weakened immune system, I initially feel snotty' => 'red',
+                ]
+            ])
+            ->add('question02', ChoiceType::class, [
+                'label' => 'What applies',
+                'label_attr' => ['class' => 'question'],
+                'required' => true,
+                'expanded' => true,
+                'multiple' => true,
+                'choices' => [
+                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
+                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
+                    'With a weakened immune system, I initially feel snotty' => 'red',
+                ]
+            ])
+            ->add('question03', ChoiceType::class, [
+                'label' => 'What applies',
+                'label_attr' => ['class' => 'question'],
+                'required' => true,
+                'expanded' => true,
+                'multiple' => true,
+                'choices' => [
+                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
+                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
+                    'With a weakened immune system, I initially feel snotty' => 'red',
+                ]
+            ])
+            ->add('question04', ChoiceType::class, [
+                'label' => 'What applies',
+                'label_attr' => ['class' => 'question'],
+                'required' => true,
+                'expanded' => true,
+                'multiple' => true,
+                'choices' => [
+                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
+                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
+                    'With a weakened immune system, I initially feel snotty' => 'red',
+                ]
+            ])
+            ->add('question05', ChoiceType::class, [
+                'label' => 'What applies',
+                'label_attr' => ['class' => 'question'],
+                'required' => true,
+                'expanded' => true,
+                'multiple' => true,
+                'choices' => [
+                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
+                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
+                    'With a weakened immune system, I initially feel snotty' => 'red',
+                ]
+            ])
+            ->add('question06', ChoiceType::class, [
+                'label' => 'What applies',
+                'label_attr' => ['class' => 'question'],
+                'required' => true,
+                'expanded' => true,
+                'multiple' => true,
+                'choices' => [
+                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
+                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
+                    'With a weakened immune system, I initially feel snotty' => 'red',
+                ]
+            ])
+
         ;
     }
 }

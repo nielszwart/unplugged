@@ -61,6 +61,27 @@
                 {% endif %}
 
                 <div class="form-group row">
+                    {{ form_label(form.call_to_action) }}
+                    {{ form_widget(form.call_to_action) }}
+                </div>
+
+                {% if page.callToAction %}
+                    <div class="form-group row">
+                        <div class="col-3">
+                            <label>{% trans %}Current call to action image{% endtrans %}</label>
+                        </div>
+                        <div class="col-9">
+                            <div class="current-image cta" style="background-image: url('{{ asset('uploads/' ~ page.callToAction) }}');"></div>
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="form-group row">
+                    {{ form_label(form.call_to_action_link) }}
+                    {{ form_widget(form.call_to_action_link, {'value': page.callToActionLink}) }}
+                </div>
+
+                <div class="form-group row">
                     {{ form_label(form.slide) }}
                     {{ form_widget(form.slide, {'checked': page.slide == 1}) }}
                 </div>

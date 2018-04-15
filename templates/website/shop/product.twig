@@ -17,26 +17,28 @@
                     <h1>{{ product.title }}</h1>
                     <p class="price">&euro;{{ product.price|number_format(2) }}</p>
 
-                    <form method="post">
-                        {% if product.isClothing %}
+                    {% if not product.deleted %}
+                        <form method="post">
+                            {% if product.isClothing %}
+                                <div class="product-field">
+                                    <select name="size">
+                                        <option value="">{% trans %}Pick a size{% endtrans %}</option>
+                                        <option value="xs">XS</option>
+                                        <option value="s">S</option>
+                                        <option value="m">M</option>
+                                        <option value="l">L</option>
+                                        <option value="xl">XL</option>
+                                    </select>
+                                </div>
+                            {% endif %}
                             <div class="product-field">
-                                <select name="size">
-                                    <option value="">{% trans %}Pick a size{% endtrans %}</option>
-                                    <option value="xs">XS</option>
-                                    <option value="s">S</option>
-                                    <option value="m">M</option>
-                                    <option value="l">L</option>
-                                    <option value="xl">XL</option>
-                                </select>
+                                <label for="quantity">{% trans %}Quantity{% endtrans %}</label>
+                                <input type="number" name="amount" value="1">
+                                <button type="submit" class="button-large">{% trans %}Add to cart{% endtrans %}</button>
                             </div>
-                        {% endif %}
-                        <div class="product-field">
-                            <label for="quantity">{% trans %}Quantity{% endtrans %}</label>
-                            <input type="number" name="amount" value="1">
-                            <button type="submit" class="button-large">{% trans %}Add to cart{% endtrans %}</button>
-                        </div>
-                        <div class="clear">&nbsp;</div>
-                    </form>
+                            <div class="clear">&nbsp;</div>
+                        </form>
+                    {% endif %}
                 </div>
                 <div class="info">
                     <h2>{% trans %}Product description{% endtrans %}</h2>

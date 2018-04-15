@@ -33,6 +33,8 @@ class PageType extends AbstractType
             ->add('slide_image', FileType::class, ['label' => 'Slide image', 'required' => false])
             ->add('header', FileType::class, ['label' => 'Header image', 'required' => false])
             ->add('footer', FileType::class, ['label' => 'Footer image', 'required' => false])
+            ->add('call_to_action', FileType::class, ['label' => 'Call to action image', 'required' => false])
+            ->add('call_to_action_link', TextType::class, ['label' => 'Call to action link', 'required' => false])
         ;
     }
 }

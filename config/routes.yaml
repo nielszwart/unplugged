@@ -215,3 +215,12 @@ admin_product_edit_nl:
     path: /admin/product/wijzig/{id}
     host: www.unplugged.nl
     defaults: { _controller: 'App\Controller\Product\ProductEditController::edit' }
+
+admin_product_delete_en:
+    path: /admin/product/delete/{id}
+    host: www.unplugged.co.uk
+    defaults: { _controller: 'App\Controller\Product\ProductDeleteController::deleteProduct' }
+admin_product_delete_nl:
+    path: /admin/product/verwijder/{id}
+    host: www.unplugged.nl
+    defaults: { _controller: 'App\Controller\Product\ProductDeleteController::deleteProduct' }

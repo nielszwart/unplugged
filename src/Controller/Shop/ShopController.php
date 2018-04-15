@@ -15,7 +15,9 @@ class ShopController extends BaseController
 {
     public function shop()
     {
-        $products = $this->getDoctrine()->getRepository(Product::class)->findAll();
+        $products = $this->getDoctrine()->getRepository(Product::class)->findBy([
+            'deleted' => false,
+        ]);
 
         return $this->render(
             'website/shop/products.twig',

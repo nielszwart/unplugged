@@ -19,6 +19,7 @@
                 <th>ID</th>
                 <th>{% trans %}Title{% endtrans %}</th>
                 <th>{% trans %}Price{% endtrans %}</th>
+                <th>{% trans %}In shop{% endtrans %}</th>
             </tr>
             </thead>
             <tbody>
@@ -27,6 +28,7 @@
                     <td>{{ product.id }}</td>
                     <td><a href="{{ getLocalizedRoute('admin_product_edit', {id: product.id}) }}">{{ product.title }}</a></td>
                     <td>&euro;{{ product.price }}</td>
+                    <td>{% if product.deleted %}{% trans %}No{% endtrans %}{% else %}{% trans %}Yes{% endtrans %}{% endif %}</td>
                 </tr>
             {% endfor %}
             </tbody>

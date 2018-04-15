@@ -12,15 +12,24 @@ use App\Service\Localization;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ProductEditController extends BaseController
 {
-    public function edit($id, Request $request, Localization $localization, FileUploader $fileUploader)
+    public function edit($id, Request $request, Localization $localization, FileUploader $fileUploader, SessionInterface $session)
     {
         $product = $this->getDoctrine()->getRepository(Product::class)->find($id);
         if (empty($product)) {
             throw new HttpException(404, $localization->translate('Could not find requested product'));
+        }
+
+        $params = array_merge($request->request->all(), $request->query->all());
+        if (!empty($params['upload_token']) && $params['upload_token'] === 'video_upload') {
+            if ($fileUploader->chunkedUpload($params, $session)) {
+                return new Response();
+            }
         }
 
         $originalImage = $product->getImage();

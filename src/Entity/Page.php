@@ -72,6 +72,16 @@ class Page
      */
     private $footer;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $call_to_action;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $call_to_action_link;
+
     public function __construct($id, $locale) {
         $this->id = $id;
         $this->locale = $locale;
@@ -197,6 +207,26 @@ class Page
         $this->footer = $footer;
     }
 
+    public function getCallToAction()
+    {
+        return $this->call_to_action;
+    }
+
+    public function setCallToAction($call_to_action)
+    {
+        $this->call_to_action = $call_to_action;
+    }
+
+    public function getCallToActionLink()
+    {
+        return $this->call_to_action_link;
+    }
+
+    public function setCallToActionLink($call_to_action_link)
+    {
+        $this->call_to_action_link = $call_to_action_link;
+    }
+
     public function edit($values)
     {
         if (isset($values['content'])) {
@@ -228,6 +258,12 @@ class Page
         }
         if (isset($values['footer'])) {
             $this->setFooter($values['footer']);
+        }
+        if (isset($values['call_to_action'])) {
+            $this->setCallToAction($values['call_to_action']);
+        }
+        if (isset($values['call_to_action_link'])) {
+            $this->setCallToActionLink($values['call_to_action_link']);
         }
     }
 }

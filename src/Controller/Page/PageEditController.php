@@ -49,6 +49,12 @@ class PageEditController extends BaseController
                     unset($data['footer']);
                 }
 
+                if (!empty($data['call_to_action']) && $data['call_to_action'] instanceof UploadedFile) {
+                    $data['call_to_action'] = $fileUploader->upload($data['call_to_action']);
+                } else {
+                    unset($data['call_to_action']);
+                }
+
                 $page->edit($data);
                 $this->save($page);
                 $this->addFlash('success', $localization->translate('Page was edited successfully'));

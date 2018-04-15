@@ -57,6 +57,11 @@ class Product
      */
     private $is_clothing = false;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $deleted = false;
+
     public function getId()
     {
         return $this->id;
@@ -145,5 +150,20 @@ class Product
     public function setIsClothing($is_clothing)
     {
         $this->is_clothing = $is_clothing;
+    }
+
+    public function getDeleted()
+    {
+        return $this->deleted;
+    }
+
+    public function setDeleted($deleted)
+    {
+        $this->deleted = $deleted;
+    }
+
+    public function delete()
+    {
+        $this->deleted = true;
     }
 }

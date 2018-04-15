@@ -12,21 +12,39 @@
     display: table-cell;
     vertical-align: middle;
 
-    h1 {
-      color: @white;
+    h1.breathe {
+      color: @homepage-blue;
       font-size: 60px;
-      text-shadow: -1px 0 @purple, 0 1px @purple, 1px 0 @purple, 0 -1px @purple;
     }
-
-    p {
-      color: @white;
-      text-shadow: -1px 0 @purple, 0 1px @purple, 1px 0 @purple, 0 -1px @purple;
+    h1.drink {
+      color: @homepage-light-blue;
+      font-size: 60px;
+    }
+    h1.eat {
+      color: @homepage-green;
+      font-size: 60px;
+    }
+    h1.chill {
+      color: @purple;
+      font-size: 60px;
+    }
+    h1.move {
+      color: @homepage-orange;
+      font-size: 60px;
+    }
+    h1.help {
+      color: @homepage-red;
+      font-size: 60px;
     }
   }
 }
 
 .page-content {
   padding: 0 @navigation-margin 50px;
+
+  h1.no-header {
+    margin: 110px 0 25px;
+  }
 }
 
 div.text {
@@ -39,6 +57,11 @@ div.text {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+
+  .cta-position {
+    display: table;
+    margin: 0 auto;
+  }
 }
 
 .page-usps {

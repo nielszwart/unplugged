@@ -24,15 +24,19 @@ class ProductType extends AbstractType
                 'attr' => ['class' => 'ckeditor'],
             ])
             ->add('price', NumberType::class, ['label' => 'Price', 'scale' => 2])
-            ->add('image', FileType::class, ['label' => 'Image', 'required' => false])
-            ->add('ebook', FileType::class, ['label' => 'E-book', 'required' => false])
-            ->add('video', FileType::class, ['label' => 'Video', 'required' => false])
+            ->add('image', FileType::class, ['label' => 'Image', 'required' => false, 'multiple' => false])
+            ->add('ebook', FileType::class, ['label' => 'E-book', 'required' => false, 'multiple' => false])
+            ->add('video', FileType::class, ['label' => 'Video', 'required' => false, 'multiple' => false])
             ->add('has_genblueprint', CheckboxType::class, [
                 'label' => 'Has GenBluePrint',
                 'required' => false,
             ])
             ->add('is_clothing', CheckboxType::class, [
                 'label' => 'Clothing',
+                'required' => false,
+            ])
+            ->add('deleted', CheckboxType::class, [
+                'label' => 'Deleted',
                 'required' => false,
             ])
         ;

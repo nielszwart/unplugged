@@ -29,6 +29,12 @@ class GenblueprintController extends BaseController
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $data = $form->getData();
+                unset($data['question01']);
+                unset($data['question02']);
+                unset($data['question03']);
+                unset($data['question04']);
+                unset($data['question05']);
+                unset($data['question06']);
 
                 if ($first) {
                     $this->save($genblueprint);
@@ -64,9 +70,6 @@ class GenblueprintController extends BaseController
 
                 return $localization->redirectToLocalizedRoute('account');
             } catch (\Exception $e) {
-                echo "<pre>";
-                var_dump($e->getMessage(), $e->getFile(), $e->getLine(), $e->getTraceAsString());
-                exit;
                 $this->addFlash('error', $localization->translate('Failed to save your GenBluePrint'));
             }
         }
