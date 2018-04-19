@@ -75,7 +75,7 @@
                 </div>
 
                 {% if product.video %}
-                    <div class="form-group row">
+                    <div class="form-group row" id="current_video">
                         <div class="col-3">
                             <label>{% trans %}Current video{% endtrans %}</label>
                         </div>
@@ -137,18 +137,28 @@
             alert('Your browser does not support large file uploads');
         }
 
-        var videoInput = document.getElementById('product_video')
+        var videoInputDiv = document.getElementById('product_video_input');
+        var videoInput = document.getElementById('product_video');
+        var uploadedFile;
         resumable.assignBrowse(videoInput);
         resumable.on('fileAdded', function(file){
-            console.log('added');
-            console.log(file.fileName);
+            uploadedFile = file;
+            console.log('Added ' + file.fileName);
             resumable.upload();
         });
         resumable.on('uploadStart', function () {
             console.log('Uploading...');
+            videoInput.style.display = 'none';
+            videoInputDiv.innerText = "Uploading...";
         });
-        resumable.on('complete', function(file){
-            console.log('Done uploading');
+        resumable.on('complete', function() {
+            console.log('Done uploading!');
+            videoInputDiv.innerHTML = "<span class='green'>Uploaded <a href='{{ asset('uploads/') }}" + uploadedFile.fileName +"' target='_blank'>" + uploadedFile.fileName + "</a></span>";
+            document.getElementById('current_video').style.display = "none";
+        });
+        resumable.on('error', function() {
+            console.log('Error occured');
+            videoInputDiv.innerHTML = "<span class='red'>Failed to upload file</span>";
         });
     </script>
 {% endblock %}

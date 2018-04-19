@@ -6,6 +6,7 @@
 
 {% block form_widget_simple %}
     <div class="col-9">
+        {% if id == 'product_video' %} <div id="product_video_input">{% endif %}
         <input
                 id="{{ id }}"
                 class="form-control"
@@ -14,6 +15,7 @@
                 {% if required %} required="required"{% endif %}
                 value="{{ value }}"
         >
+        {% if id == 'product_video' %} </div>{% endif %}
     </div>
 {% endblock %}
 

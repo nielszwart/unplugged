@@ -27,8 +27,15 @@ class ProductEditController extends BaseController
 
         $params = array_merge($request->request->all(), $request->query->all());
         if (!empty($params['upload_token']) && $params['upload_token'] === 'video_upload') {
-            if ($fileUploader->chunkedUpload($params, $session)) {
+            $response = $fileUploader->chunkedUpload();
+            if ($response) {
+                if (is_int($response)) {
+                    $product->setVideo($params['resumableFilename']);
+                    $this->save($product);
+                }
                 return new Response();
+            } else {
+                return new Response('fail', 400);
             }
         }
 
