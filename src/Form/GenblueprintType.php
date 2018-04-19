@@ -439,9 +439,9 @@ class GenblueprintType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
-                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
-                    'With a weakened immune system, I initially feel snotty' => 'red',
+                    'In times of intense stress I tend to look for an escape' => 'green',
+                    'In times of intense stress I tend to fight' => 'blue',
+                    'In times of intense stress I wouldn’t know what I would do ' => 'red',
                 ]
             ])
             ->add('question02', ChoiceType::class, [
@@ -451,9 +451,9 @@ class GenblueprintType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
-                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
-                    'With a weakened immune system, I initially feel snotty' => 'red',
+                    'After I’ve exercised too intensely, I become nauseous' => 'green',
+                    'After I’ve exercised too intensely, I feel more energized' => 'blue',
+                    'When do I exercise too intensely? I never do that!' => 'red',
                 ]
             ])
             ->add('question03', ChoiceType::class, [
@@ -463,9 +463,9 @@ class GenblueprintType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
-                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
-                    'With a weakened immune system, I initially feel snotty' => 'red',
+                    'It is easy for me to push my physical boundaries' => 'green',
+                    'It is hard for me to push my physical boundaries' => 'blue',
+                    'I don’t know how to push my physical boundaries' => 'red',
                 ]
             ])
             ->add('question04', ChoiceType::class, [
@@ -475,9 +475,9 @@ class GenblueprintType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
-                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
-                    'With a weakened immune system, I initially feel snotty' => 'red',
+                    'I like to ‘go hard’ when I’m exercising' => 'green',
+                    'I prefer exercising with proper form over ‘going hard’' => 'blue',
+                    'I see exercising as a necessary evil' => 'red',
                 ]
             ])
             ->add('question05', ChoiceType::class, [
@@ -487,9 +487,9 @@ class GenblueprintType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
-                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
-                    'With a weakened immune system, I initially feel snotty' => 'red',
+                    'I like to party and I’m always the last one to leave' => 'green',
+                    'I hate parties and I hardly ever go to one' => 'blue',
+                    'Depending on the mood I’m in, I’ll show up to some parties' => 'red',
                 ]
             ])
             ->add('question06', ChoiceType::class, [
@@ -499,9 +499,9 @@ class GenblueprintType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'With a weakened immune system I get tired, my reaction levels are slower and my body doesn´t function well' => 'green',
-                    'With a weakened immune system, my digestion and bowel function declines' => 'blue',
-                    'With a weakened immune system, I initially feel snotty' => 'red',
+                    'I constantly need people around me in order to feel good' => 'green',
+                    'I prefer to be alone' => 'blue',
+                    'Sometimes I like to have people around me and sometimes I don’t ' => 'red',
                 ]
             ])
 
