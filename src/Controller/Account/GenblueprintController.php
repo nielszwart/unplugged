@@ -7,7 +7,9 @@ use App\Controller\BaseController;
 use App\Entity\Account;
 use App\Entity\Answer;
 use App\Entity\Genblueprint;
+use App\Entity\PhysicalTest;
 use App\Form\GenblueprintType;
+use App\Form\PhysicalTestType;
 use App\Service\Localization;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -25,7 +27,9 @@ class GenblueprintController extends BaseController
         $genblueprint = $first ? new Genblueprint() : $account->getGenblueprint();
 
         $form = $this->createForm(GenblueprintType::class);
+        $physicalForm = $this->createForm(PhysicalTestType::class);
         $form->handleRequest($request);
+        $physicalForm->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $data = $form->getData();
@@ -35,6 +39,7 @@ class GenblueprintController extends BaseController
                 unset($data['question04']);
                 unset($data['question05']);
                 unset($data['question06']);
+                $physicalData = $physicalForm->getData();
 
                 if ($first) {
                     $this->save($genblueprint);
@@ -44,6 +49,13 @@ class GenblueprintController extends BaseController
                     foreach ($data as $question => $answers) {
                         $answer = new Answer($genblueprint, $question, $answers);
                         $this->save($answer);
+                    }
+
+                    if ($physicalData) {
+                        $physicalTest = new PhysicalTest($genblueprint, $physicalData);
+                        $genblueprint->setPhysicalTest($physicalTest);
+                        $this->save($physicalTest);
+                        $this->save($genblueprint);
                     }
 
                     $this->addFlash('success', $localization->translate('Successfully created your GenBluePrint'));
@@ -63,7 +75,18 @@ class GenblueprintController extends BaseController
                         $this->save($answer);
                     }
 
+                    if ($physicalData) {
+                        $physicalTest = $genblueprint->getPhysicalTest();
+                        if (!$physicalTest) {
+                            $physicalTest = new PhysicalTest($genblueprint, $physicalData);
+                        } else {
+                            $physicalTest->edit($physicalData);
+                        }
+                        $this->save($physicalTest);
+                    }
+
                     $this->save($genblueprint);
+
                     $this->addFlash('success', $localization->translate('Successfully updated your GenBluePrint'));
                     $this->sendGenBluePrintEmail($mailer, $localization, $account);
                 }
@@ -76,6 +99,7 @@ class GenblueprintController extends BaseController
 
         return $this->render('website/account/genblueprint.twig', [
                 'form' => $form->createView(),
+                'physicalForm' => $physicalForm->createView(),
                 'account' => $account,
                 'genblueprint' => $genblueprint,
             ]
@@ -125,6 +149,4 @@ class GenblueprintController extends BaseController
 
         $mailer->send($message);
     }
-
-
 }

@@ -222,6 +222,227 @@
 
             <div class="clear">&nbsp;</div>
 
+            <h2>{% trans %}Physical test{% endtrans %}</h2>
+            <p>
+                {% trans %}The muscle test: Every muscle group will be tested for maximum performance.{% endtrans %}
+                {% trans %}Maximum power is 1 repetition.{% endtrans %}
+                {% trans %}This information will be combined with a test of 80% of your maximum power in which you will do as many repetitions as possible.{% endtrans %}
+                <br/><br/>
+                {% trans %}Example:{% endtrans %}
+                <br/><br/>
+                {% trans %}Maximum power (1 repetition) is 60 kg with the leg extension (leg muscle machine) 80% of 60 kg is 48kg.{% endtrans %}
+                {% trans %}With those 48 kg you are going to do as many repetitions as possible.{% endtrans %}
+                {% trans %}If your machine doesn’t allow you to choose 48kg, then you can choose 45 or 50 kg and you will adjust the number of repetitions by 1 (either 1 more or one less).{% endtrans %}
+            </p>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.bicep_curl_max) }}
+                {{ form_widget(physicalForm.bicep_curl_max) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.bicep_curl_80) }}
+                {{ form_widget(physicalForm.bicep_curl_80) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.tricep_extension_max) }}
+                {{ form_widget(physicalForm.tricep_extension_max) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.tricep_extension_80) }}
+                {{ form_widget(physicalForm.tricep_extension_80) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.leg_extension_max) }}
+                {{ form_widget(physicalForm.leg_extension_max) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.leg_extension_80) }}
+                {{ form_widget(physicalForm.leg_extension_80) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.leg_curl_max) }}
+                {{ form_widget(physicalForm.leg_curl_max) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.leg_curl_80) }}
+                {{ form_widget(physicalForm.leg_curl_80) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.chest_press_max) }}
+                {{ form_widget(physicalForm.chest_press_max) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.chest_press_80) }}
+                {{ form_widget(physicalForm.chest_press_80) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.lat_pulley_max) }}
+                {{ form_widget(physicalForm.lat_pulley_max) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.lat_pulley_80) }}
+                {{ form_widget(physicalForm.lat_pulley_80) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.shoulder_press_max) }}
+                {{ form_widget(physicalForm.shoulder_press_max) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.shoulder_press_80) }}
+                {{ form_widget(physicalForm.shoulder_press_80) }}
+            </div>
+
+            <div class="clear">&nbsp;</div>
+
+            <p>
+                {% trans %}Body measurements: measuring your proportions by yourself can be quite a difficult task. Ask your partner, personal coach or doctor for help.{% endtrans %}
+                <br/>
+                {% trans %}We will need the following measurements of your body in centimeters:{% endtrans %}
+            </p>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.waist) }}
+                {{ form_widget(physicalForm.waist) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.belly) }}
+                {{ form_widget(physicalForm.belly) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.hip) }}
+                {{ form_widget(physicalForm.hip) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.upper_arm) }}
+                {{ form_widget(physicalForm.upper_arm) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.chest) }}
+                {{ form_widget(physicalForm.chest) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.neck) }}
+                {{ form_widget(physicalForm.neck) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.upper_leg) }}
+                {{ form_widget(physicalForm.upper_leg) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.lower_leg) }}
+                {{ form_widget(physicalForm.lower_leg) }}
+            </div>
+
+            <div class="clear">&nbsp;</div>
+
+            <p>
+                {% trans %}Skin plow measurement: our body fat is spread across our body in a unique way.{% endtrans %}
+                {% trans %}It can be difficult to measure some areas of your body by yourself.{% endtrans %}
+                {% trans %}If you’re not sure, you can always ask a professional for help.{% endtrans %}
+                {% trans %}In this image you will clearly see what kinds of measurements you’ll have to do.{% endtrans %}
+                {% trans %}Need any help? Just ask us for a Personal Measuring.{% endtrans %}<br/>
+                {% trans %}Measure everything from the right side of your body.{% endtrans %}
+                <br/><br/>
+                {% trans %}We need the following measurements of skin plows:{% endtrans %}
+            </p>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.chin) }}
+                {{ form_widget(physicalForm.chin) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.cheek) }}
+                {{ form_widget(physicalForm.cheek) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.armpit_chest) }}
+                {{ form_widget(physicalForm.armpit_chest) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.tricep) }}
+                {{ form_widget(physicalForm.tricep) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.bicep) }}
+                {{ form_widget(physicalForm.bicep) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.back_shoulderblade) }}
+                {{ form_widget(physicalForm.back_shoulderblade) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.lower_back) }}
+                {{ form_widget(physicalForm.lower_back) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.torso_upper_right) }}
+                {{ form_widget(physicalForm.torso_upper_right) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.waist_right) }}
+                {{ form_widget(physicalForm.waist_right) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.waist_front_right) }}
+                {{ form_widget(physicalForm.waist_front_right) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.belly_button) }}
+                {{ form_widget(physicalForm.belly_button) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.knee) }}
+                {{ form_widget(physicalForm.knee) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.calf) }}
+                {{ form_widget(physicalForm.calf) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.upper_leg_front) }}
+                {{ form_widget(physicalForm.upper_leg_front) }}
+            </div>
+
+            <div class="form-field one-third">
+                {{ form_label(physicalForm.upper_leg_back) }}
+                {{ form_widget(physicalForm.upper_leg_back) }}
+            </div>
+
+            <div class="clear">&nbsp;</div>
+
             <button type="submit" class="button-large">{% trans %}Save{% endtrans %}</button>
 
             {{ form_end(form) }}

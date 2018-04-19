@@ -28,6 +28,11 @@ class Genblueprint
      */
     private $answers;
 
+    /**
+     * @ORM\OneToOne(targetEntity="PhysicalTest", mappedBy="genblueprint")
+     */
+    private $physical_test;
+
     public function __construct()
     {
         $this->date_changed = new \DateTime();
@@ -59,5 +64,15 @@ class Genblueprint
     public function getAnswers()
     {
         return $this->answers;
+    }
+
+    public function getPhysicalTest()
+    {
+        return $this->physical_test;
+    }
+
+    public function setPhysicalTest($physical_test)
+    {
+        $this->physical_test = $physical_test;
     }
 }
