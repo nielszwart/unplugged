@@ -19,10 +19,10 @@ class Hostnames
     {
         switch ($this->env) {
             case 'dev':
-                $host = 'www.unplugged.nl/admin';
+                $host = 'www.unplugging.nl/admin';
                 break;
             case 'prod':
-                $host = 'www.unplugged.nl/admin';
+                $host = 'www.unplugging.nl/admin';
                 break;
             default:
                 throw new HttpException(500, 'No environment given');
@@ -35,10 +35,10 @@ class Hostnames
     {
         switch ($this->env) {
             case 'dev':
-                $host = 'www.unplugged.nl';
+                $host = 'www.unplugging.nl';
                 break;
             case 'prod':
-                $host = 'www.unplugged.nl';
+                $host = 'www.unplugging.nl';
                 break;
             default:
                 throw new HttpException(500, 'No environment given');

@@ -12,20 +12,20 @@ logout:
 
 register_en:
     path: /register
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Account\RegisterController::register' }
 register_nl:
     path: /registreren
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Account\RegisterController::register' }
 
 registered_en:
     path: /registered
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Account\RegisterController::registered' }
 registered_nl:
     path: /geregistreerd
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Account\RegisterController::registered' }
 
 account:
@@ -35,56 +35,56 @@ account:
 
 account_edit_en:
     path: /edit-account
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Account\EditController::edit' }
 account_edit_nl:
     path: /wijzig-account
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Account\EditController::edit' }
 
 account_complete_profile_en:
     path: /account/complete-profile
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
 account_complete_profile_nl:
     path: /account/profiel-aanvullen
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
 
 account_shop_en:
     path: /account/shop
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Shop\ShopController::shop' }
 account_shop_nl:
     path: /account/winkel
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Shop\ShopController::shop' }
 
 account_shop_product_en:
     path: /account/shop/product/{id}
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Shop\ShopController::product' }
 account_shop_product_nl:
     path: /account/winkel/product/{id}
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Shop\ShopController::product' }
 
 account_shop_cart_en:
     path: /account/shop/cart
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Shop\CartController::cart' }
 account_shop_cart_nl:
     path: /account/winkel/mandje
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Shop\CartController::cart' }
 
 account_shop_order_placed_en:
     path: /account/shop/order-placed
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Shop\ShopController::orderPlaced' }
 account_shop_order_placed_nl:
     path: /account/winkel/order-geplaatst
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Shop\ShopController::orderPlaced' }
 
 clear_cart:
@@ -98,11 +98,11 @@ mollie_webhook:
 
 account_purchase_overview_en:
     path: /account/purchases
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Account\PurchaseController::overview' }
 account_purchase_overview_nl:
     path: /account/aankopen
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Account\PurchaseController::overview' }
 
 account_download_purchase:
@@ -115,20 +115,20 @@ account_genblueprint:
 
 forgot_password_en:
     path: /forgot-password
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\SecurityController::forgotPassword' }
 forgot_password_nl:
     path: /wachtwoord-vergeten
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\SecurityController::forgotPassword' }
 
 reset_password_en:
     path: /reset-password
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\SecurityController::resetPassword' }
 reset_password_nl:
     path: /wachtwoord-opnieuw-instellen
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\SecurityController::resetPassword' }
 
 contact:
@@ -141,11 +141,11 @@ magnesium_test:
 
 vitamin_test_en:
     path: /vitamin-b12-test
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Test\VitamineTestController::test' }
 vitamin_test_nl:
     path: /vitamine-b12-test
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Test\VitamineTestController::test' }
 
 page_view:
@@ -160,22 +160,22 @@ admin_dashboard:
 
 admin_page_overview_en:
     path: /admin/pages
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     methods: [GET]
     defaults: { _controller: 'App\Controller\Page\PageOverviewController::overview' }
 admin_page_overview_nl:
     path: /admin/paginas
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     methods: [GET]
     defaults: { _controller: 'App\Controller\Page\PageOverviewController::overview' }
 
 admin_page_edit_en:
     path: /admin/page/edit/{slug}/{locale}
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Page\PageEditController::edit' }
 admin_page_edit_nl:
     path: /admin/pagina/wijzig/{slug}/{locale}
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Page\PageEditController::edit' }
 
 admin_account_overview:
@@ -189,38 +189,38 @@ admin_account_view:
 
 admin_product_overview_en:
     path: /admin/products
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     methods: [GET]
     defaults: { _controller: 'App\Controller\Product\ProductOverviewController::overview' }
 admin_product_overview_nl:
     path: /admin/producten
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     methods: [GET]
     defaults: { _controller: 'App\Controller\Product\ProductOverviewController::overview' }
 
 admin_product_create_en:
     path: /admin/product/new
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Product\ProductCreateController::create' }
 admin_product_create_nl:
     path: /admin/product/nieuw
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Product\ProductCreateController::create' }
 
 admin_product_edit_en:
     path: /admin/product/edit/{id}
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Product\ProductEditController::edit' }
 admin_product_edit_nl:
     path: /admin/product/wijzig/{id}
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Product\ProductEditController::edit' }
 
 admin_product_delete_en:
     path: /admin/product/delete/{id}
-    host: www.unplugged.co.uk
+    host: www.unplugging.co.uk
     defaults: { _controller: 'App\Controller\Product\ProductDeleteController::deleteProduct' }
 admin_product_delete_nl:
     path: /admin/product/verwijder/{id}
-    host: www.unplugged.nl
+    host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Product\ProductDeleteController::deleteProduct' }

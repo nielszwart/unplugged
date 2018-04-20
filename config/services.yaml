@@ -4,8 +4,8 @@ parameters:
     locale: 'en'
     uploads_directory: '%kernel.project_dir%\public\uploads\'
     domain_locales:
-        www.unplugged.co.uk: en
-        www.unplugged.nl: nl
+        www.unplugging.co.uk: en
+        www.unplugging.nl: nl
     mollie_api_key: '%env(MOLLIE_API_KEY)%'
 
 
