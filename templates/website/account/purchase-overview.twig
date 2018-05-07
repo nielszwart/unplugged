@@ -29,7 +29,7 @@
                         <div class="lines">
                             {% for line in order.orderLines %}
                                 <div class="line">
-                                    {% if line.product.video or line.product.ebook and order.status == 'paid' %}
+                                    {% if line.product.ebook and order.status == 'paid' %}
                                         <a href="{{ getLocalizedRoute('account_download_purchase', {id: line.id}) }}" target="_blank" class="product-link">{{ line.product.title }}</a>
                                     {% elseif line.product.hasGenblueprint %}
                                         <a href="{{ getLocalizedRoute('account_genblueprint') }}" target="_blank" class="product-link">{{ line.product.title }}</a>

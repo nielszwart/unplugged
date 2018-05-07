@@ -6,7 +6,9 @@
     {% if page.header %}
         <div class="page-header" style="background-image: url({{ asset('uploads/' ~ page.header) }})">
             <div class="text-position">
-                <h1 class="{{ page.slug }}">{{ page.title }}</h1>
+                <div class="image-opacity-bar">
+                    <h1 class="{{ page.slug }}">{{ page.title }}</h1>
+                </div>
             </div>
         </div>
     {% endif %}
@@ -25,7 +27,7 @@
     <div class="page-footer" style="background-image: url({{ asset('uploads/' ~ page.footer) }})">
         {% if page.callToAction %}
             <div class="cta-position">
-                <a href="{{ page.callToActionLink }}">
+                <a href="{{ page.callToActionLink }}" target="_blank">
                     <img class="call-to-action" src="{{ asset('uploads/' ~ page.callToAction) }}">
                 </a>
             </div>

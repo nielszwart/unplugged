@@ -3,7 +3,7 @@
 {% block title %}{{ a.fullName }}{% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
+    <div class="container-fluid account-view">
         <div class="row header-row">
             <div class="col-6">
                 <h1>{{ a.fullName }}</h1>
@@ -347,6 +347,129 @@
                     <tr>
                         <th>{% trans %}Diet{% endtrans %}</th><td>{{ a.profile.diet }}{% if a.profile.dietOpen %}<br>{{ a.profile.dietOpen }}{% endif %}</td>
                     </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if a.genblueprint.physicalTest %}
+        <div class="row">
+            <div class="col-12">
+                <h2>{% trans %}Physical test{% endtrans %}</h2>
+                <table class="table table-striped table-sm">
+                    <tbody>
+                        <tr>
+                            <th>{% trans %}Maximum power (1 repetition) Bicep Curl.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.bicepCurlMax }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Amount of repetitions with 80% of your maximum power.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.bicepCurl80 }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Maximum power (1 repetition) Tricep Extension.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.tricepExtensionMax }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Amount of repetitions with 80% of your maximum power.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.tricepExtension80 }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Maximum power (1 repetition) Leg Extension or Leg Press.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.legExtensionMax }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Amount of repetitions with 80% of your maximum power.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.legExtension80 }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Maximum power (1 repetition) Leg Curl.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.legCurlMax }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Amount of repetitions with 80% of your maximum power.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.legCurl80 }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Maximum power (1 repetition) Chest machine or Chest press.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.chestPressMax }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Amount of repetitions with 80% of your maximum power.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.chestPress80 }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Maximum power (1 repetition) Lat Pulley.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.latPulleyMax }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Amount of repetitions with 80% of your maximum power.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.latPulley80 }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Maximum power (1 repetition) Shoulder Press or Front Raises.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.shoulderPressMax }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Amount of repetitions with 80% of your maximum power.{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.shoulderPress80 }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Waist size{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.waist }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Belly size{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.belly }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Hip size{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.hip }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Upper arm size{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.upperArm }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Chest size{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.chest }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Neck size{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.neck }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Upper leg size{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.upperLeg }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Lower leg size{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.lowerLeg }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Chin{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.chin }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Cheek{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.cheek }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Armpit/Chest{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.armpitChest }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Tricep{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.tricep }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Bicep{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.bicep }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}back_shoulderblade{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.backShoulderblade }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}lower_back{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.lowerBack }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Right upper side of torso{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.torsoUpperRight }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Right side of waist{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.waistRight }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Right front side of your waist{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.waistFrontRight }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Front of your belly/belly button{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.bellyButton }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Knee{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.knee }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Calf{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.calf }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Front of upper leg{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.upperLegFront }}</td>
+                        </tr>
+                        <tr>
+                            <th>{% trans %}Back of upper leg{% endtrans %}</th><td>{{ a.genblueprint.physicalTest.upperLegBack }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>

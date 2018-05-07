@@ -56,9 +56,7 @@ class PurchaseController extends BaseController
         }
 
         $file = null;
-        if ($product->getVideo()) {
-            $file = $product->getVideo();
-        } else if ($product->getEbook()) {
+        if ($product->getEbook()) {
             $file = $product->getEbook();
         }
 

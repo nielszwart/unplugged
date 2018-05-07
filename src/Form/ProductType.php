@@ -26,7 +26,6 @@ class ProductType extends AbstractType
             ->add('price', NumberType::class, ['label' => 'Price', 'scale' => 2])
             ->add('image', FileType::class, ['label' => 'Image', 'required' => false, 'multiple' => false])
             ->add('ebook', FileType::class, ['label' => 'E-book', 'required' => false, 'multiple' => false])
-            ->add('video', FileType::class, ['label' => 'Video', 'required' => false, 'multiple' => false])
             ->add('has_genblueprint', CheckboxType::class, [
                 'label' => 'Has GenBluePrint',
                 'required' => false,
