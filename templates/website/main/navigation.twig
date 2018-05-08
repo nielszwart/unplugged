@@ -32,12 +32,44 @@
                 </a>
             </div>
             <div class="nav-bottom-menu">
+                {% if locale == 'nl' %}
+                    {% set slug = 'hoe-werkt-het' %}
+                {% else %}
+                    {% set slug = 'how-it-works' %}
+                {% endif %}
+                <div class="mobile-menu">
+                    <div id="toggle-menu">
+                        <img alt="menu" src="{{ asset('img/menu.svg') }}">
+                    </div>
+                    <ul id="mobile-menu-list">
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: slug}) }}">{% trans %}How it works{% endtrans %}</a></li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'breathe'}) }}">{% trans %}Breathe{% endtrans %}</a></li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'drink'}) }}">{% trans %}Drink{% endtrans %}</a></li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'eat'}) }}">{% trans %}Eat{% endtrans %}</a></li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'chill'}) }}">{% trans %}Chill{% endtrans %}</a></li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'move'}) }}">{% trans %}Move{% endtrans %}</a></li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'help'}) }}">{% trans %}Help{% endtrans %}</a></li>
+
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('magnesium_test') }}">{% trans %}Magnesium test{% endtrans %}</a></li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('vitamin_test') }}">{% trans %}Vitamin B12 test{% endtrans %}</a></li>
+
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                            <li class="nav-item"><a href="{{ getLocalizedRoute('logout') }}">{% trans %}Logout{% endtrans %}</a></li>
+                            <li class="nav-item"><a href="{{ getLocalizedRoute('account') }}">{% trans %}Account{% endtrans %}</a></li>
+                        {% else %}
+                            <li class="nav-item"><a href="{{ getLocalizedRoute('login') }}">{% trans %}Login{% endtrans %}</a></li>
+                            <li class="nav-item"><a href="{{ getLocalizedRoute('register') }}">{% trans %}Register{% endtrans %}</a></li>
+                        {% endif %}
+
+                        <li class="nav-item">
+                            <a href="{% if locale == 'nl' %}http://www.unplugging.co.uk{% else %}http://www.unplugging.nl{% endif %}">
+                                {% if locale == 'nl' %}English{% else %}Nederlands{% endif %}
+                            </a>
+                        </li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('contact') }}">{% trans %}Contact{% endtrans %}</a></li>
+                    </ul>
+                </div>
                 <ul class="bottom-menu">
-                    {% if locale == 'nl' %}
-                        {% set slug = 'hoe-werkt-het' %}
-                    {% else %}
-                        {% set slug = 'how-it-works' %}
-                    {% endif %}
                     <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: slug}) }}">{% trans %}How it works{% endtrans %}</a></li>
                     <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'breathe'}) }}">{% trans %}Breathe{% endtrans %}</a></li>
                     <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'drink'}) }}">{% trans %}Drink{% endtrans %}</a></li>

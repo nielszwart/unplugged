@@ -81,4 +81,42 @@ header {
       }
     }
   }
+
+  .mobile-menu {
+    display: none;
+
+    #toggle-menu {
+      float: right;
+      margin-right: 25px;
+      height: 30px;
+      padding: 15px 0;
+
+      img {
+        height: 30px;
+        cursor: pointer;
+      }
+    }
+
+    #mobile-menu-list {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: 91px;
+      width: 250px;
+      border-bottom: 1px solid @purple;
+      border-left: 1px solid @purple;
+      background-color: @white;
+
+      li {
+        padding: 10px;
+
+        a {
+          color: @purple;
+        }
+      }
+    }
+    #mobile-menu-list.open {
+      display: block;
+    }
+  }
 }
