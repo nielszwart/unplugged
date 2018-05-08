@@ -9,45 +9,33 @@
 
             <div class="account-block">
                 <a href="{{ getLocalizedRoute('account_shop') }}">
-                    <div class="inner-block">
-                        {% trans %}Shop{% endtrans %}
-                    </div>
+                    <img src="{{ asset('img/shop_' ~ app.request.getLocale() ~ '.png') }}">
                 </a>
             </div>
             <div class="account-block">
                 <a href="{{ getLocalizedRoute('account_purchase_overview') }}">
-                    <div class="inner-block">
-                        {% trans %}Purchases{% endtrans %}
-                    </div>
+                    <img src="{{ asset('img/purchases_' ~ app.request.getLocale() ~ '.png') }}">
                 </a>
             </div>
             <div class="account-block">
                 <a href="{{ getLocalizedRoute('account_edit') }}">
-                    <div class="inner-block">
-                        {% trans %}Edit account{% endtrans %}
-                    </div>
+                    <img src="{{ asset('img/edit_account_' ~ app.request.getLocale() ~ '.png') }}">
                 </a>
             </div>
             <div class="account-block">
                 <a href="{{ getLocalizedRoute('account_complete_profile') }}">
-                    <div class="inner-block">
-                        {% trans %}Complete profile{% endtrans %}
-                    </div>
+                    <img src="{{ asset('img/complete_profile_' ~ app.request.getLocale() ~ '.png') }}">
                 </a>
             </div>
             <div class="account-block">
                 <a href="{{ getLocalizedRoute('logout') }}">
-                    <div class="inner-block">
-                        {% trans %}Logout{% endtrans %}
-                    </div>
+                    <img src="{{ asset('img/logout_' ~ app.request.getLocale() ~ '.png') }}">
                 </a>
             </div>
             {% if account.genblueprint %}
                 <div class="account-block">
                     <a href="{{ getLocalizedRoute('account_genblueprint') }}">
-                        <div class="inner-block">
-                            {% trans %}GenBluePrint{% endtrans %}
-                        </div>
+                        <img src="{{ asset('img/genblueprint_' ~ app.request.getLocale() ~ '.png') }}">
                     </a>
                 </div>
             {% endif %}
