@@ -24,13 +24,15 @@
         {{ page.content|raw }}
     </div>
 
-    <div class="page-footer" style="background-image: url({{ asset('uploads/' ~ page.footer) }})">
-        {% if page.callToAction %}
-            <div class="cta-position">
-                <a href="{{ page.callToActionLink }}" target="_blank">
-                    <img class="call-to-action" src="{{ asset('uploads/' ~ page.callToAction) }}">
-                </a>
-            </div>
-        {% endif %}
-    </div>
+    {% if page.footer %}
+        <div class="page-footer" style="background-image: url({{ asset('uploads/' ~ page.footer) }})">
+            {% if page.callToAction %}
+                <div class="cta-position">
+                    <a href="{{ page.callToActionLink }}" target="_blank">
+                        <img class="call-to-action" src="{{ asset('uploads/' ~ page.callToAction) }}">
+                    </a>
+                </div>
+            {% endif %}
+        </div>
+    {% endif %}
 {% endblock %}
