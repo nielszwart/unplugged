@@ -7,6 +7,20 @@
         <div class="page-content">
             <h1>{% trans %}Leave us a message{% endtrans %}</h1>
             {{ form_start(form) }}
+            <div class="contact-details">
+                <div class="details-position">
+                    <p>
+                        Unplugging<br />
+                        Rozengracht 73<br />
+                        1506 SH, Zaandam
+                    </p>
+                    <br/>
+                    <p>
+                        Tel: +31 6 41177688<br />
+                        info@unplugged.nl
+                    </p>
+                </div>
+            </div>
             <div class="sender-info">
                 <div class="contact-field">
                     {{ form_label(form.name) }}
@@ -32,18 +46,7 @@
 
                 <button type="submit" class="contact-button">{% trans %}Send{% endtrans %}</button>
             </div>
-            <div class="contact-details">
-                <p>
-                    Unplugged<br />
-                    Rozengracht 73<br />
-                    1506 SH, Zaandam
-                </p>
-                <br/>
-                <p>
-                    Tel: +31 6 41177688<br />
-                    info@unplugged.nl
-                </p>
-            </div>
+
             {{ form_end(form) }}
 
             <div class="clear"></div>
