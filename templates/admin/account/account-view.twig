@@ -353,7 +353,7 @@
         </div>
         {% endif %}
 
-        {% if a.genblueprint.physicalTest %}
+        {% if a.genblueprint and a.genblueprint.physicalTest %}
         <div class="row">
             <div class="col-12">
                 <h2>{% trans %}Physical test{% endtrans %}</h2>

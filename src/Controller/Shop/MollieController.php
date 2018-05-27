@@ -23,7 +23,14 @@ class MollieController extends BaseController
         }
 
         $payment = $mollie->payments->get($request->request->get('id'));
+        if (!$payment) {
+            throw new HttpException(404, "The ID Mollie gave is not known by Mollie (??)");
+        }
+
         $order = $this->getDoctrine()->getRepository(Order::class)->findOneBy(['payment_provider_id' => $payment->id]);
+        if (!$order) {
+            throw new HttpException(404, "The Mollie ID is not known by us");
+        }
 
         if ($payment->isPaid()) {
             $order->setStatus('paid');

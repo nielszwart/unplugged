@@ -1,40 +1,42 @@
 .shop {
-  width: 70%;
+  width: 80%;
   margin: 40px auto 0;
 
   .products {
 
-    a.item {
-      display: block;
+    .product-wrapper {
+      width: 33%;
+      float: left;
 
-      .product {
-        float: left;
-        width: 30%;
-        margin: 25px 5% 0 0;
+      a.item {
 
-        .image {
+        .product {
+          padding: 25px;
+          width: auto;
+          margin: 0;
 
-          img {
-            width: 100%;
+          .image {
+
+            img {
+              width: 100%;
+            }
           }
-        }
 
-        .info {
-          text-align: center;
-          font-size: 14px;
+          .info {
+            text-align: center;
+            font-size: 14px;
 
-          .price {
-            font-weight: bold;
+            .price {
+              font-weight: bold;
+            }
           }
         }
       }
-
-
     }
+  }
 
-    a.item:nth-child(3n) .product {
-      margin-right: 0;
-    }
+  .by-two {
+    display: none;
   }
 }
 
@@ -141,8 +143,6 @@
 }
 
 .top-bar {
-  height: 50px;
-
   a {
     margin-left: 20px;
   }

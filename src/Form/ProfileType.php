@@ -33,7 +33,7 @@ class ProfileType extends AbstractType
                 'required' => false,
             ])
             ->add('gender', ChoiceType::class, [
-                'label' => 'Geslacht',
+                'label' => 'Gender',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,

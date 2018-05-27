@@ -19,7 +19,10 @@ class AccountViewController extends BaseController
         $diff = $now->diff($dob);
         $account->age = $diff->y;
 
-        $genblueprint = $this->calculateGenblueprint($account->getGenblueprint());
+        $genblueprint = [];
+        if (!empty($account->getGenblueprint())) {
+            $genblueprint = $this->calculateGenblueprint($account->getGenblueprint());
+        }
 
         return $this->render(
             'admin/account/account-view.twig',

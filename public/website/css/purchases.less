@@ -1,48 +1,56 @@
-.purchases {
-  width: 70%;
-  margin: 0 auto;
+.account-content {
+  .page-content();
 
-  .orders {
+  .purchases {
+    width: 70%;
+    margin: 0 auto;
 
-    .order {
-      padding: 10px;
-      border: 1px solid @purple;
-      margin-top: 40px;
+    .orders {
 
-      .info {
+      .order {
+        padding: 10px;
+        border: 1px solid @purple;
+        margin-top: 40px;
 
-        td {
-          padding: 5px 20px 5px 0;
-        }
+        .info {
 
-        td:first-child {
-          font-weight: bold
-        }
-      }
-
-      .lines {
-        margin: 20px 0 0;
-
-        .line {
-          background-color: lightgray;
-          padding: 10px;
-          border: 1px solid lightgray;
-
-          a {
-            color: @purple;
-            text-decoration: underline;
+          td {
+            padding: 5px 20px 5px 0;
           }
 
-          span.right {
-            float: right;
-            font-weight: bold;
+          td:first-child {
+            font-weight: bold
           }
         }
 
-        .line:nth-child(even) {
-          background-color: white;
+        .lines {
+          margin: 20px 0 0;
+
+          .line {
+            background-color: lightgray;
+            padding: 10px;
+            border: 1px solid lightgray;
+
+            a {
+              color: @purple;
+              text-decoration: underline;
+            }
+
+            span.right {
+              float: right;
+              font-weight: bold;
+            }
+          }
+
+          .line:nth-child(even) {
+            background-color: white;
+          }
         }
       }
+    }
+
+    .break {
+      display: none;
     }
   }
 }

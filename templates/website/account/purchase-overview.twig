@@ -3,9 +3,9 @@
 {% block title %}{% trans %}Purchases{% endtrans %}{% endblock %}
 
 {% block body %}
-    <div class="page-content">
+    <div class="account-content">
         <div class="purchases">
-            <a href="{{ getLocalizedRoute('account') }}" class="button-small float-right">{% trans %}Back to account{% endtrans %}</a>
+            <a href="{{ getLocalizedRoute('account') }}" class="button-small back-button">{% trans %}Back to account{% endtrans %}</a>
             <h1>{% trans %}Purchase overview{% endtrans %}</h1>
             <div class="orders">
                 {% for order in orders %}
@@ -31,16 +31,19 @@
                                 <div class="line">
                                     {% if line.product.ebook and order.status == 'paid' %}
                                         <a href="{{ getLocalizedRoute('account_download_purchase', {id: line.id}) }}" target="_blank" class="product-link">{{ line.product.title }}</a>
-                                    {% elseif line.product.hasGenblueprint %}
+                                    {% elseif line.product.hasGenblueprint and order.status == 'paid' %}
                                         <a href="{{ getLocalizedRoute('account_genblueprint') }}" target="_blank" class="product-link">{{ line.product.title }}</a>
                                     {% else %}
                                         {{ line.product.title }}
                                     {% endif %}
                                     x{{ line.amount }}
+                                    <span class="break"><br></span>
                                     {% if line.color %} | {{ line.color|capitalize }}{% endif %}
                                     {% if line.size %} | {{ line.size|capitalize }}{% endif %}
                                     <span class="right">&euro;{{ line.price|number_format(2) }}</span>
+                                    <div class="clear"></div>
                                 </div>
+
                             {% endfor %}
                         </div>
                     </div>

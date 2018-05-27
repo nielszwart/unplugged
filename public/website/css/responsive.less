@@ -41,6 +41,19 @@
       }
     }
   }
+
+  .genblueprint {
+    .form-field.one-third {
+      width: 50%;
+    }
+  }
+
+  .account-content {
+    .purchases {
+      width: auto;
+      margin: 0;
+    }
+  }
 }
 
 @media screen and (max-width: 1150px) {
@@ -77,7 +90,8 @@
     }
   }
 
-  .page-content {
+  .page-content,
+  .account-content {
     padding: 0 100px 25px;
   }
 
@@ -102,6 +116,10 @@
         height: 200px;
       }
     }
+  }
+
+  .shop {
+    width: 100%;
   }
 }
 
@@ -182,6 +200,57 @@
       }
     }
   }
+
+  .back-button {
+    float: none;
+  }
+
+  .top-bar a {
+    margin: 10px 20px 0 0;
+  }
+
+  .magnesium,
+  .vitamin,
+  .complete-profile,
+  .genblueprint {
+    .form-field {
+      input:not([type=checkbox]):not([type=radio]),
+      textarea {
+        width: 80%;
+      }
+    }
+  }
+
+  .genblueprint {
+    .form-field.one-third {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .account-content {
+    padding: 0 35px 25px;
+
+    .purchases {
+      .break {
+        display: block;
+      }
+    }
+  }
+
+  .shop {
+    .products {
+      .product-wrapper {
+        width: 50%;
+      }
+    }
+    .by-two {
+      display: block;
+    }
+    .by-three {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -241,7 +310,7 @@
       }
     }
   }
-  .page-content {
+  .page-content{
     padding: 0 35px 25px;
   }
   .page-footer {
@@ -251,6 +320,17 @@
   .account {
     .account-block {
       width: 50%;
+    }
+  }
+
+  .shop {
+    .products {
+      .product-wrapper {
+        width: 100%;
+      }
+    }
+    .by-two {
+      display: none;
     }
   }
 }
