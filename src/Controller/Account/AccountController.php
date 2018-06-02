@@ -6,6 +6,7 @@ namespace App\Controller\Account;
 
 use App\Controller\BaseController;
 use App\Entity\Account;
+use App\Service\GenBluePrintService;
 use App\Service\Localization;
 
 class AccountController extends BaseController
@@ -20,6 +21,7 @@ class AccountController extends BaseController
 
         return $this->render('website/account/account.twig', [
             'account' => $account,
+            'hasGenBluePrintAccess' => GenBluePrintService::hasGenBluePrintAccess($account),
         ]);
     }
 }

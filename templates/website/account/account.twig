@@ -12,13 +12,16 @@
                     <img src="{{ asset('img/complete_profile_' ~ app.request.getLocale() ~ '.png') }}">
                 </a>
             </div>
-            {% if account.genblueprint %}
-                <div class="account-block">
-                    <a href="{{ getLocalizedRoute('account_genblueprint') }}">
-                        <img src="{{ asset('img/genblueprint_' ~ app.request.getLocale() ~ '.png') }}">
-                    </a>
-                </div>
+            {% if hasGenBluePrintAccess %}
+                {% set genblueprintUrl = getLocalizedRoute('account_genblueprint') %}
+            {% else %}
+                {% set genblueprintUrl = getLocalizedRoute('account_shop') %}
             {% endif %}
+            <div class="account-block">
+                <a href="{{ genblueprintUrl }}">
+                    <img src="{{ asset('img/genblueprint_' ~ app.request.getLocale() ~ '.png') }}">
+                </a>
+            </div>
             <div class="account-block">
                 <a href="{{ getLocalizedRoute('account_shop') }}">
                     <img src="{{ asset('img/shop_' ~ app.request.getLocale() ~ '.png') }}">

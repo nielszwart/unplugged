@@ -22,7 +22,7 @@ class AccountType extends AbstractType
             ->add('city', TextType::class, ['label' => 'City', 'required' => false])
             ->add('phone_number', TextType::class, ['label' => 'Phone number', 'required' => false])
             ->add('date_of_birth', DateType::class, ['widget' => 'single_text', 'label' => 'Date of birth', 'required' => false])
-            ->add('city_of_birth', TextType::class, ['label' => 'Birthplace', 'required' => false]);
+        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)

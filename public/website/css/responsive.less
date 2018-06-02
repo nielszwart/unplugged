@@ -54,6 +54,12 @@
       margin: 0;
     }
   }
+
+  .page-content {
+    .product {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 1150px) {
@@ -251,6 +257,41 @@
       display: none;
     }
   }
+
+  .tool-block {
+    .left {
+      display: none;
+    }
+
+    .right {
+      width: 100%;
+    }
+  }
+
+  .page-content {
+    .product {
+      .left,
+      .right {
+        width: 100%;
+      }
+
+      .right {
+        .cart {
+          form {
+            .product-field {
+              button {
+                margin-left: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .shoppingcart {
+      width: 100%;
+    }
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -315,6 +356,12 @@
   }
   .page-footer {
     height: 250px;
+
+    .cta-position {
+      .call-to-action {
+        height: 200px;
+      }
+    }
   }
 
   .account {

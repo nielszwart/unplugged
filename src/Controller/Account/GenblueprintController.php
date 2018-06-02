@@ -10,6 +10,7 @@ use App\Entity\Genblueprint;
 use App\Entity\PhysicalTest;
 use App\Form\GenblueprintType;
 use App\Form\PhysicalTestType;
+use App\Service\GenBluePrintService;
 use App\Service\Localization;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -19,7 +20,7 @@ class GenblueprintController extends BaseController
     {
         $account = $this->getDoctrine()->getRepository(Account::class)->findOneBy(['user' => $this->getUser()->getId()]);
 
-        if (!$this->hasPurchasedGenblueprint($account)) {
+        if (!GenBluePrintService::hasGenBluePrintAccess($account)) {
             return $localization->redirectToLocalizedRoute('account');
         }
 
@@ -104,29 +105,6 @@ class GenblueprintController extends BaseController
                 'genblueprint' => $genblueprint,
             ]
         );
-    }
-
-    private function hasPurchasedGenblueprint(Account $account)
-    {
-        $orders = $account->getOrders();
-        if (empty($orders)) {
-            return false;
-        }
-
-        foreach ($orders as $order) {
-            if ($order->getStatus() !== 'paid') {
-                continue;
-            }
-
-            foreach ($order->getOrderLines() as $orderLine) {
-                echo $orderLine->getProduct()->getTitle();
-                if ($orderLine->getProduct()->getHasGenblueprint()) {
-                    return true;
-                }
-            }
-        }
-
-        return false;
     }
 
     private function sendGenBluePrintEmail(\Swift_Mailer $mailer, Localization $localization, Account $account, $new = false)

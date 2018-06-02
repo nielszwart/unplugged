@@ -61,11 +61,6 @@ class Account
     /**
      * @ORM\Column(type="string", nullable=true)
      */
-    private $city_of_birth;
-
-    /**
-     * @ORM\Column(type="string", nullable=true)
-     */
     private $phone_number;
 
     /**
@@ -87,6 +82,11 @@ class Account
      * @ORM\OneToOne(targetEntity="Genblueprint")
      */
     private $genblueprint;
+
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $free;
 
     public function __construct(){
         $this->date_created = new \DateTime();
@@ -114,9 +114,6 @@ class Account
         }
         if (isset($values['date_of_birth'])) {
             $this->setDateOfBirth(new \DateTime($values['date_of_birth']));
-        }
-        if (isset($values['city_of_birth'])) {
-            $this->setCityOfBirth($values['city_of_birth']);
         }
         if (isset($values['phone_number'])) {
             $this->setPhoneNumber($values['phone_number']);
@@ -190,16 +187,6 @@ class Account
     public function setDateOfBirth($date_of_birth)
     {
         $this->date_of_birth = $date_of_birth;
-    }
-
-    public function getCityOfBirth()
-    {
-        return $this->city_of_birth;
-    }
-
-    public function setCityOfBirth($city_of_birth)
-    {
-        $this->city_of_birth = $city_of_birth;
     }
 
     public function getPhoneNumber()
@@ -287,5 +274,20 @@ class Account
     public function setGenblueprint($genblueprint)
     {
         $this->genblueprint = $genblueprint;
+    }
+
+    public function getFree()
+    {
+        return $this->free;
+    }
+
+    public function setFree($free)
+    {
+        $this->free = $free;
+    }
+
+    public function toggleFree()
+    {
+        $this->free = $this->free ? false : true;
     }
 }

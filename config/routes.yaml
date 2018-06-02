@@ -135,6 +135,10 @@ contact:
     path: /contact
     defaults: { _controller: 'App\Controller\ContactController::contact' }
 
+tools:
+    path: /tools
+    defaults: { _controller: 'App\Controller\ToolsController::tools' }
+
 magnesium_test:
     path: /magnesium-test
     defaults: { _controller: 'App\Controller\Test\MagnesiumTestController::test' }
@@ -186,6 +190,14 @@ admin_account_overview:
 admin_account_view:
     path: /admin/account/{id}
     defaults: { _controller: 'App\Controller\Account\AccountViewController::view' }
+
+admin_account_toggle_free:
+    path: /admin/account/toggle-free/{id}
+    defaults: { _controller: 'App\Controller\Account\AccountViewController::toggleAccountFree' }
+
+admin_account_toggle_active:
+    path: /admin/account/toggle-active/{id}
+    defaults: { _controller: 'App\Controller\Account\AccountViewController::toggleAccountActive' }
 
 admin_product_overview_en:
     path: /admin/products

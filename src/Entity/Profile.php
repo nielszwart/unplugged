@@ -26,6 +26,11 @@ class Profile
     /**
      * @ORM\Column(type="string", nullable=true)
      */
+    private $city_of_birth;
+
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
     private $birth_time;
 
     /**
@@ -476,6 +481,16 @@ class Profile
     public function setDateChanged($date_changed)
     {
         $this->date_changed = $date_changed;
+    }
+
+    public function getCityOfBirth()
+    {
+        return $this->city_of_birth;
+    }
+
+    public function setCityOfBirth($city_of_birth)
+    {
+        $this->city_of_birth = $city_of_birth;
     }
 
     public function getBirthTime()

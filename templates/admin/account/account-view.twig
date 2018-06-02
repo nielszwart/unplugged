@@ -9,7 +9,9 @@
                 <h1>{{ a.fullName }}</h1>
             </div>
             <div class="col-6">
-                <a href="{{ getLocalizedRoute('admin_account_overview') }}" class="btn btn-dark float-right">{% trans %}Back to overview{% endtrans %}</a>
+                <a href="{{ getLocalizedRoute('admin_account_overview') }}" class="btn btn-dark float-right action">{% trans %}Back to overview{% endtrans %}</a>
+                <a href="{{ getLocalizedRoute('admin_account_toggle_free', {id: a.id}) }}" class="btn btn-dark float-right action">{% trans %}Toggle free{% endtrans %}</a>
+                <a href="{{ getLocalizedRoute('admin_account_toggle_active', {id: a.id}) }}" class="btn btn-dark float-right action">{% trans %}Toggle active{% endtrans %}</a>
             </div>
         </div>
 
@@ -45,9 +47,6 @@
                         <th>{% trans %}Age{% endtrans %}</th><td>{{ a.age }}</td>
                     </tr>
                     <tr>
-                        <th>{% trans %}City of birth{% endtrans %}</th><td>{{ a.cityOfBirth }}</td>
-                    </tr>
-                    <tr>
                         <th>{% trans %}Date created{% endtrans %}</th><td>{{ a.dateCreated }}</td>
                     </tr>
                     <tr>
@@ -58,6 +57,9 @@
                     </tr>
                     <tr>
                         <th>{% trans %}Role{% endtrans %}</th><td>{{ a.user.role }}</td>
+                    </tr>
+                    <tr>
+                        <th>{% trans %}Free account{% endtrans %}</th><td>{% if a.free %}{% trans %}Yes{% endtrans %}{% else %}{% trans %}No{% endtrans %}{% endif %}</td>
                     </tr>
                     </tbody>
                 </table>
@@ -91,6 +93,9 @@
                 <h2>{% trans %}Profile{% endtrans %}</h2>
                 <table class="table table-striped table-sm">
                     <tbody>
+                    <tr>
+                        <th>{% trans %}City of birth{% endtrans %}</th><td>{{ a.profile.cityOfBirth }}</td>
+                    </tr>
                     <tr>
                         <th>{% trans %}Birthtime{% endtrans %}</th><td>{{ a.profile.birthTime }}</td>
                     </tr>

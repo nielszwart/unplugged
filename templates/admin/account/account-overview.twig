@@ -21,6 +21,8 @@
                 <th>{% trans %}Age{% endtrans %}</th>
                 <th>{% trans %}E-mail{% endtrans %}</th>
                 <th>{% trans %}Phone{% endtrans %}</th>
+                <th>{% trans %}Free{% endtrans %}</th>
+                <th>{% trans %}Active{% endtrans %}</th>
             </tr>
             </thead>
             <tbody>
@@ -34,6 +36,8 @@
                     <td>{{ a.age }}</td>
                     <td>{{ a.user.email }}</td>
                     <td>{{ a.phoneNumber }}</td>
+                    <td>{% if a.free %}{% trans %}Ja{% endtrans %}{% else %}{% trans %}Nee{% endtrans %}{% endif %}</td>
+                    <td>{% if a.user.isActive %}{% trans %}Ja{% endtrans %}{% else %}{% trans %}Nee{% endtrans %}{% endif %}</td>
                 </tr>
             {% endfor %}
             </tbody>

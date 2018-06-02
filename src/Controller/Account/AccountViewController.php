@@ -7,6 +7,7 @@ namespace App\Controller\Account;
 use App\Controller\BaseController;
 use App\Entity\Account;
 use App\Entity\Genblueprint;
+use App\Service\Localization;
 
 class AccountViewController extends BaseController
 {
@@ -63,5 +64,32 @@ class AccountViewController extends BaseController
             'blue' => round(($totals['blue'] / $totals['total']) * 100, 0),
             'red' => round(($totals['red'] / $totals['total']) * 100, 0),
         ];
+    }
+
+    public function toggleAccountFree($id, Localization $localization)
+    {
+        $account = $this->getDoctrine()->getRepository(Account::class)->find($id);
+        $account->toggleFree();
+
+        $free = $account->getFree() ? $localization->translate('Yes') : $localization->translate('No');
+
+        $this->save($account);
+        $this->addFlash('success', $localization->translate('Toggled free account to: ' . $free ));
+
+        return $localization->redirectToLocalizedRoute('admin_account_view', ['id' => $id]);
+    }
+
+    public function toggleAccountActive($id, Localization $localization)
+    {
+        $account = $this->getDoctrine()->getRepository(Account::class)->find($id);
+        $user = $account->getUser();
+        $user->toggleActive();
+
+        $active = $user->getIsActive() ? $localization->translate('Active') : $localization->translate('Inactive');
+
+        $this->save($user);
+        $this->addFlash('success', $localization->translate('Toggled account to: ' . $active ));
+
+        return $localization->redirectToLocalizedRoute('admin_account_view', ['id' => $id]);
     }
 }

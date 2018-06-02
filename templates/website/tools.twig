@@ -1,0 +1,69 @@
+{% extends 'website/base.html.twig' %}
+
+{% block title %}{% trans %}Tools{% endtrans %}{% endblock %}
+
+{% block body %}
+    <div class="page-content">
+        <h1>{% trans %}Tools{% endtrans %}</h1>
+
+        <div class="tool-block vitamin-test">
+            <div class="left">
+                <a href="{{ getLocalizedRoute('vitamin_test') }}">
+                    <img class="tool-image" src="{{ asset('img/temp1.jpg') }}">
+                </a>
+            </div>
+            <div class="right">
+                <div class="tool-text-position">
+                    <a href="{{ getLocalizedRoute('vitamin_test') }}"><h2>{% trans %}Vitamin test{% endtrans %}</h2></a>
+                    <div class="tool-text">
+                        <p>Lorem ipsum dolor sit amet, justo oporteat et ius, pri te ubique molestie. Sea eu meis iisque, ut eros liberavisse per, vidit decore eu sed. Ex augue singulis eam, quo ex impetus senserit conclusionemque. Putant senserit volutpat qui no, has at option alienum. Vel luptatum repudiare dissentiunt te, ex omittam mentitum eam, aperiam corpora accusamus mea ad.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">&nbsp;</div>
+        </div>
+        <div class="tool-block magnesium-test">
+            <div class="left">
+                <a href="{{ getLocalizedRoute('magnesium_test') }}">
+                    <img class="tool-image" src="{{ asset('img/temp2.jpg') }}">
+                </a>
+            </div>
+            <div class="right">
+                <div class="tool-text-position">
+                    <a href="{{ getLocalizedRoute('magnesium_test') }}"><h2>{% trans %}Magnesium test{% endtrans %}</h2></a>
+                    <div class="tool-text">
+                        <p>Lorem ipsum dolor sit amet, justo oporteat et ius, pri te ubique molestie. Sea eu meis iisque, ut eros liberavisse per, vidit decore eu sed. Ex augue singulis eam, quo ex impetus senserit conclusionemque. Putant senserit volutpat qui no, has at option alienum. Vel luptatum repudiare dissentiunt te, ex omittam mentitum eam, aperiam corpora accusamus mea ad.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">&nbsp;</div>
+        </div>
+        <div class="tool-block youtube">
+            <div class="left">
+                <a href="http://www.youtube.com" target="_blank">
+                    <img class="tool-image" src="{{ asset('img/temp3.jpg') }}">
+                </a>
+            </div>
+            <div class="right">
+                <div class="tool-text-position">
+                    <a href="http://www.youtube.com" target="_blank"><h2>{% trans %}Youtube{% endtrans %}</h2></a>
+                    <div class="tool-text">
+                        <p>Lorem ipsum dolor sit amet, justo oporteat et ius, pri te ubique molestie.</p>
+                        <ul>
+                            <li>
+                                <a href="http://www.youtube.com" target="_blank">Super leuke video</a>
+                            </li>
+                            <li>
+                                <a href="http://www.youtube.com" target="_blank">Beetje saaie maar korte video</a>
+                            </li>
+                            <li>
+                                <a href="http://www.youtube.com" target="_blank">Beste filmpje allertijden</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="clear">&nbsp;</div>
+        </div>
+    </div>
+{% endblock %}

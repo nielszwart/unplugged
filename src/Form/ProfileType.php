@@ -17,6 +17,7 @@ class ProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add('city_of_birth', TextType::class, ['label' => 'Birthplace', 'required' => false])
             ->add('birth_time', TextType::class, [
                 'label' => 'Birthtime',
                 'label_attr' => ['class' => 'question'],

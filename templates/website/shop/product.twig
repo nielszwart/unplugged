@@ -6,8 +6,8 @@
     <div class="page-content">
         <div class="product">
             <div class="top-bar">
-                <a href="{{ getLocalizedRoute('account_shop') }}" class="button-small float-right">{% trans %}Back to overview{% endtrans %}</a>
-                <a href="{{ getLocalizedRoute('account_shop_cart') }}" class="button-small float-right">{% trans %}Cart{% endtrans %}</a>
+                <a href="{{ getLocalizedRoute('account_shop') }}" class="button-small back-button">{% trans %}Back to overview{% endtrans %}</a>
+                <a href="{{ getLocalizedRoute('account_shop_cart') }}" class="button-small back-button">{% trans %}Cart{% endtrans %}</a>
             </div>
             <div class="left">
                 <img src="{{ asset('uploads/' ~ product.image ) }}">
