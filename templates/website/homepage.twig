@@ -3,7 +3,7 @@
 {% block title %}Unplugged{% endblock %}
 
 {% block body %}
-    <div class="homepage-header-image" style="background-image: url({{ asset('img/top1.jpg') }})">
+    <div class="homepage-header-image" style="background-image: url('{{ asset('img/top1.jpg') }}')">
         <div class="text-position">
             <div class="image-opacity-bar">
                 <h1>{% trans %}Unplugging starts here{% endtrans %}</h1>
@@ -14,7 +14,7 @@
 
     <div class="usps">
         <div class="why">
-                <h2>{% trans %}Why Unplugged?{% endtrans %}</h2>
+                <h2>{% trans %}Why Unplugging?{% endtrans %}</h2>
         </div>
         <div class="usp-list">
             <div class="usp">
@@ -71,7 +71,7 @@
             <ul class="pages">
                 {% for page in pages %}
                     <li>
-                        <div class="image" style="background-image: url({{ asset('uploads/' ~ page.slideImage) }})">
+                        <div class="image" style="background-image: url('{{ asset('uploads/' ~ page.slideImage) }}')">
                             <div class="image-text">
                                 <div class="image-opacity-bar">
                                     <h2>{{ page.slideTitle }}</h2>

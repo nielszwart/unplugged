@@ -4,7 +4,7 @@
 
 {% block body %}
     {% if page.header %}
-        <div class="page-header" style="background-image: url({{ asset('uploads/' ~ page.header) }})">
+        <div class="page-header" style="background-image: url('{{ asset('uploads/' ~ page.header) }}')">
             <div class="text-position">
                 <div class="image-opacity-bar">
                     <h1 class="{{ page.slug }}">{{ page.title }}</h1>
@@ -25,7 +25,7 @@
     </div>
 
     {% if page.footer %}
-        <div class="page-footer" style="background-image: url({{ asset('uploads/' ~ page.footer) }})">
+        <div class="page-footer" style="background-image: url('{{ asset('uploads/' ~ page.footer) }}')">
             {% if page.callToAction %}
                 <div class="cta-position">
                     <a href="{{ page.callToActionLink }}" target="_blank">
