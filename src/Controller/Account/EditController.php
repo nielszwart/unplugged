@@ -3,13 +3,10 @@
 namespace App\Controller\Account;
 
 use App\Controller\BaseController;
-use App\Entity\User;
 use App\Form\AccountType;
-use App\Form\UserType;
 use App\Service\Localization;
 use App\Entity\Account;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class EditController extends BaseController
 {
