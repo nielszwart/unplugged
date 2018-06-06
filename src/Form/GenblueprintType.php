@@ -130,7 +130,7 @@ class GenblueprintType extends AbstractType
                 'choices' => [
                     'I have been slim and fit all my life' => 'green',
                     'I have been athletically built all my life, neither fat nor skinny' => 'blue',
-                    'In my life, I have become heavier and somewhat more chubby ' => 'red',
+                    'In my life, I have become heavier and somewhat more chubby' => 'red',
                 ]
             ])
             ->add('question6', ChoiceType::class, [
@@ -250,7 +250,7 @@ class GenblueprintType extends AbstractType
                 'choices' => [
                     'I have irregular stools which sometimes results in obstipation' => 'green',
                     'I have regular stools, sometimes twice or more a day' => 'blue',
-                    'I have regular stools: heavy and firm' => 'red',
+                    'I have regular stools; heavy and firm' => 'red',
                 ]
             ])
             ->add('question16', ChoiceType::class, [
@@ -368,7 +368,7 @@ class GenblueprintType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'My hair is dark, stiff, rough or frizzy ' => 'green',
+                    'My hair is dark, stiff, rough or frizzy' => 'green',
                     'My hair is light and easily becomes grey' => 'blue',
                     'My hair is thick and wavy and is brilliant in color' => 'red',
                 ]
@@ -380,7 +380,7 @@ class GenblueprintType extends AbstractType
                 'expanded' => true,
                 'multiple' => true,
                 'choices' => [
-                    'I prefer a warm climate with high humidity ' => 'green',
+                    'I prefer a warm climate with high humidity' => 'green',
                     'I prefer a cool climate' => 'blue',
                     'I have no climate preferences' => 'red',
                 ]
@@ -442,7 +442,7 @@ class GenblueprintType extends AbstractType
                 'choices' => [
                     'In times of intense stress I tend to look for an escape' => 'green',
                     'In times of intense stress I tend to fight' => 'blue',
-                    'In times of intense stress I wouldn’t know what I would do ' => 'red',
+                    'In times of intense stress I wouldn’t know what I would do' => 'red',
                 ]
             ])
             ->add('question02', ChoiceType::class, [
@@ -502,7 +502,7 @@ class GenblueprintType extends AbstractType
                 'choices' => [
                     'I constantly need people around me in order to feel good' => 'green',
                     'I prefer to be alone' => 'blue',
-                    'Sometimes I like to have people around me and sometimes I don’t ' => 'red',
+                    'Sometimes I like to have people around me and sometimes I don’t' => 'red',
                 ]
             ])
 
