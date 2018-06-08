@@ -19,13 +19,18 @@ class CartController extends BaseController
     public function cart(Request $request, Localization $localization, ShoppingCart $cart, Hostnames $host)
     {
         if ($request->isMethod('post')) {
+            if ($cart->getTotalPrice() < 0.01) {
+                $this->addFlash('error', $localization->translate('Minimum order price is 1 cent'));
+                return $localization->redirectToLocalizedRoute('account_shop_cart');
+            }
+
             $order = $this->createNewOrder($cart);
 
             $mollie = new \Mollie_API_Client();
             $mollie->setApiKey($this->getParameter('mollie_api_key'));
             $payment = $mollie->payments->create([
                 "amount"      => $cart->getTotalPrice(),
-                "description" => $localization->translate('UNPLUGGED order'),
+                "description" => $localization->translate('UNPLUGGING order'),
                 "redirectUrl" => $host->getWebsiteUrl() . $localization->getLocalizedRoute('account_shop_order_placed'),
                 "webhookUrl"  => $host->getWebsiteUrl() . $localization->getLocalizedRoute('mollie_webhook'),
             ]);
