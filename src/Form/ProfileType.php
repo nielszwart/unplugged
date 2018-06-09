@@ -17,7 +17,11 @@ class ProfileType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('city_of_birth', TextType::class, ['label' => 'Birthplace', 'required' => false])
+            ->add('city_of_birth', TextType::class, [
+                'label' => 'Birthplace',
+                'label_attr' => ['class' => 'question'],
+                'required' => false
+            ])
             ->add('birth_time', TextType::class, [
                 'label' => 'Birthtime',
                 'label_attr' => ['class' => 'question'],
@@ -185,7 +189,7 @@ class ProfileType extends AbstractType
                 'multiple' => false,
                 'choices' => [
                     'I do not use medications' => 'I do not use medications',
-                    'I had an operation in the last 5 years' => 'I had an operation in the last 5 years',
+                    'I use medications' => 'I use medications',
                 ]
             ])
             ->add('medication_open', TextareaType::class, [

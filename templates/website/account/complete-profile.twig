@@ -9,10 +9,17 @@
             <h1>{% trans %}Complete your profile{% endtrans %}</h1>
 
             <div class="text">
-                <p>Wie ben ik? En wat zijn mijn mogelijkheden als persoon?</p><br />
-                <p>Om een compleet beeld van je te krijgen is het belangrijk dat je jouw profiel zo compleet mogelijk maakt.</p><br/>
-                <p>Al deze informatie is prive! Deze informatie delen we niet en wordt alleen door ons gebruikt om jou maximaal in elke zone te kunnen aansturen en te kunnen adviseren.</p><br/>
-                <p>Jouw persoonlijke informatie vormt dan ook de GenBluePrint. Deze GenBluePrint kunnen we maximaal optimaliseren met verschillende lichamelijke testen waardoor het ook mogelijk wordt om in je eigen zone te trainen en sporten. Dit laatste onderdeel (body) gebeurd via onze partner NEOBODIES waar getraind wordt op basis van je GenBluePrint.</p>
+                <p>{% trans %}Who am I? What are my possibilities as a person?{% endtrans %}</p><br />
+                <p>{% trans %}In order to get a complete image of who you are, it is important to create a complete profile.{% endtrans %}</p><br/>
+                <p>
+                    {% trans %}All the information you provide will remain confidential!{% endtrans %}
+                    {% trans %}This information will not be shared and will only be used by us to give you the best advice based on the zone you’re in (Warrior, Hunter or Survivor).{% endtrans %}
+                </p><br/>
+                <p>
+                    {% trans %}Your personal information contributes to your GenBluePrint.{% endtrans %}
+                    {% trans %}We can then optimize this GenBluePrint with various physical tests which enable you to exercise in accordance to your zone.{% endtrans %}
+                    {% trans %}This last part (move) will be executed by our partner NEOBODIES, a place where you can perform sports and exercise based on your GenBluePrint.{% endtrans %}
+                </p>
             </div>
 
             {{ form_start(form) }}
