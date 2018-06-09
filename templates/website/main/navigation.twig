@@ -17,7 +17,7 @@
                         </a>
                     </li>
                     <li class="nav-item"><a href="{{ getLocalizedRoute('contact') }}">{% trans %}Contact{% endtrans %}</a></li>
-                    <li class="nav-item"><a href="{{ getLocalizedRoute('tools') }}">{% trans %}Tools{% endtrans %}</a></li>
+                    <li class="nav-item"><a href="{{ getLocalizedRoute('tools_view') }}">{% trans %}Tools{% endtrans %}</a></li>
                     <li class="nav-item"><a href="{{ getLocalizedRoute('account_shop') }}">{% trans %}Shop{% endtrans %}</a></li>
                     {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                         <li class="nav-item"><a href="{{ getLocalizedRoute('logout') }}">{% trans %}Logout{% endtrans %}</a></li>
@@ -57,7 +57,7 @@
                         <li class="nav-item"><a href="{{ getLocalizedRoute('page_view', {slug: 'help'}) }}">{% trans %}Help{% endtrans %}</a></li>
 
                         <li class="nav-item"><a href="{{ getLocalizedRoute('account_shop') }}">{% trans %}Shop{% endtrans %}</a></li>
-                        <li class="nav-item"><a href="{{ getLocalizedRoute('tools') }}">{% trans %}Tools{% endtrans %}</a></li>
+                        <li class="nav-item"><a href="{{ getLocalizedRoute('tools_view') }}">{% trans %}Tools{% endtrans %}</a></li>
 
                         {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                             <li class="nav-item"><a href="{{ getLocalizedRoute('logout') }}">{% trans %}Logout{% endtrans %}</a></li>

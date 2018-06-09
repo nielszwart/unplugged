@@ -135,10 +135,6 @@ contact:
     path: /contact
     defaults: { _controller: 'App\Controller\ContactController::contact' }
 
-tools:
-    path: /tools
-    defaults: { _controller: 'App\Controller\ToolsController::tools' }
-
 magnesium_test:
     path: /magnesium-test
     defaults: { _controller: 'App\Controller\Test\MagnesiumTestController::test' }
@@ -151,6 +147,11 @@ vitamin_test_nl:
     path: /vitamine-b12-test
     host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Test\VitamineTestController::test' }
+
+tools_view:
+    path: /tools
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Tool\ToolsViewController::view' }
 
 page_view:
     path: /{slug}
@@ -181,6 +182,35 @@ admin_page_edit_nl:
     path: /admin/pagina/wijzig/{slug}/{locale}
     host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Page\PageEditController::edit' }
+
+admin_tool_overview_en:
+    path: /admin/tools
+    host: www.unplugging.co.uk
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Tool\ToolOverviewController::overview' }
+admin_tool_overview_nl:
+    path: /admin/tools
+    host: www.unplugging.nl
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Tool\ToolOverviewController::overview' }
+
+admin_tool_create_en:
+    path: /admin/tool/new/{locale}
+    host: www.unplugging.co.uk
+    defaults: { _controller: 'App\Controller\Tool\ToolCreateController::create' }
+admin_tool_create_nl:
+    path: /admin/tool/nieuw/{locale}
+    host: www.unplugging.nl
+    defaults: { _controller: 'App\Controller\Tool\ToolCreateController::create' }
+
+admin_tool_edit_en:
+    path: /admin/tool/edit/{id}/{locale}
+    host: www.unplugging.co.uk
+    defaults: { _controller: 'App\Controller\Tool\ToolEditController::edit' }
+admin_tool_edit_nl:
+    path: /admin/tool/wijzig/{id}/{locale}
+    host: www.unplugging.nl
+    defaults: { _controller: 'App\Controller\Tool\ToolEditController::edit' }
 
 admin_account_overview:
     path: /admin/accounts
