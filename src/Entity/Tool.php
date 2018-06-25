@@ -42,6 +42,17 @@ class Tool
      */
     private $link;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $file;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $new_tab = false;
+
+
     public function __construct($locale)
     {
         $this->setLocale($locale);
@@ -107,6 +118,26 @@ class Tool
         $this->link = $link;
     }
 
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile($file)
+    {
+        $this->file = $file;
+    }
+
+    public function getNewTab()
+    {
+        return $this->new_tab;
+    }
+
+    public function setNewTab($new_tab)
+    {
+        $this->new_tab = $new_tab;
+    }
+
     public function edit($values)
     {
         if (isset($values['content'])) {
@@ -120,6 +151,12 @@ class Tool
         }
         if (isset($values['link'])) {
             $this->setLink($values['link']);
+        }
+        if (isset($values['file'])) {
+            $this->setFile($values['file']);
+        }
+        if (isset($values['new_tab'])) {
+            $this->setNewTab($values['new_tab']);
         }
     }
 }

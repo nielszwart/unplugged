@@ -30,6 +30,12 @@ class ToolCreateController extends BaseController
                     unset($data['image']);
                 }
 
+                if (!empty($data['file']) && $data['file'] instanceof UploadedFile) {
+                    $data['file'] = $fileUploader->upload($data['file']);
+                } else {
+                    unset($data['file']);
+                }
+
                 if (strpos($data['link'], 'www') === 0) {
                     $data['link'] = 'http://' . $data['link'];
                 }

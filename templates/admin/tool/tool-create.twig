@@ -38,6 +38,16 @@
                     {{ form_widget(form.link) }}
                 </div>
 
+                <div class="form-group row">
+                    {{ form_label(form.file) }}
+                    {{ form_widget(form.file) }}
+                </div>
+
+                <div class="form-group row">
+                    {{ form_label(form.new_tab) }}
+                    {{ form_widget(form.new_tab) }}
+                </div>
+
                 <button type="submit" class="btn btn-success float-right">{% trans %}Save{% endtrans %}</button>
             </div>
             <div class="col-1">&nbsp;</div>

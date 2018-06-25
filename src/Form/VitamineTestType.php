@@ -16,107 +16,107 @@ class VitamineTestType extends AbstractType
     {
         $builder
             ->add('question1', ChoiceType::class, [
-                'label' => 'Ben je vegetariër, veganist of eet je niet met regelmaat dierlijke producten?',
+                'label' => 'Are you a vegetarian, vegan or do you skip eating animal related food?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question2', ChoiceType::class, [
-                'label' => 'Ben je vaak vermoeidheid en problemen met concentratie en geheugen?',
+                'label' => 'Do you experience extreme fatigue or concentration and memory problems?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question3', ChoiceType::class, [
-                'label' => 'Heb je last van je darmen?',
+                'label' => 'Do you have gut problems?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question4', ChoiceType::class, [
-                'label' => 'Heeft je wel eens last van een ontstoken, branderige, prikkelbare tong of aften?',
+                'label' => 'Do you sometimes experience a painful tong or mouth ulcers?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question5', ChoiceType::class, [
-                'label' => 'Ervaar je wel eens tintelingen in de handen of voeten?',
+                'label' => 'Do you ever experience tingling of the hands or feet?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question6', ChoiceType::class, [
-                'label' => 'Heeft u last van neerslachtigheid of voel je wel eens down?',
+                'label' => 'Do you ever feel down or depressed?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question7', ChoiceType::class, [
-                'label' => 'Kom je moeilijk in slaap of slaap je moeilijk door?',
+                'label' => 'Do you have difficulties falling a sleep or often wake up during the night?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question8', ChoiceType::class, [
-                'label' => 'Ben je wel eens duizelig of heb je last van bloedarmoede of oorsuizen?',
+                'label' => 'Do you ever feel dizziness or do you have anaemia or tinnitus?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question9', ChoiceType::class, [
-                'label' => 'Heb je wel eens last van je maag of een maagoperatie ondergaan?',
+                'label' => 'Do you have stomach complaints or did you have stomach surgery?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question10', ChoiceType::class, [
-                'label' => 'Heb je wel eens stress en/of bent u ouder dan 55 jaar?',
+                'label' => 'Do you experience stress or/and are you over 55 years old',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question11', ChoiceType::class, [
-                'label' => 'Gebruikt u medicatie zoals rennies, maagbeschermers, maagzuurremmers of metformine?',
+                'label' => 'Do you take medicines for heartburn?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,

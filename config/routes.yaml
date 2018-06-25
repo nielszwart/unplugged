@@ -12,7 +12,7 @@ logout:
 
 register_en:
     path: /register
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Account\RegisterController::register' }
 register_nl:
     path: /registreren
@@ -21,7 +21,7 @@ register_nl:
 
 registered_en:
     path: /registered
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Account\RegisterController::registered' }
 registered_nl:
     path: /geregistreerd
@@ -35,7 +35,7 @@ account:
 
 account_edit_en:
     path: /edit-account
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Account\EditController::edit' }
 account_edit_nl:
     path: /wijzig-account
@@ -44,7 +44,7 @@ account_edit_nl:
 
 account_complete_profile_en:
     path: /account/complete-profile
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Account\CompleteProfileController::complete' }
 account_complete_profile_nl:
     path: /account/profiel-aanvullen
@@ -53,7 +53,7 @@ account_complete_profile_nl:
 
 account_shop_en:
     path: /account/shop
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Shop\ShopController::shop' }
 account_shop_nl:
     path: /account/winkel
@@ -62,7 +62,7 @@ account_shop_nl:
 
 account_shop_product_en:
     path: /account/shop/product/{id}
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Shop\ShopController::product' }
 account_shop_product_nl:
     path: /account/winkel/product/{id}
@@ -71,7 +71,7 @@ account_shop_product_nl:
 
 account_shop_cart_en:
     path: /account/shop/cart
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Shop\CartController::cart' }
 account_shop_cart_nl:
     path: /account/winkel/mandje
@@ -80,7 +80,7 @@ account_shop_cart_nl:
 
 account_shop_order_placed_en:
     path: /account/shop/order-placed
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Shop\ShopController::orderPlaced' }
 account_shop_order_placed_nl:
     path: /account/winkel/order-geplaatst
@@ -98,7 +98,7 @@ mollie_webhook:
 
 account_purchase_overview_en:
     path: /account/purchases
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Account\PurchaseController::overview' }
 account_purchase_overview_nl:
     path: /account/aankopen
@@ -115,7 +115,7 @@ account_genblueprint:
 
 forgot_password_en:
     path: /forgot-password
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\SecurityController::forgotPassword' }
 forgot_password_nl:
     path: /wachtwoord-vergeten
@@ -124,7 +124,7 @@ forgot_password_nl:
 
 reset_password_en:
     path: /reset-password
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\SecurityController::resetPassword' }
 reset_password_nl:
     path: /wachtwoord-opnieuw-instellen
@@ -141,7 +141,7 @@ magnesium_test:
 
 vitamin_test_en:
     path: /vitamin-b12-test
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Test\VitamineTestController::test' }
 vitamin_test_nl:
     path: /vitamine-b12-test
@@ -165,7 +165,7 @@ admin_dashboard:
 
 admin_page_overview_en:
     path: /admin/pages
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     methods: [GET]
     defaults: { _controller: 'App\Controller\Page\PageOverviewController::overview' }
 admin_page_overview_nl:
@@ -176,7 +176,7 @@ admin_page_overview_nl:
 
 admin_page_edit_en:
     path: /admin/page/edit/{slug}/{locale}
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Page\PageEditController::edit' }
 admin_page_edit_nl:
     path: /admin/pagina/wijzig/{slug}/{locale}
@@ -185,7 +185,7 @@ admin_page_edit_nl:
 
 admin_tool_overview_en:
     path: /admin/tools
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     methods: [GET]
     defaults: { _controller: 'App\Controller\Tool\ToolOverviewController::overview' }
 admin_tool_overview_nl:
@@ -196,7 +196,7 @@ admin_tool_overview_nl:
 
 admin_tool_create_en:
     path: /admin/tool/new/{locale}
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Tool\ToolCreateController::create' }
 admin_tool_create_nl:
     path: /admin/tool/nieuw/{locale}
@@ -205,12 +205,17 @@ admin_tool_create_nl:
 
 admin_tool_edit_en:
     path: /admin/tool/edit/{id}/{locale}
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Tool\ToolEditController::edit' }
 admin_tool_edit_nl:
     path: /admin/tool/wijzig/{id}/{locale}
     host: www.unplugging.nl
     defaults: { _controller: 'App\Controller\Tool\ToolEditController::edit' }
+
+admin_tool_edit_delete_file:
+    path: /admin/tool/delete/file/{id}/{locale}
+    methods: [GET]
+    defaults: { _controller: 'App\Controller\Tool\ToolEditController::deleteFile' }
 
 admin_account_overview:
     path: /admin/accounts
@@ -231,7 +236,7 @@ admin_account_toggle_active:
 
 admin_product_overview_en:
     path: /admin/products
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     methods: [GET]
     defaults: { _controller: 'App\Controller\Product\ProductOverviewController::overview' }
 admin_product_overview_nl:
@@ -242,7 +247,7 @@ admin_product_overview_nl:
 
 admin_product_create_en:
     path: /admin/product/new
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Product\ProductCreateController::create' }
 admin_product_create_nl:
     path: /admin/product/nieuw
@@ -251,7 +256,7 @@ admin_product_create_nl:
 
 admin_product_edit_en:
     path: /admin/product/edit/{id}
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Product\ProductEditController::edit' }
 admin_product_edit_nl:
     path: /admin/product/wijzig/{id}
@@ -260,7 +265,7 @@ admin_product_edit_nl:
 
 admin_product_delete_en:
     path: /admin/product/delete/{id}
-    host: www.unplugging.co.uk
+    host: www.unplugging.eu
     defaults: { _controller: 'App\Controller\Product\ProductDeleteController::deleteProduct' }
 admin_product_delete_nl:
     path: /admin/product/verwijder/{id}

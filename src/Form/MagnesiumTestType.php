@@ -16,110 +16,110 @@ class MagnesiumTestType extends AbstractType
     {
         $builder
             ->add('question1', ChoiceType::class, [
-                'label' => 'Drink je wekelijks koolzuurhoudende dranken (ook spa rood)?',
+                'label' => 'Do you drink sparkling beverages?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja, ik drink bijna dagelijks koolzuurhoudende dranken' => 'Ja, ik drink bijna dagelijks koolzuurhoudende dranken',
-                    'Ja, ik drink niet meer dan 5 glazen koolzuurhoudende drank per week' => 'Ja, ik drink niet meer dan 5 glazen koolzuurhoudende drank per week',
-                    'Nee, ik drink geen koolzuurhoudende dranken' => 'Nee, ik drink geen koolzuurhoudende dranken',
+                    'Yes, I drink them daily' => 'Ja, ik drink bijna dagelijks koolzuurhoudende dranken',
+                    'Yes, I drink them but not more than 5 glasses a week.' => 'Ja, ik drink niet meer dan 5 glazen koolzuurhoudende drank per week',
+                    'No, I don’t drink sparkling beverages' => 'Nee, ik drink geen koolzuurhoudende dranken',
                 ]
             ])
             ->add('question2', ChoiceType::class, [
-                'label' => 'Eet je regelmatig suiker in je voeding of eet je regelmatig gebakjes, taarten, desserts, snoep of andere voedingsmiddelen met veel suiker?',
+                'label' => 'Do you consume sugar-containing foods?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja, ik kan niet van zoetigheid afblijven' => 'Ja, ik kan niet van zoetigheid afblijven',
-                    'Ik probeer minder suiker in te nemen' => 'Ik probeer minder suiker in te nemen',
-                    'Nee' => 'Nee',
+                    'Yes I do, I can’t resist them' => 'Ja, ik kan niet van zoetigheid afblijven',
+                    'Yes I do, but I try to minimize it' => 'Ik probeer minder suiker in te nemen',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question3', ChoiceType::class, [
-                'label' => 'Drink je dagelijks koffie, thee of ander cafeine houdende dranken?',
+                'label' => 'Do you drink coffee, tea or other caffeine containing drinks?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja, wel meer dan 3 kopjes per dag' => 'Ja, wel meer dan 3 kopjes per dag',
-                    'Ja, maar het blijft meestal bij 1 a 2 kopjes per dag' => 'Ja, maar het blijft meestal bij 1 a 2 kopjes per dag',
-                    'Nee' => 'Nee',
+                    'Yes, more than three cups a day.' => 'Ja, wel meer dan 3 kopjes per dag',
+                    'Yes, but not more than 1 or 2 cups a day' => 'Ja, maar het blijft meestal bij 1 a 2 kopjes per dag',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question4', ChoiceType::class, [
-                'label' => 'Heb je dagelijks veel stress te verwerken?',
+                'label' => 'Do you experience a lot of stress in your life?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja, dagelijks heb ik wel een stress momenten' => 'Ja, dagelijks heb ik wel een stress momenten',
-                    'Soms, maar niet dagelijks' => 'Soms, maar niet dagelijks',
-                    'Nee, ik heb geen stress' => 'Nee, ik heb geen stress',
+                    'Yes i have several stress moments a day' => 'Ja, dagelijks heb ik wel een stress momenten',
+                    'Yes I have stress but not on a daily basis.' => 'Soms, maar niet dagelijks',
+                    'No' => 'Nee, ik heb geen stress',
                 ]
             ])
             ->add('question5', ChoiceType::class, [
-                'label' => 'Als je gaat slapen...',
+                'label' => 'When you go to bed to sleep...',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'heb je moeite met inslapen' => 'heb je moeite met inslapen',
-                    'word je steeds wakker' => 'word je steeds wakker',
-                    'val je snel in slaap' => 'val je snel in slaap',
-                    'heb ik wel eens last van verkrampte spieren tijdens mijn slaap' => 'heb ik wel eens last van verkrampte spieren tijdens mijn slaap',
+                    'You struggle to fall a sleep' => 'heb je moeite met inslapen',
+                    'You wake up several times a night' => 'word je steeds wakker',
+                    'You fall a sleep easily' => 'val je snel in slaap',
+                    'You suffer from muscle cramps often' => 'heb ik wel eens last van verkrampte spieren tijdens mijn slaap',
                 ]
             ])
             ->add('question6', ChoiceType::class, [
-                'label' => 'Gebruik je medicijnen m.b.t. je bloedruk, je hart of longen?',
+                'label' => 'Do you use medicines for blood pressure, heart or lung disease?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja, ik gebruik dit soort medicijnen' => 'Ja, ik gebruik dit soort medicijnen',
-                    'Nee, maar ik heb wel lichamelijke klachten in die richting' => 'Nee, maar ik heb wel lichamelijke klachten in die richting',
-                    'Nee ik gebruik geen medicijnen' => 'Nee ik gebruik geen medicijnen',
+                    'Yes I do' => 'Ja, ik gebruik dit soort medicijnen',
+                    'No, but I do have compatible physical complains' => 'Nee, maar ik heb wel lichamelijke klachten in die richting',
+                    'No' => 'Nee ik gebruik geen medicijnen',
                 ]
             ])
             ->add('question7', ChoiceType::class, [
-                'label' => 'Drink je gemiddeld meer dan 7 glazen alcohol per week?',
+                'label' => 'Do you drink more than 7 glasses of alcohol containing drinks a week?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question8', ChoiceType::class, [
-                'label' => 'Heb je wel eens last van een trillend ooglid of andere spiertrillingen?',
+                'label' => 'Are you experiencing a tremor of your eyelid or other muscle tremors?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
                 ]
             ])
             ->add('question9', ChoiceType::class, [
-                'label' => 'Heb je diabetes type I of II?',
+                'label' => 'Do you have diabetes type 1 or 2?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Ja' => 'Ja',
-                    'Nee' => 'Nee',
-                    'Weet ik niet' => 'Weet ik niet',
+                    'Yes' => 'Ja',
+                    'No' => 'Nee',
+                    'I don’t know' => 'Weet ik niet',
                 ]
             ])
             ->add('question10', ChoiceType::class, [
-                'label' => 'Wat is jouw leeftijd?',
+                'label' => 'What is your age?',
                 'label_attr' => ['class' => 'question'],
                 'expanded' => true,
                 'multiple' => false,
                 'choices' => [
-                    'Jonger dan 40' => 'Jonger dan 40',
+                    'Younger than 40 years old' => 'Jonger dan 40',
                     '40-55' => '40-55',
                     '55+' => '55+'
                 ]

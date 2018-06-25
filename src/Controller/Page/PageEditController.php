@@ -9,11 +9,9 @@ use App\Entity\Page;
 use App\Form\PageType;
 use App\Service\FileUploader;
 use App\Service\Localization;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\Translation\Translator;
 
 class PageEditController extends BaseController
 {
