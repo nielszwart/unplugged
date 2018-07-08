@@ -26,21 +26,32 @@ class GenblueprintController extends BaseController
 
         $first = empty($account->getGenblueprint());
         $genblueprint = $first ? new Genblueprint() : $account->getGenblueprint();
+        $physicalTest = !empty($genblueprint->getPhysicalTest()) ? $genblueprint->getPhysicalTest() : new PhysicalTest($genblueprint);
 
-        $form = $this->createForm(GenblueprintType::class);
-        $physicalForm = $this->createForm(PhysicalTestType::class);
+        $answers = [];
+        if (!$first) {
+            foreach ($genblueprint->getAnswers() as $answer) {
+                $question = $answer->getQuestion();
+                if ($answer->getGreen()) {
+                    $answers[$question][] = 'green';
+                }
+                if ($answer->getRed()) {
+                    $answers[$question][] = 'red';
+                }
+                if ($answer->getBlue()) {
+                    $answers[$question][] = 'blue';
+                }
+            }
+        }
+
+        $form = $this->createForm(GenblueprintType::class, ['answers' => $answers]);
+        $physicalForm = $this->createForm(PhysicalTestType::class, $physicalTest);
         $form->handleRequest($request);
         $physicalForm->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             try {
                 $data = $form->getData();
-                unset($data['question01']);
-                unset($data['question02']);
-                unset($data['question03']);
-                unset($data['question04']);
-                unset($data['question05']);
-                unset($data['question06']);
-                $physicalData = $physicalForm->getData();
+                $physicalTest = $physicalForm->getData();
 
                 if ($first) {
                     $this->save($genblueprint);
@@ -52,8 +63,7 @@ class GenblueprintController extends BaseController
                         $this->save($answer);
                     }
 
-                    if ($physicalData) {
-                        $physicalTest = new PhysicalTest($genblueprint, $physicalData);
+                    if ($physicalTest) {
                         $genblueprint->setPhysicalTest($physicalTest);
                         $this->save($physicalTest);
                         $this->save($genblueprint);
@@ -61,6 +71,7 @@ class GenblueprintController extends BaseController
 
                     $this->addFlash('success', $localization->translate('Successfully created your GenBluePrint'));
                     $this->sendGenBluePrintEmail($mailer, $localization, $account, true);
+                    $this->sendEmailToClient($mailer, $localization, ['email' => $this->getUser()->getEmail()]);
                 } else {
                     foreach ($data as $question => $answers) {
                         $answer = $this->getDoctrine()->getRepository(Answer::class)->findOneBy([
@@ -76,13 +87,7 @@ class GenblueprintController extends BaseController
                         $this->save($answer);
                     }
 
-                    if ($physicalData) {
-                        $physicalTest = $genblueprint->getPhysicalTest();
-                        if (!$physicalTest) {
-                            $physicalTest = new PhysicalTest($genblueprint, $physicalData);
-                        } else {
-                            $physicalTest->edit($physicalData);
-                        }
+                    if ($physicalTest) {
                         $this->save($physicalTest);
                     }
 
@@ -124,6 +129,16 @@ class GenblueprintController extends BaseController
                 ),
                 'text/html'
             );
+
+        $mailer->send($message);
+    }
+
+    protected function sendEmailToClient($mailer, $localization, $data)
+    {
+        $message = (new \Swift_Message($localization->translate('GenBluePrint test')))
+            ->setFrom('info@unplugged.nl')
+            ->setTo($data['email'])
+            ->setBody($this->renderView('email/test-response.twig'), 'text/html');
 
         $mailer->send($message);
     }

@@ -47,16 +47,23 @@ class AccountViewController extends BaseController
             'total' => 0,
         ];
         foreach ($genblueprint->getAnswers() as $answer) {
+
+            if (in_array($answer->getQuestion(), ['question01', 'question02', 'question03', 'question04', 'question05', 'question06'])) {
+                continue;
+            }
+
             if ($answer->getGreen()) {
                 $totals['green']++;
+                $totals['total']++;
             }
             if ($answer->getBlue()) {
                 $totals['blue']++;
+                $totals['total']++;
             }
             if ($answer->getRed()) {
                 $totals['red']++;
+                $totals['total']++;
             }
-            $totals['total']++;
         }
 
         return [

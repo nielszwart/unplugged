@@ -208,7 +208,7 @@ class PhysicalTest
      */
     private $upper_leg_back;
 
-    public function __construct(Genblueprint $genblueprint, $data)
+    public function __construct(Genblueprint $genblueprint, array $data = [])
     {
         $this->setGenblueprint($genblueprint);
         $this->edit($data);

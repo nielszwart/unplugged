@@ -77,6 +77,10 @@
                 <input type="text" class="emailtest" name="emailtest" value="">
             </div>
 
+            <div class="form-field">
+                {{ form_widget(form.agree) }}
+            </div>
+
             <button type="submit" class="button-large">{% trans %}Send{% endtrans %}</button>
 
             {{ form_end(form) }}

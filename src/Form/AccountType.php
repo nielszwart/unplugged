@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Account;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -22,6 +23,7 @@ class AccountType extends AbstractType
             ->add('city', TextType::class, ['label' => 'City', 'required' => false])
             ->add('phone_number', TextType::class, ['label' => 'Phone number', 'required' => false])
             ->add('date_of_birth', DateType::class, ['widget' => 'single_text', 'label' => 'Date of birth', 'required' => false])
+            ->add('agree', CheckboxType::class, ['label' => 'I have read and agree to the terms and conditions, disclaimer and AVR', 'required' => true])
         ;
     }
 

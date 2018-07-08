@@ -88,6 +88,11 @@ class Account
      */
     private $free;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $agree;
+
     public function __construct(){
         $this->date_created = new \DateTime();
     }
@@ -117,6 +122,9 @@ class Account
         }
         if (isset($values['phone_number'])) {
             $this->setPhoneNumber($values['phone_number']);
+        }
+        if (isset($values['agree'])) {
+            $this->setAgree($values['agree']);
         }
     }
 
@@ -289,5 +297,15 @@ class Account
     public function toggleFree()
     {
         $this->free = $this->free ? false : true;
+    }
+
+    public function getAgree()
+    {
+        return $this->agree;
+    }
+
+    public function setAgree($agree): void
+    {
+        $this->agree = $agree;
     }
 }
