@@ -5,6 +5,7 @@ namespace App\Controller\Page;
 
 
 use App\Controller\BaseController;
+use App\Entity\Expert;
 use App\Entity\Page;
 use App\Service\Localization;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -21,10 +22,16 @@ class PageViewController extends BaseController
             throw new HttpException(404, $localization->translate('Could not find the page you are looking for'));
         }
 
+        $experts = [];
+        if ($page->getId() === 6) {
+            $experts = $this->getDoctrine()->getRepository(Expert::class)->findBy(['locale' => $request->getLocale()]);
+        }
+
         return $this->render(
             'website/page/page-view.twig',
             [
                 'page' => $page,
+                'experts' => $experts,
             ]
         );
     }

@@ -45,14 +45,17 @@
 
   ul {
     list-style-type: disc;
-    list-style-position: inside;
-    line-height: 1.7em;
   }
 
   ol {
     list-style-type: decimal;
-    list-style-position: inside;
+  }
+
+  ul, ol {
+    list-style-position: outside;
     line-height: 1.7em;
+    margin-left: 1.25em;
+    padding-left: 0;
   }
 }
 
@@ -82,4 +85,45 @@ div.text {
 
 .page-usps {
   margin-bottom: 50px;
+}
+
+.items {
+  .item-block {
+    border: 1px solid @purple;
+    border-radius: 5px;
+    margin-top: 20px;
+    padding: 15px 25px;
+
+    .left {
+      float: left;
+      width: 20%;
+
+      .item-image{
+        width: 100%;
+      }
+    }
+
+    .right {
+      float: right;
+      width: 76%;
+
+      .item-text {
+        ul {
+
+          li {
+            padding-top: 10px;
+          }
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .expert-block {
+    .item-block();
+    border: none;
+  }
 }

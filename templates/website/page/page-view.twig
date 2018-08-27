@@ -22,6 +22,10 @@
             <h1 class="no-header">{{ page.title }}</h1>
         {% endif %}
         {{ page.content|raw }}
+
+        {% if page.id == 6 %}
+            {% include 'website/page/_help.twig' %}
+        {% endif %}
     </div>
 
     {% if page.footer %}
